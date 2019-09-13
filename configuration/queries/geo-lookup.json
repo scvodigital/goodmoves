@@ -1,0 +1,47 @@
+{
+  "size": 6,
+  "_source": ["place", "display", "point"],
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "query_string": {
+             "fields": ["autocomplete", "textbag"],
+             "query":
+             {{~#if (regexMatch @root.request.params.query.q "^([A-Z]{1,2})(([0-9][A-Z])|([0-9]{1,2}))" "ig")~}}
+               {{{stringify (replace @root.request.params.query.q " " "")}}}
+             {{else}}
+               {{{stringify (lowercase @root.request.params.query.q)}}}
+             {{~/if~}}
+          }
+        }
+      ],
+      "should": [
+        {
+          "term": {
+            "localType": {
+              "value": "City",
+              "boost": 5
+            }
+          }
+        },
+        {
+          "term": {
+            "localType": {
+              "value": "Town",
+              "boost": 2
+            }
+          }
+        },
+        {
+          "term": {
+            "country": {
+              "value": "Scotland",
+              "boost": 10.0
+            }
+          }
+        }
+      ]
+    }
+  }
+}

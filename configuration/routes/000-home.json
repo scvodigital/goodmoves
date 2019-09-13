@@ -1,0 +1,169 @@
+{
+  "name": "home",
+  "pattern": "/",
+  "debug": false,
+  "metaData": {
+    "hideSearch": true
+  },
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    "context.metaData.commonTasks.searchesData",
+    "context.metaData.commonTasks.shortlistData",
+    "context.metaData.commonTasks.notesData",
+    "context.metaData.commonTasks.organisationsWithOpenVacancies",
+    {
+      "name": "primaryResponse",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../../elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "home_latest_personalised",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_home-latest-personalised"
+          },
+          {
+            "name": "home_latest",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_home-latest"
+          },
+          {
+            "name": "recently_viewed",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_recently-viewed"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../../elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "top",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_home-top"
+          },
+          {
+            "name": "shortlist_vacancies_open",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_shortlist-open"
+          },
+          {
+            "name": "shortlist_vacancies_closed",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_shortlist-closed"
+          },
+          {
+            "name": "currently_recruiting",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-organisation",
+            "template": ">context.metaData.handlebars.queries.organisations_currently-recruiting"
+          },
+          {
+            "name": "types",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_types"
+          },
+          {
+            "name": "types_regions",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_types-regions-scotland"
+          },
+          {
+            "name": "types_regions_belgium",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_types-regions-belgium"
+          },
+          {
+            "name": "types_regions_england",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_types-regions-england"
+          },
+          {
+            "name": "types_regions_northern_ireland",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_types-regions-northern-ireland"
+          },
+          {
+            "name": "types_regions_wales",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_types-regions-wales"
+          },
+          {
+            "name": "splash",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "scvo-media",
+            "template": ">context.metaData.handlebars.queries.pages_splash"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    "context.metaData.commonTasks.termsMaps",
+    {
+      "name": "posts",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../../elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "tfn_latest",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "tfn-legacy-post-news,tfn-legacy-feature",
+            "template": ">context.metaData.handlebars.queries.posts_tfn-latest"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.vacancies_home-head-tags",
+              "body": ">context.metaData.handlebars.templates.vacancies_home",
+              "foot": ">context.metaData.handlebars.templates.vacancies_home-foot"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

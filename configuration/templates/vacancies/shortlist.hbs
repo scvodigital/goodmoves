@@ -1,0 +1,60 @@
+<div id="detailed-results-container" class="container-content content-shortlist">
+  <div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+        <h1 class="mdc-typography--headline3 v-margin-full">
+          Shortlist
+        </h1>
+      </div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+        {{#compare @root.data.shortlist_vacancies.open.hits.total ">" 0}}
+        <div class="t-margin-full align-centre">
+          <div class="mdc-chip-set mdc-chip-set--filter t-margin">
+            {{> shortlist_alerts}}
+          </div>
+        </div>
+        {{/compare}}
+      </div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1-desktop mdc-layout-grid__cell--span-4-tablet hide-sm">
+      </div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+        <form action="{{{@root.request.url.path}}}" method="GET">
+          {{> vacancy_search_sort}}
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {{#compare @root.data.shortlist_vacancies.open.hits.total "===" 0}}
+    {{#compare @root.data.shortlist_vacancies.closed.hits.total "===" 0}}
+      <p class="mdc-typography--body1">
+        You don't yet have any jobs on your shortlist. To add a job, click the &ensp;<strong><span class="far fa-star mdc-chip__icon mdc-chip__icon--leading" aria-hidden="true"></span>Shortlist</strong>&ensp;button.
+      </p>
+    {{else}}
+      <p class="mdc-typography--body1">
+        You don't have any open jobs on your shortlist.
+      </p>
+    {{/compare}}
+  {{/compare}}
+
+  {{#compare @root.data.shortlist_vacancies.open.hits.total ">" 0}}
+    {{#each @root.data.shortlist_vacancies.open.hits.hits ~}}
+      {{> vacancy_search_result _source}}
+    {{/each ~}}
+    <div class="foot">
+      {{> pagination paging=@root.data.shortlist_vacancies.open.pagination}}
+    </div>
+  {{/compare}}
+
+  {{#compare @root.data.shortlist_vacancies.closed.hits.total ">" 0}}
+    <h2 class="mdc-typography--headline5 v-margin-full">
+      Closed jobs
+    </h2>
+    {{#each @root.data.shortlist_vacancies.closed.hits.hits ~}}
+      {{> vacancy_search_result _source}}
+    {{/each ~}}
+    <div class="foot">
+      {{> pagination paging=@root.data.shortlist_vacancies.closed.pagination}}
+    </div>
+  {{/compare}}
+</div>

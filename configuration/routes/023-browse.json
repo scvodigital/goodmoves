@@ -1,0 +1,94 @@
+{
+  "name": "browse",
+  "pattern": "/browse",
+  "metaData": {
+    "sidebarButton": {
+      "icon": "search",
+      "tooltip": "Search",
+      "classes": "hide-md hide-lg"
+    }
+  },
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../../elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "types",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_types"
+          },
+          {
+            "name": "types_regions",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_types-regions-scotland"
+          },
+          {
+            "name": "types_regions_belgium",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_types-regions-belgium"
+          },
+          {
+            "name": "types_regions_england",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_types-regions-england"
+          },
+          {
+            "name": "types_regions_northern_ireland",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_types-regions-northern-ireland"
+          },
+          {
+            "name": "types_regions_wales",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_types-regions-wales"
+          },
+          {
+            "name": "banner",
+            "index": "{$../../../elasticsearch-index.txt}",
+            "type": "goodmoves-banner",
+            "template": ">context.metaData.handlebars.queries.banners_banner"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    "context.metaData.commonTasks.termsMaps",
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.pages_page-head-tags",
+              "body": ">context.metaData.handlebars.templates.vacancies_browse",
+              "sidebar": ">context.metaData.handlebars.templates.vacancies_search-form"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

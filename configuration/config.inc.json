@@ -1,0 +1,42 @@
+{
+  "domains": [
+    "goodmoves.com",
+    "test.goodmoves.com",
+    "beta.goodmoves.com",
+    "goodmoves.eu",
+    "goodmoves.be",
+    "goodmoves.scot",
+    "goodmovesjobs.de",
+    "goodmoves.local",
+    "goodmoves.org.uk"
+  ],
+  "routes": [
+    "{:./routes/*.json}"
+  ],
+  "metaData": {
+    "assetsVersion": "{:../../../package.json@version}",
+    "assetsBase": "https://storage.googleapis.com/scvo-assets/test/goodmoves/",
+    "title": "Goodmoves - charity and voluntary sector recruitment",
+    "emailCampaignName": "goodmoves-saved-searches",
+    "shortlistCampaignName": "goodmoves-shortlist",
+    "volunteeringTerms": "{:./data/volunteering-terms.json}",
+    "menus": "{:./data/menus.json}",
+    "elasticsearchUrl": "https://readonly:onlyread@2e6b5fd9344d4f8565e7d015d861b240.europe-west3.gcp.cloud.es.io:9243",
+    "termTypeLabels": "{:./data/term-type-labels.json}",
+    "handlebars": {
+      "partials": {
+        "{$./partials/**/*.*}": "includeRelativePath=false&regexExpression=(-)&regexOptions=gi&regexReplace=_"
+      },
+      "templates": {
+        "{$./templates/**/*.*}": ""
+      },
+      "layouts": {
+        "{$./layouts/**/*.*}": ""
+      },
+      "queries": {
+        "{$./queries/**/*.*}": ""
+      }
+    },
+    "commonTasks": "{:./data/common-tasks.json}"
+  }
+}

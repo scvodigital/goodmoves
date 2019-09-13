@@ -1,0 +1,47 @@
+{
+  "size": 1,
+  "_source": [
+    "Id",
+    "slug",
+    "charity_number",
+    "title",
+    "title_slug",
+    "alias",
+    "description",
+    "goodhq_organisation",
+    "geo_organisation_coords",
+    "postcode",
+    "has_logo",
+    "logo_url",
+    "facebook",
+    "facebook_url",
+    "twitter",
+    "twitter_url",
+    "linkedin",
+    "linkedin_url",
+    "website",
+    "website_url",
+    "rendered.json_ld",
+    "rendered.goodmoves_charity_info"
+  ],
+  "query": {
+    "bool": {
+      "filter": [
+        {{>queries_organisation_common_filters request.params.query}}
+      ],
+      "should": [
+        {
+          "term": {
+            "Id": "{{@root.request.params.id}}"
+          }
+        },
+        {
+          "term": {
+            "slug": "{{@root.request.params.id}}"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  }
+}

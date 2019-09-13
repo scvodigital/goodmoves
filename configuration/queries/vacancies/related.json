@@ -1,0 +1,142 @@
+{
+  "size": 4,
+  "_source": [
+    "Id",
+    "slug",
+    "top_job",
+    "description",
+    "title",
+    "title_slug",
+    "geo_coords",
+    "location",
+    "salary",
+    "salary_min",
+    "role_status_list",
+    "active",
+    "closing_date",
+    "start_at",
+    "end_at",
+    "organisation.slug",
+    "organisation.name",
+    "organisation.id",
+    "organisation.name_slug",
+    "roles_slugs",
+    "sectors_slugs",
+    "organisation.has_logo",
+    "organisation.logo_url",
+    "remuneration_type"
+  ],
+  "query": {
+    "function_score": {
+      "query": {
+        {{#compare @root.data.primaryResponse.hits.total ">" 0}}
+        "bool": {
+          "must": [
+            {{>queries_vacancy_common_filters_open @root.request.params.query}}
+          ],
+          "must_not": [
+            {{>queries_term field="Id" term=@root.data.primaryResponse.hits.hits.[0]._source.Id}}
+          ]
+        }
+        {{else}}
+        "match_none": {}
+        {{/compare}}
+      },
+      "boost": "5",
+      "functions": [
+        {{#each @root.data.primaryResponse.hits.hits.[0]._source.sectors ~}}
+        {
+          "filter": {
+            "match": {
+              "sectors": "{{this}}"
+            }
+          },
+          "weight": 1
+        },
+        {{/each ~}}
+        {{#each @root.data.primaryResponse.hits.hits.[0]._source.roles ~}}
+        {
+          "filter": {
+            "match": {
+              "roles": "{{this}}"
+            }
+          },
+          "weight": 1
+        },
+        {{/each ~}}
+        {{#if @root.data.primaryResponse.hits.hits.[0]._source.salary_min ~}}
+        {
+          "gauss": {
+            "salary_min": {
+              "origin": "{{@root.data.primaryResponse.hits.hits.[0]._source.salary_min}}",
+              "scale": "1000",
+              "offset": "10000",
+              "decay": 0.1
+            }
+          }
+        },
+        {{/if ~}}
+        {{#if @root.data.primaryResponse.hits.hits.[0]._source.remuneration_type ~}}
+        {
+          "filter": {
+            "match": {
+              "remuneration_type": "{{@root.data.primaryResponse.hits.hits.[0]._source.remuneration_type}}"
+            }
+          },
+          "weight": 1
+        },
+        {{/if ~}}
+        {{#if @root.data.primaryResponse.hits.hits.[0]._source.organisation.field_of_work ~}}
+        {
+          "filter": {
+            "match": {
+              "organisation.field_of_work": "{{@root.data.primaryResponse.hits.hits.[0]._source.organisation.field_of_work}}"
+            }
+          },
+          "weight": 5
+        },
+        {{/if ~}}
+        {{#if @root.data.primaryResponse.hits.hits.[0]._source.organisation.name ~}}
+        {
+          "filter": {
+            "more_like_this": {
+              "fields": ["organisation.name^2","text_bag"],
+              "like": "{{@root.data.primaryResponse.hits.hits.[0]._source.organisation.name}}",
+              "min_term_freq": 1,
+              "max_query_terms": 12
+            }
+          },
+          "weight": 2
+        },
+        {{/if ~}}
+        {{#each @root.data.primaryResponse.hits.hits.[0]._source.geo_coords ~}}
+        {
+          "gauss": {
+            "geo_coords": {
+              "origin": { "lat": {{lat}}, "lon": {{lon}} },
+              "offset": "2km",
+              "scale":  "10km"
+            }
+          },
+          "weight": 2
+        },
+        {{/each ~}}
+        {
+          "filter": {
+            "more_like_this": {
+              "fields": ["title^5","text_bag"],
+              "like": "{{@root.data.primaryResponse.hits.hits.[0]._source.title}}",
+              "min_term_freq": 1,
+              "max_query_terms": 12
+            }
+          },
+          "weight": 3
+        }
+      ],
+      "max_boost": 50,
+      "score_mode": "sum",
+      "boost_mode": "multiply",
+      "min_score" : 1
+    }
+  }
+}
