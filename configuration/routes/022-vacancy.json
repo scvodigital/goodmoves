@@ -19,12 +19,12 @@
       "name": "primaryResponse",
       "taskModule": "elasticsearch",
       "config": {
-        "connectionStringTemplate": "{$../../../elasticsearch-url.txt}",
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
         "elasticsearchConfig": {
           "apiVersion": "5.6"
         },
         "queryTemplates": {
-          "index": "{$../../../elasticsearch-index.txt}",
+          "index": "{$../data/elasticsearch-index.txt}",
           "type": "goodmoves-vacancy",
           "template": ">context.metaData.handlebars.queries.vacancies_vacancy"
         }
@@ -35,56 +35,56 @@
       "name": "supplimentaryResponses",
       "taskModule": "elasticsearch",
       "config": {
-        "connectionStringTemplate": "{$../../../elasticsearch-url.txt}",
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
         "elasticsearchConfig": {
           "apiVersion": "5.6"
         },
         "queryTemplates": [
           {
             "name": "types",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",
             "template": ">context.metaData.handlebars.queries.vacancies_types"
           },
           {
             "name": "types_regions",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",
             "template": ">context.metaData.handlebars.queries.vacancies_types-regions-scotland"
           },
           {
             "name": "types_regions_belgium",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",
             "template": ">context.metaData.handlebars.queries.vacancies_types-regions-belgium"
           },
           {
             "name": "types_regions_england",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",
             "template": ">context.metaData.handlebars.queries.vacancies_types-regions-england"
           },
           {
             "name": "types_regions_northern_ireland",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",
             "template": ">context.metaData.handlebars.queries.vacancies_types-regions-northern-ireland"
           },
           {
             "name": "types_regions_wales",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",
             "template": ">context.metaData.handlebars.queries.vacancies_types-regions-wales"
           },
           {
             "name": "related",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",
             "template": ">context.metaData.handlebars.queries.vacancies_related"
           },
           {
             "name": "not_found",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",
             "template": ">context.metaData.handlebars.queries.pages_not-found"
           }
@@ -97,14 +97,14 @@
       "name": "posts",
       "taskModule": "elasticsearch",
       "config": {
-        "connectionStringTemplate": "{$../../../elasticsearch-url.txt}",
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
         "elasticsearchConfig": {
           "apiVersion": "5.6"
         },
         "queryTemplates": [
           {
             "name": "tfn_latest",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "tfn-legacy-post-news,tfn-legacy-post-blog,tfn-legacy-feature",
             "template": ">context.metaData.handlebars.queries.posts_tfn-latest"
           }

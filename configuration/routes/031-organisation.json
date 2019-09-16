@@ -20,12 +20,12 @@
       "name": "primaryResponse",
       "taskModule": "elasticsearch",
       "config": {
-        "connectionStringTemplate": "{$../../../elasticsearch-url.txt}",
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
         "elasticsearchConfig": {
           "apiVersion": "5.6"
         },
         "queryTemplates": {
-          "index": "{$../../../elasticsearch-index.txt}",
+          "index": "{$../data/elasticsearch-index.txt}",
           "type": "goodmoves-organisation",
           "template": ">context.metaData.handlebars.queries.organisations_organisation"
         }
@@ -36,32 +36,32 @@
       "name": "supplimentaryResponses",
       "taskModule": "elasticsearch",
       "config": {
-        "connectionStringTemplate": "{$../../../elasticsearch-url.txt}",
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
         "elasticsearchConfig": {
           "apiVersion": "5.6"
         },
         "queryTemplates": [
           {
             "name": "vacancies_open",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",
             "template": ">context.metaData.handlebars.queries.vacancies_organisation-vacancies-open"
           },
           {
             "name": "vacancies_closed",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",
             "template": ">context.metaData.handlebars.queries.vacancies_organisation-vacancies-closed"
           },
           {
             "name": "types",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",
             "template": ">context.metaData.handlebars.queries.vacancies_types"
           },
           {
             "name": "not_found",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodmoves-organisation",
             "template": ">context.metaData.handlebars.queries.pages_not-found"
           }
@@ -73,26 +73,26 @@
       "name": "goodhq",
       "taskModule": "elasticsearch",
       "config": {
-        "connectionStringTemplate": "{$../../../elasticsearch-url.txt}",
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
         "elasticsearchConfig": {
           "apiVersion": "5.6"
         },
         "queryTemplates": [
           {
             "name": "posts",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodhq-post",
             "template": ">context.metaData.handlebars.queries.goodhq_posts"
           },
           {
             "name": "reviews",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodhq-review",
             "template": ">context.metaData.handlebars.queries.goodhq_reviews"
           },
           {
             "name": "volunteering",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "milo-volunteering-opportunity",
             "template": ">context.metaData.handlebars.queries.goodhq_volunteering"
           }

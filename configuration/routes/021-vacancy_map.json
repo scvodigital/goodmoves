@@ -18,7 +18,7 @@
       "name": "location_data",
       "taskModule": "elasticsearch",
       "config": {
-        "connectionStringTemplate": "{$../../../elasticsearch-url.txt}",
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
         "elasticsearchConfig": {
           "apiVersion": "5.6"
         },
@@ -37,14 +37,14 @@
       "name": "search_data",
       "taskModule": "elasticsearch",
       "config": {
-        "connectionStringTemplate": "{$../../../elasticsearch-url.txt}",
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
         "elasticsearchConfig": {
           "apiVersion": "5.6"
         },
         "queryTemplates": [
           {
             "name": "map_results",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",
             "template": ">context.metaData.handlebars.queries.vacancies_search-map"
           }

@@ -1,5 +1,5 @@
 const autoprefixer = require('autoprefixer');
-const JsonIncWebpackPlugin = require('./json-inc-webpack-plugin');
+const JsonIncWebpackPlugin = require('./node_modules/@scvo/common/json-inc-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
 

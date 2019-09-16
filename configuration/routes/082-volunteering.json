@@ -18,20 +18,20 @@
       "name": "search_data",
       "taskModule": "elasticsearch",
       "config": {
-        "connectionStringTemplate": "{$../../../elasticsearch-url.txt}",
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
         "elasticsearchConfig": {
           "apiVersion": "5.6"
         },
         "queryTemplates": [
           {
             "name": "home_latest",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "milo-volunteering-opportunity",
             "template": ">context.metaData.handlebars.queries.volunteering_home-latest"
           },
           {
             "name": "home_top",
-            "index": "{$../../../elasticsearch-index.txt}",
+            "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",
             "template": ">context.metaData.handlebars.queries.volunteering_home-top"
           }
