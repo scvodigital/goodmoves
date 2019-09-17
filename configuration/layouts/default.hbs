@@ -70,7 +70,7 @@
   {{/ifAny ~}}
   <link type="text/css" rel="stylesheet" href="{{~>asset_url url='libraries/leaflet/leaflet.css'~}}" />
   <link type="text/css" rel="stylesheet" href="{{~>asset_url url='libraries/fontawesome-pro/css/all.min.css'~}}" />
-  <link type="text/css" rel="stylesheet" href="{{~>asset_url url='main-VERSION.css'}}" />
+  <link type="text/css" rel="stylesheet" href="{{~>asset_url url='main.css'}}" />
 </head>
 <body class="mdc-theme--site-bg {{#if request.params.path}}{{replace request.params.path '_' ' '}}{{else}}home{{/if}}">
   <goodmoves-site>
@@ -398,7 +398,7 @@
   catch(e){window.attachEvent("onload", $buo_f)}
   </script>
 
-	<script type="text/javascript" src="{{~>asset_url url='main-VERSION.js'~}}"></script>
+	<script type="text/javascript" src="{{~>asset_url url='main.js'~}}"></script>
 
   <script>
     var goodmoves = null; readyListeners = [];

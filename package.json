@@ -1,13 +1,13 @@
 {
   "name": "@scvo/goodmoves",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "Site configuration and assets for goodmoves.com",
   "main": "index.js",
   "scripts": {
     "test": "echo \"No tests specified\" && exit 0",
-    "start": "npm run clear-build && webpack --watch --env=dev",
-    "build": "npm run clear-build && webpack --env=prod",
-    "publish": "npm run build && GOOGLE_APPLICATION_CREDENTIALS=\"secret.json\" node publish.js",
+    "start": "npm run clear-build && LIBRARY=Goodmoves webpack --watch --env=dev",
+    "build": "npm run clear-build && LIBRARY=Goodmoves webpack --env=prod",
+    "publish": "npm run build && GOOGLE_APPLICATION_CREDENTIALS=\"secret.json\" SITE=goodmoves node publish.js",
     "clear-build": "rm -rf build/**",
     "deploy": "./deploy.sh"
   },

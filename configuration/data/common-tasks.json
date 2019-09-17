@@ -45,56 +45,56 @@
     "name": "supplimentaryResponses",
     "taskModule": "elasticsearch",
     "config": {
-      "connectionStringTemplate": "{$../../../elasticsearch-url.txt}",
+      "connectionStringTemplate": "{$./elasticsearch-url.txt}",
       "elasticsearchConfig": {
         "apiVersion": "5.6"
       },
       "queryTemplates": [
         {
           "name": "types",
-          "index": "{$../../../elasticsearch-index.txt}",
+          "index": "{$./elasticsearch-index.txt}",
           "type": "goodmoves-vacancy",
           "template": ">context.metaData.handlebars.queries.vacancies_types"
         },
         {
           "name": "types_regions",
-          "index": "{$../../../elasticsearch-index.txt}",
+          "index": "{$./elasticsearch-index.txt}",
           "type": "goodmoves-vacancy",
           "template": ">context.metaData.handlebars.queries.vacancies_types-regions-scotland"
         },
         {
           "name": "types_regions_belgium",
-          "index": "{$../../../elasticsearch-index.txt}",
+          "index": "{$./elasticsearch-index.txt}",
           "type": "goodmoves-vacancy",
           "template": ">context.metaData.handlebars.queries.vacancies_types-regions-belgium"
         },
         {
           "name": "types_regions_england",
-          "index": "{$../../../elasticsearch-index.txt}",
+          "index": "{$./elasticsearch-index.txt}",
           "type": "goodmoves-vacancy",
           "template": ">context.metaData.handlebars.queries.vacancies_types-regions-england"
         },
         {
           "name": "types_regions_northern_ireland",
-          "index": "{$../../../elasticsearch-index.txt}",
+          "index": "{$./elasticsearch-index.txt}",
           "type": "goodmoves-vacancy",
           "template": ">context.metaData.handlebars.queries.vacancies_types-regions-northern-ireland"
         },
         {
           "name": "types_regions_wales",
-          "index": "{$../../../elasticsearch-index.txt}",
+          "index": "{$./elasticsearch-index.txt}",
           "type": "goodmoves-vacancy",
           "template": ">context.metaData.handlebars.queries.vacancies_types-regions-wales"
         },
         {
           "name": "banner",
-          "index": "{$../../../elasticsearch-index.txt}",
+          "index": "{$./elasticsearch-index.txt}",
           "type": "goodmoves-banner",
           "template": ">context.metaData.handlebars.queries.banners_banner"
         },
         {
           "name": "not_found",
-          "index": "{$../../../elasticsearch-index.txt}",
+          "index": "{$./elasticsearch-index.txt}",
           "type": "goodmoves-vacancy",
           "template": ">context.metaData.handlebars.queries.pages_not-found"
         }
@@ -106,14 +106,14 @@
     "name": "organisationsWithVacancies",
     "taskModule": "elasticsearch",
     "config": {
-      "connectionStringTemplate": "{$../../../elasticsearch-url.txt}",
+      "connectionStringTemplate": "{$./elasticsearch-url.txt}",
       "elasticsearchConfig": {
         "apiVersion": "5.6"
       },
       "queryTemplates": [
         {
           "name": "vacancies",
-          "index": "{$../../../elasticsearch-index.txt}",
+          "index": "{$./elasticsearch-index.txt}",
           "type": "goodmoves-vacancy",
           "template": ">context.metaData.handlebars.queries.vacancies_organisations"
         }
@@ -125,14 +125,14 @@
     "name": "organisationsWithVacancies",
     "taskModule": "elasticsearch",
     "config": {
-      "connectionStringTemplate": "{$../../../elasticsearch-url.txt}",
+      "connectionStringTemplate": "{$./elasticsearch-url.txt}",
       "elasticsearchConfig": {
         "apiVersion": "5.6"
       },
       "queryTemplates": [
         {
           "name": "vacancies",
-          "index": "{$../../../elasticsearch-index.txt}",
+          "index": "{$./elasticsearch-index.txt}",
           "type": "goodmoves-vacancy",
           "template": ">context.metaData.handlebars.queries.vacancies_organisations-currently-recruiting"
         }
