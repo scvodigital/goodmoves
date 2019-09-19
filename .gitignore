@@ -64,4 +64,5 @@ typings/
 secret.json
 
 # build
+build/config.json
 build
