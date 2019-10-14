@@ -96,7 +96,7 @@
     },
     {
       "label": "Settings",
-      "icon": "cog",
+      "icon": "user-cog",
       "path": "/settings",
       "route": "^/settings"
     },
