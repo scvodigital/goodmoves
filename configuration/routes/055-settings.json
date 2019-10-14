@@ -4,7 +4,7 @@
   "metaData": {
     "hideSearch": true,
     "sidebarButton": {
-      "icon": "cog",
+      "icon": "user-cog",
       "tooltip": "Settings",
       "classes": "hide-md hide-lg"
     }
