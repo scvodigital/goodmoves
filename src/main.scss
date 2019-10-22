@@ -810,6 +810,10 @@ a[href^="https://search.volunteerscotland.net"]::after {
   top: -0.1rem;
   position: relative;
 }
+a[href^="http://search.volunteerscotland.net"].noext::after,
+a[href^="https://search.volunteerscotland.net"].noext::after {
+  content: ""
+}
 
 .content-volunteering-search {
   .search-info {
@@ -975,6 +979,9 @@ footer.mdc-layout__footer {
   }
   .home-banner .banner-search.overlay .content {
     background-color: rgb(68, 133, 50);
+  }
+  .volunteering-banner .banner-search.overlay .content {
+    padding: 0;
   }
   .currently-recruiting .content-secondary-logo {
     padding: 0 $unit/2 1px;
