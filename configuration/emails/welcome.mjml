@@ -10,28 +10,35 @@
       <mj-section>
         <mj-column padding="0px">
           <mj-text font-size="16px" color="#000000" font-family="Montserrat, helvetica, Arial, sans-serif">
-            <p>Hello,</p>
-
-            <p>Thank you for creating a job seeker account on goodmoves. Once you have signed in into your profile, you can:</p>
-
+            <p>
+              Hello,
+            </p>
+            <p>
+              Thank you for creating a job seeker account on Goodmoves. Once you have signed in into your profile, you can:
+            </p>
             <ul>
               <li>
-                Save searches by either keyword, sector, role or location to receive job alerts either weekly or daily depending on your preference.
+                Save your job searches by keyword, location, sector, or role and opt to to receive email alerts daily or weekly depending on your preference. Each saved search can be added to the email alert. You will only receive an alert if new jobs have been posted matching your preferences since you subscribed or last received an alert.
               </li>
               <li>
                 Shortlist jobs that are of interest to you using the Shortlist button - displayed with a star icon on the lower right of each search result or in the detailed job description.
               </li>
               <li>
-                Once you have added a job to your shortlist, a tick will appear instead of the star. You can opt to have an alert sent to you when jobs on your shortlist are nearing their closing date. This can be activated with the "Send 'closing soon' alerts" button on the Shortlist page.
+                Once you have added a job to your shortlist, a tick will appear instead of the star. You can opt to receive an email alert when jobs on your shortlist are nearing their closing date. This can be activated with the "Send 'closing soon' alerts" button on the Shortlist page.
               </li>
               <li>
                 Save notes about jobs. This feature can be used by choosing the Notes tab in the detailed job description (next to Location). Once you have written any note about the job you can save it to your profile, update and view it whenever you need.
               </li>
+              <li>
+                Update or delete your account whenever you want in your account settings.
+              </li>
             </ul>
-
             <p>
-              Thank you,<br />
-              goodmoves team
+              Should you have any questions about your account please let us know at <a href="mailto:enquiries@goodmoves.org.uk">enquiries@goodmoves.org.uk</a>
+            </p>
+            <p>
+              Regards,<br />
+              The Goodmoves team
             </p>
           </mj-text>
         </mj-column>
