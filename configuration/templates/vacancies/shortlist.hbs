@@ -6,26 +6,28 @@
           Shortlist
         </h1>
       </div>
+      {{#ifAny (compare @root.data.shortlist_vacancies.open.hits.total ">" 0) (compare @root.data.shortlist_vacancies.closed.hits.total ">" 0) ~}}
       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-        {{#compare @root.data.shortlist_vacancies.open.hits.total ">" 0}}
         <div class="t-margin-full align-centre">
           <div class="mdc-chip-set mdc-chip-set--filter t-margin">
             {{> shortlist_alerts}}
           </div>
         </div>
-        {{/compare}}
       </div>
       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1-desktop mdc-layout-grid__cell--span-4-tablet hide-sm">
       </div>
       <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+        {{#ifAny (compare @root.data.shortlist_vacancies.open.hits.total ">" 1) (compare @root.data.shortlist_vacancies.closed.hits.total ">" 1) ~}}
         <form action="{{{@root.request.url.path}}}" method="GET">
           {{> vacancy_search_sort}}
         </form>
+        {{/ifAny ~}}
       </div>
+      {{/ifAny ~}}
     </div>
   </div>
 
-  {{#ifAll (compare @root.data.shortlist_vacancies.open.hits.total "===" 0) (compare @root.data.shortlist_vacancies.closed.hits.total "===" 0)}}
+  {{#ifAll (compare @root.data.shortlist_vacancies.open.hits.total "===" 0) (compare @root.data.shortlist_vacancies.closed.hits.total "===" 0) ~}}
   <p class="mdc-typography--body1">
     You don't have any jobs on your shortlist. To add a job, use the&ensp;<strong><span class="far fa-star mdc-chip__icon mdc-chip__icon--leading" aria-hidden="true"></span> Shortlist</strong>&ensp;button on a vacancy.
   </p>
@@ -33,7 +35,7 @@
   <p class="mdc-typography--body1">
     You don't have any jobs on your shortlist.
   </p>
-  {{/ifAll}}
+  {{/ifAll ~}}
 
   {{#compare @root.data.shortlist_vacancies.open.hits.total ">" 0}}
     {{#each @root.data.shortlist_vacancies.open.hits.hits ~}}

@@ -178,6 +178,9 @@ header {
   }
 }
 .settings {
+  .settings-heading {
+    top: $unit*.85;
+  }
   .mdc-form-field {
     .mdc-radio {
       .mdc-radio__outer-circle {
@@ -996,6 +999,9 @@ footer.mdc-layout__footer {
     .t-margin-full {
       margin-top: 0;
     }
+  }
+  .settings .settings-heading {
+    display: block;
   }
 }
 
