@@ -11,9 +11,8 @@ $mdc-theme-secondary: #E0E0E0; // Gray 300
 $mdc-theme-secondary-light: #F5F5F5; // Gray 100
 $mdc-theme-secondary-dark: #212121; // Gray 900
 
-$mdc-theme-footer: #37474F; // Blue Gray 800
-$mdc-theme-footer-light: #E1E3E4;
-$mdc-theme-footer-dark: #263238; // Blue Gray 900
+$mdc-theme-footer: #385665;
+$mdc-theme-footer-light: #FEF9F9;
 
 $mdc-theme-error: #A9201E;
 
@@ -30,7 +29,7 @@ $unit: 1rem;
 @import url(../node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css);
 
 body {
-  background-color: $mdc-theme-footer-dark;
+  background-color: $mdc-theme-footer-light;
 }
 ::-moz-selection {
   color: #fff;
@@ -61,7 +60,7 @@ header {
       }
       .mdc-tab.mdc-tab--active {
         background-color: transparent;
-        // border-bottom: $unit/5 solid $mdc-theme-footer-dark;
+        // border-bottom: $unit/5 solid $mdc-theme-footer;
       }
     }
     .scvo-tab-bar {
@@ -72,7 +71,7 @@ header {
       .mdc-tab-bar .mdc-tab {
         display: inline-block;
         .mdc-tab--label {
-          color: $mdc-theme-footer-dark;
+          color: $mdc-theme-footer;
         }
       }
       .brand-logo img {
@@ -918,32 +917,44 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
 
 footer.mdc-layout__footer {
   border-top: none;
-  background-color: $mdc-theme-footer-light;
   box-shadow: none;
   h3 {
-    color: $mdc-theme-footer;
+    color: white;
     border-bottom: none;
+    text-transform: none;
   }
   a,
   a:hover,
   .about a,
   .about a:hover,
   .mdc-layout-grid p {
-    color: $mdc-theme-footer;
+    color: white;
   }
   .fa-ul {
     .fa-li {
       .fas, .fal, .far, .fab {
-        color: $mdc-theme-footer;
+        color: white;
       }
     }
   }
+  .footer-main {
+    margin-bottom: 0;
+    padding-bottom: $unit;
+    background-color: $mdc-theme-footer;
+    p,
+    a {
+      color: white;
+    }
+  }
   .footer-copyright {
-    background-color: $mdc-theme-footer-dark;
+    background-color: $mdc-theme-footer-light;
     p,
     a,
     a:hover {
-      color: white;
+      color: $mdc-theme-footer;
+    }
+    p {
+      line-height: 1.4rem;
     }
   }
 }
