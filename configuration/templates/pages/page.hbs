@@ -1,5 +1,7 @@
 <div class="container-content content-page">
+  {{#unless (compare @root.request.url.pathname "/employers-survey-2019") ~}}
   {{> banner_ad}}
+  {{/unless ~}}
 
   <div class="full">
     {{#compare data.primaryResponse.hits.total ">" 0 ~}}
