@@ -48,6 +48,15 @@ body {
 
 header {
   .container-fluid {
+    .mdc-top-app-bar__upper {
+      .mdc-tab-bar {
+        overflow: visible;
+        .mdc-tab-scroller,
+        .mdc-tab-scroller__scroll-area {
+          overflow: visible;
+        }
+      }
+    }
     .mdc-top-app-bar__lower {
       background-color: $mdc-theme-primary-medium;
     }
@@ -81,6 +90,9 @@ header {
     #upper-tab-bar {
       .mdc-tab:hover .mdc-tab__text-label {
         border-bottom-color: $mdc-theme-primary;
+      }
+      .mdc-tab.mdc-button:hover .mdc-tab__text-label {
+        border-bottom-color: transparent;
       }
       .mdc-tab.mdc-tab--active .mdc-tab__text-label {
         border-bottom-color: $mdc-theme-primary;

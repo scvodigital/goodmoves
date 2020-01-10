@@ -21,7 +21,7 @@
       "route": "^/advice"
     }
   ],
-  "upper-not-signed-in": [
+  "main-not-signed-in": [
     {
       "label": "Jobs by email",
       "icon": "envelope",
@@ -29,7 +29,7 @@
       "route": "^/jobs-by-email"
     }
   ],
-  "upper-signed-in": [
+  "main-signed-in": [
     {
       "label": "Jobs by email",
       "icon": "envelope",
@@ -42,6 +42,8 @@
       "label": "Recruiting?",
       "icon": "clipboard-list",
       "path": "/recruitment",
+      "linkClasses": "mdc-button mdc-button--raised",
+      "labelClasses": "mdc-theme--on-primary",
       "route": "^/recruitment"
     },
     {
