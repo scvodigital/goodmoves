@@ -42,7 +42,7 @@
       "label": "Recruiting?",
       "icon": "clipboard-list",
       "path": "/recruitment",
-      "linkClasses": "mdc-button mdc-button--raised",
+      "linkClasses": "mdc-button mdc-button--raised r-margin",
       "labelClasses": "mdc-theme--on-primary",
       "route": "^/recruitment"
     },
