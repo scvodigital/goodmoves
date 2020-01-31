@@ -70,6 +70,43 @@
   {{/ifAny ~}}
   <link type="text/css" rel="stylesheet" href="{{~>asset_url url='libraries/leaflet/leaflet.css'~}}" />
   <link type="text/css" rel="stylesheet" href="{{~>asset_url url='libraries/fontawesome-pro/css/all.min.css'~}}" />
+
+  <style type="text/css">
+  @font-face {
+  font-family: 'Asap';
+  src: url('{{~>asset_url url='fonts/Asap-Bold.eot'~}}');
+  src: url('{{~>asset_url url='fonts/Asap-Bold.eot?#iefix'~}}') format('embedded-opentype'),
+       url('{{~>asset_url url='fonts/Asap-Bold.woff2'~}}') format('woff2'),
+       url('{{~>asset_url url='fonts/Asap-Bold.woff'~}}') format('woff'),
+       url('{{~>asset_url url='fonts/Asap-Bold.ttf'~}}') format('truetype'),
+       url('{{~>asset_url url='fonts/Asap-Bold.svg#Asap-Bold'~}}') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  }
+  @font-face {
+  font-family: 'Ingra';
+  src: url('{{~>asset_url url='fonts/IngraSCVO-Regular.eot'~}}');
+  src: url('{{~>asset_url url='fonts/IngraSCVO-Regular.eot?#iefix'~}}') format('embedded-opentype'),
+       url('{{~>asset_url url='fonts/IngraSCVO-Regular.woff2'~}}') format('woff2'),
+       url('{{~>asset_url url='fonts/IngraSCVO-Regular.woff'~}}') format('woff'),
+       url('{{~>asset_url url='fonts/IngraSCVO-Regular.ttf'~}}') format('truetype'),
+       url('{{~>asset_url url='fonts/IngraSCVO-Regular.svg#IngraSCVO-Regular'~}}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  }
+  @font-face {
+  font-family: 'Ingra';
+  src: url('{{~>asset_url url='fonts/IngraSCVO-SemiBold.eot'~}}');
+  src: url('{{~>asset_url url='fonts/IngraSCVO-SemiBold.eot?#iefix'~}}') format('embedded-opentype'),
+       url('{{~>asset_url url='fonts/IngraSCVO-SemiBold.woff2'~}}') format('woff2'),
+       url('{{~>asset_url url='fonts/IngraSCVO-SemiBold.woff'~}}') format('woff'),
+       url('{{~>asset_url url='fonts/IngraSCVO-SemiBold.ttf'~}}') format('truetype'),
+       url('{{~>asset_url url='fonts/IngraSCVO-SemiBold.svg#IngraSCVO-SemiBold'~}}') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  }
+  </style>
+
   <link type="text/css" rel="stylesheet" href="{{~>asset_url url='main.css'}}" />
 </head>
 <body class="mdc-theme--site-bg {{#if request.params.path}}{{replace request.params.path '_' ' '}}{{else}}home{{/if}}">
@@ -99,11 +136,11 @@
       {{/ifAny}}
       <header class="mdc-top-app-bar mdc-elevation--z5 top-bar-stuck" id="top-bar">
         <div class="container-fluid">
-          {{!-- <div class="mdc-top-app-bar__row mdc-top-app-bar__lower scvo-tab-bar">
-            <section class="mdc-top-app-bar__row mdc-top-app-bar__section--align-start">
+          <div class="mdc-top-app-bar__row mdc-top-app-bar__lower scvo-tab-bar">
+            <section class="mdc-top-app-bar__row">
               {{> components_scvo_bar}}
             </section>
-          </div> --}}
+          </div>
           <div class="mdc-top-app-bar__row mdc-top-app-bar__upper">
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
               {{#unless @root.route.metaData.hideSearch ~}}
@@ -339,7 +376,7 @@
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone about">
                   <h3>About</h3>
                   <p>
-                    <strong>Goodmoves</strong> is the premier careers hub for the civil society, charity and voluntary sector &ndash; run by the <a href="https://scvo.org">Scottish Council for Voluntary Organisations</a>.
+                    <strong>Goodmoves</strong> is the premier careers hub for the civil society, charity and voluntary sector &ndash; run by the <a href="https://scvo.scot">Scottish Council for Voluntary Organisations</a>.
                   </p>
                 </div>
               </div>
@@ -357,9 +394,9 @@
                   </p>
                 </div>
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-4-phone">
-                  <a href="https://scvo.org" class="brand-logo" title="Scottish Council for Voluntary Organisations">
-                    <!-- <img src="{{~>asset_url url='images/logos/scvo-secondary.svg'~}}" alt="Scottish Council for Voluntary Organisations" /> -->
-                    <img src="{{~>asset_url url='images/logos/scvo-legacy-black.png'~}}" alt="Scottish Council for Voluntary Organisations" />
+                  <a href="https://scvo.scot" class="brand-logo" title="Scottish Council for Voluntary Organisations">
+                    <img src="{{~>asset_url url='images/logos/scvo-secondary.svg'~}}" alt="Scottish Council for Voluntary Organisations" />
+                    {{!-- <img src="{{~>asset_url url='images/logos/scvo-legacy-black.png'~}}" alt="Scottish Council for Voluntary Organisations" /> --}}
                   </a>
                 </div>
               </div>
