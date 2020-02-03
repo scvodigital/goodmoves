@@ -159,7 +159,7 @@ footer.mdc-layout__footer {
 }
 
 body {
-  background-color: $mdc-theme-footer-light;
+  background-color: $mdc-theme-footer;
 }
 ::-moz-selection {
   color: #fff;
@@ -1082,7 +1082,7 @@ footer.mdc-layout__footer {
   }
   .footer-main {
     margin-bottom: 0;
-    padding: $unit $unit $unit*2;
+    padding: $unit*1.5 $unit $unit;
     background-color: $mdc-theme-footer;
     p,
     a {
@@ -1090,12 +1090,12 @@ footer.mdc-layout__footer {
     }
   }
   .footer-copyright {
-    background-color: $mdc-theme-footer-light;
-    p,
-    a,
-    a:hover {
-      color: $mdc-theme-footer;
-    }
+    // background-color: $mdc-theme-footer-light;
+    // p,
+    // a,
+    // a:hover {
+    //   color: $mdc-theme-footer;
+    // }
     p {
       line-height: 1.4rem;
     }
