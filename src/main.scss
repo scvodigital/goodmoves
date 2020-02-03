@@ -23,6 +23,7 @@ $mdc-theme-volunteering-dark: #223c1d;
 
 $unit: 1rem;
 $thick-line: 5px;
+$transition-speed: 0.3s;
 
 @import "./node_modules/material-components-web/material-components-web.scss";
 @import "./node_modules/@scvo/common/old/common-styles.scss";
@@ -137,7 +138,7 @@ footer.mdc-layout__footer {
     border-bottom: $thick-line solid transparent;
     margin-right: $unit;
     color: $secondary-color;
-    transition: border 0.2s;
+    transition: border $transition-speed;
   }
   .text-link:hover {
     text-decoration: none;
@@ -1026,7 +1027,7 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
       max-height: 100%;
       width: 100%;
       height: auto;
-      transition: 0.3s;
+      transition: $transition-speed;
     }
   }
 }
@@ -1073,6 +1074,18 @@ footer.mdc-layout__footer {
   .mdc-layout-grid p {
     color: white;
   }
+  a {
+    transition: border $transition-speed;
+    border-bottom: $thick-line solid transparent;
+  }
+  a.brand-logo {
+    border: none !important
+  }
+  .mdc-list .mdc-list-item a:hover,
+  a:hover {
+    text-decoration: none !important;
+    border-bottom: $thick-line solid white;
+  }
   .fa-ul {
     .fa-li {
       .fas, .fal, .far, .fab {
@@ -1090,12 +1103,6 @@ footer.mdc-layout__footer {
     }
   }
   .footer-copyright {
-    // background-color: $mdc-theme-footer-light;
-    // p,
-    // a,
-    // a:hover {
-    //   color: $mdc-theme-footer;
-    // }
     p {
       line-height: 1.4rem;
     }
