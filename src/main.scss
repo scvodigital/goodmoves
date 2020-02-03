@@ -1064,6 +1064,7 @@ footer.mdc-layout__footer {
     color: white;
     border-bottom: none;
     text-transform: none;
+    font-size: 1.4rem;
   }
   a,
   a:hover,
@@ -1081,7 +1082,7 @@ footer.mdc-layout__footer {
   }
   .footer-main {
     margin-bottom: 0;
-    padding-bottom: $unit;
+    padding: $unit $unit $unit*2;
     background-color: $mdc-theme-footer;
     p,
     a {
