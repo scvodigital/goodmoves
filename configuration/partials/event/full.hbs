@@ -159,7 +159,7 @@
               </p>
               {{/compare ~}}
               <p class="book-now">
-                <a href="{{#if booking_url}}{{#startsWith "https://www.surveygizmo.eu" booking_url}}https://scvo.org{{url}}/book{{else}}{{{booking_url}}}{{/startsWith}}{{else}}https://scvo.org{{url}}/book{{/if}}" class="mdc-button mdc-button--raised">
+                <a href="{{#if booking_url}}{{#startsWith "https://www.surveygizmo.eu" booking_url}}{{url}}/book{{else}}{{{booking_url}}}{{/startsWith}}{{else}}{{url}}/book{{/if}}" class="mdc-button mdc-button--raised">
                   Book now
                 </a>
               </p>
