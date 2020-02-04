@@ -21,6 +21,10 @@ $mdc-theme-tfn-dark: #2f7e8e;
 $mdc-theme-volunteering: #448532;
 $mdc-theme-volunteering-dark: #223c1d;
 
+$primary-color: #FF595A;
+$secondary-color: #244B5A;
+$gray-color: #D5D8DC;
+
 $unit: 1rem;
 $thick-line: 5px;
 $transition-speed: 0.3s;
@@ -30,19 +34,10 @@ $transition-speed: 0.3s;
 @import url(../node_modules/leaflet.markercluster/dist/MarkerCluster.css);
 @import url(../node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css);
 
-$gray-color: #D5D8DC;
-$secondary-color: #244B5A;
-
 $base-font-family:                  "Ingra", Helvetica, Arial, sans-serif;
 $heading-font-family:               "Asap", Helvetica, Arial, sans-serif;
 $footer-font-family:                "Ingra", Helvetica, Arial, sans-serif;
 
-// h1,
-// h2,
-// h3,
-// h4 {
-//   font-family: $heading-font-family, $base-font-family, Helvetica, Arial, sans-serif;
-// }
 p,
 li,
 .mdc-tab,
@@ -1067,6 +1062,7 @@ footer.mdc-layout__footer {
     text-transform: none;
     font-size: 1.4rem;
   }
+  p,
   a,
   a:hover,
   .about a,
@@ -1075,16 +1071,18 @@ footer.mdc-layout__footer {
     color: white;
   }
   a {
-    transition: border $transition-speed;
-    border-bottom: $thick-line solid transparent;
+    transition: color $transition-speed;
+    // border-bottom: $thick-line solid transparent;
   }
   a.brand-logo {
-    border: none !important
+    border: none !important;
   }
   .mdc-list .mdc-list-item a:hover,
+  .about a:hover,
   a:hover {
+    color: $primary-color;
     text-decoration: none !important;
-    border-bottom: $thick-line solid white;
+    // border-bottom: $thick-line solid white;
   }
   .fa-ul {
     .fa-li {
@@ -1096,11 +1094,7 @@ footer.mdc-layout__footer {
   .footer-main {
     margin-bottom: 0;
     padding: $unit*1.5 $unit $unit;
-    background-color: $mdc-theme-footer;
-    p,
-    a {
-      color: white;
-    }
+    // background-color: $mdc-theme-footer;
   }
   .footer-copyright {
     p {
