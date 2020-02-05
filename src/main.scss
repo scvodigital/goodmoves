@@ -1093,10 +1093,12 @@ footer.mdc-layout__footer {
   }
   .footer-main {
     margin-bottom: 0;
-    padding: $unit*1.5 $unit $unit;
+    padding: $unit*1.5 $unit*1.5 $unit;
     // background-color: $mdc-theme-footer;
   }
   .footer-copyright {
+    padding-left: $unit*1.5;
+    padding-right: $unit*1.5;
     p {
       line-height: 1.4rem;
     }
@@ -1123,8 +1125,14 @@ footer.mdc-layout__footer {
   .home-banner .banner-search.overlay .content {
     background-image: linear-gradient(80deg, rgb(68, 133, 50), rgb(68, 133, 50) 66%, transparent 66.08%, transparent);
   }
+  .mdc-toolbar-fixed-adjust {
+    padding-top: 100px;
+  }
 }
 @media screen and (max-width: $mobile-breakpoint) {
+  .mdc-toolbar-fixed-adjust {
+    padding-top: 100px;
+  }
   .home-banner .banner-search {
     background-size: cover !important;
     background-position: center center !important;
