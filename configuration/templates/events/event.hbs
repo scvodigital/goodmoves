@@ -2,7 +2,7 @@
   {{#compare data.primaryResponse.hits.total ">" 0 ~}}
   {{#with data.primaryResponse.hits.hits.[0]._source as |event| ~}}
 
-  {{> event_full event}}
+  {{> content_event_full event}}
 
   {{/with ~}}
   {{else}}

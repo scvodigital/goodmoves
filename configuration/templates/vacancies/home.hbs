@@ -209,7 +209,7 @@
                 (map @root.data.supplimentaryResponses.shortlist_vacancies_open.hits.hits (getProp "_source"))
                 (map @root.data.supplimentaryResponses.shortlist_vacancies_closed.hits.hits (getProp "_source"))
               )
-              itemsPartial="vacancy_mini"
+              itemsPartial="content_vacancy_mini"
               moreUrl="/search"
               moreText="Find more jobs for your shortlist"}}
             <p class="mdc-typography--body1 h-padding v-margin-none">
@@ -251,7 +251,7 @@
               (map @root.data.primaryResponse.home_latest_personalised.hits.hits (getProp "_source"))
               else=(map @root.data.primaryResponse.home_latest.hits.hits (getProp "_source"))
             )
-            itemsPartial="vacancy_mini"
+            itemsPartial="content_vacancy_mini"
             moreUrl=(if
               (compare @root.data.primaryResponse.home_latest_personalised.hits.total ">" 0)
               "/search?sort=newest"
@@ -290,7 +290,7 @@
             items=(map
               (sortByIndex @root.data.primaryResponse.recently_viewed.hits.hits (split @root.request.cookies.recently_viewed ',') '_id') (getProp "_source")
             )
-            itemsPartial="vacancy_mini"
+            itemsPartial="content_vacancy_mini"
             moreUrl="/search?sort=newest&page=1"
             moreText="Find more jobs"}}
         {{/components_horizontal_card_scroller}}
@@ -318,7 +318,7 @@
             scrollRightIconClasses="fal fa-fw fa-angle-right"
             itemClasses="top-primary-content"
             items=(map @root.data.supplimentaryResponses.top.hits.hits (getProp "_source"))
-            itemsPartial="vacancy_mini"
+            itemsPartial="content_vacancy_mini"
             moreUrl="/search"
             moreText="Find more jobs"}}
         {{/components_horizontal_card_scroller}}

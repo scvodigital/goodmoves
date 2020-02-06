@@ -39,7 +39,7 @@
 
   {{#compare @root.data.shortlist_vacancies.open.hits.total ">" 0}}
     {{#each @root.data.shortlist_vacancies.open.hits.hits ~}}
-      {{> vacancy_search_result _source}}
+      {{> content_vacancy_search_result _source}}
     {{/each ~}}
     <div class="foot">
       {{> pagination paging=@root.data.shortlist_vacancies.open.pagination}}
@@ -51,7 +51,7 @@
       Closed jobs
     </h2>
     {{#each @root.data.shortlist_vacancies.closed.hits.hits ~}}
-      {{> vacancy_search_result _source}}
+      {{> content_vacancy_search_result _source}}
     {{/each ~}}
     <div class="foot">
       {{> pagination paging=@root.data.shortlist_vacancies.closed.pagination}}

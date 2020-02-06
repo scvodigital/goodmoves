@@ -1,0 +1,12 @@
+<div class="mdc-card content-primary search-result{{if top_job " top-content"}}" data-vacancy-id="{{Id}}">
+  {{> content_vacancy_key_info view="search-result"}}
+  <hr class="mdc-list-divider" />
+  {{#compare (trim (getProperty @root.data.notes Id)) "!==" "" ~}}
+    {{> content_vacancy_description limit="3rem" description=description}}
+    {{> content_vacancy_notes limit="3rem"}}
+  {{else}}
+    {{> content_vacancy_description limit="4rem" description=description}}
+  {{/compare ~}}
+  {{> content_vacancy_actions slug=slug Id=Id home_based=home_based various_locations=various_locations distance=distance}}
+</div>
+{{>ga documentType="goodmoves-vacancy" documentId=Id hitType=(default hitContext "search-result")}}

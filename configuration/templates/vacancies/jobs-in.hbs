@@ -15,7 +15,7 @@
             {{#compare @root.request.params.district (slugify (replace (replace admin_district " City" "") "City of " ""))}}
               {{#ifAny (if @root.request.params.ward false else=true) (compare @root.request.params.ward "===" (slugify admin_ward))}}
               <marker style="display:none;" data-map="vacancyMap" data-lat="{{latitude}}" data-lng="{{longitude}}" data-shortlisted="{{#each @root.data.shortlist.items}}{{#compare id "===" ../../_source.Id}}true{{/compare}}{{/each}}" data-homebased="{{#if ../_source.home_based}}true{{/if}}" data-variouslocations="{{#if ../_source.various_locations}}true{{/if}}" data-title="{{../_source.title}}">
-                {{>vacancy_map ../_source}}
+                {{> content_vacancy_map ../_source}}
               </marker>
               {{/ifAny}}
             {{/compare}}
@@ -57,6 +57,6 @@
   </div>
 
   {{#each @root.data.search_data.detailed_results.hits.hits ~}}
-  {{> vacancy_search_result _source sort=sort distance=fields.distance.[0]}}
+  {{> content_vacancy_search_result _source sort=sort distance=fields.distance.[0]}}
   {{/each ~}}
 </div>

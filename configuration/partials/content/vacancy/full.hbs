@@ -1,5 +1,5 @@
 <div class="mdc-card content-primary full{{if top_job " top-content"}}" data-vacancy-id="{{Id}}">
-  {{> vacancy_key_info view="full"}}
+  {{> content_vacancy_key_info view="full"}}
   <hr class="mdc-list-divider" />
   <div class="content-primary-info-container">
     {{#>components_tab_bar id="content-primary-tab-bar" defaultTabIdentifier="hash"}}
@@ -145,7 +145,7 @@
         </div>
       </div>
     </div>
-    {{> vacancy_actions slug=slug Id=Id action="organisation"}}
+    {{> content_vacancy_actions slug=slug Id=Id action="organisation"}}
   </div>
 </div>
 {{#if @root.request.params.query.email ~}}

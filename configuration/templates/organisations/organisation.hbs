@@ -5,7 +5,7 @@
 
   {{#with @root.data.primaryResponse.hits.hits.[0]._source as |organisation| ~}}
 
-  {{> organisation_full organisation}}
+  {{> content_organisation_full organisation}}
 
   {{#compare @root.data.supplimentaryResponses.vacancies_open.hits.total ">" 0 ~}}
   <hr />
@@ -13,7 +13,7 @@
     Current vacancies
   </div>
   {{#each @root.data.supplimentaryResponses.vacancies_open.hits.hits ~}}
-  {{> vacancy_list _source}}
+  {{> content_vacancy_list _source}}
   {{/each ~}}
   {{/compare ~}}
 
@@ -25,7 +25,7 @@
     Closed vacancies
   </div>
   {{#each @root.data.supplimentaryResponses.vacancies_closed.hits.hits ~}}
-  {{> vacancy_list _source}}
+  {{> content_vacancy_list _source}}
   {{/each ~}}
   {{/compare ~}}
 

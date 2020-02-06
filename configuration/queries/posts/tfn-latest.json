@@ -4,6 +4,7 @@
     "title",
     "url",
     "date_published",
+    "image_wide",
     "image_feature"
   ],
   "query": {
