@@ -23,6 +23,7 @@ $mdc-theme-volunteering-dark: #223c1d;
 
 $primary-color: #FF595A;
 $secondary-color: #244B5A;
+$secondary-color-dark: darken($secondary-color, 10%) !default;
 $gray-color: #D5D8DC;
 
 $unit: 1rem;
@@ -1113,12 +1114,16 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
   .card {
     width: 100%;
   }
+  a,
   p,
   h4,
-  .mdc-typography--headline5,
-  .card-image-link:hover .card-title,
-  a {
+  .mdc-typography--headline5 {
     color: white;
+  }
+  .card-image-link:hover .card-title,
+  a:hover {
+    color: $secondary-color-dark;
+    text-decoration: none;
   }
   .gist {
     .mdc-card__subtitle {
