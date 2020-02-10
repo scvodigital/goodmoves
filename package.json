@@ -1,6 +1,6 @@
 {
   "name": "@scvo/goodmoves",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Site configuration and assets for goodmoves.com",
   "main": "index.js",
   "scripts": {
