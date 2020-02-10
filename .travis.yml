@@ -7,7 +7,7 @@ branches:
 cache:
   npm: true
 before_install:
-- openssl aes-256-cbc -K $encrypted_2bca134f6b02_key -iv $encrypted_2bca134f6b02_iv
+- openssl aes-256-cbc -K $encrypted_a31ce30c4474_key -iv $encrypted_a31ce30c4474_iv
   -in secret.json.enc -out secret.json -d
 install:
 - npm i
