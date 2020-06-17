@@ -22,17 +22,25 @@
           }
         }
       ],
-      "must": [
-        {
-          "term": {
-            "team": "events"
-          }
-        },
+      "should": [
         {
           "term": {
             "course_type": "Training Course"
           }
         },
+        {
+          "term": {
+            "course_type": "Network Event"
+          }
+        },
+        {
+          "term": {
+            "course_type": "Seminar"
+          }
+        }
+      ],
+      "minimum_should_match": 1,
+      "must": [
         {
           "range" : {
             "date_start" : {
