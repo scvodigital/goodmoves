@@ -2,14 +2,14 @@
   <div class="mdc-card__info--event-row">
     <div class="mdc-card__info--event">
       <div class="mdc-card__info--event-title mdc-typography--headline6">
-        <a href="{{url}}">
+        <a href="https://scvo.scot/support/events/{{Id}}/{{title_slug}}">
           {{trim title}}
         </a>
       </div>
       <div class="post-info">
-        {{> content_event_post_info_booked}}
-        {{> content_event_post_info_date}}
-        {{> content_event_post_info_city}}
+        {{{rendered.post_info_booked}}}
+        {{{rendered.post_info_date}}}
+        {{{rendered.post_info_city}}}
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@
   </div>
   <div class="mdc-card__actions">
     <div class="mdc-card__action-buttons demo-card__action-buttons--text-only mdc-card__actions--full-bleed">
-      <a href="{{url}}" class="mdc-card__action">Find out more</a>
+      <a href="https://scvo.scot/support/events/{{Id}}/{{title_slug}}" class="mdc-card__action">Find out more</a>
     </div>
   </div>
 </div>

@@ -8,10 +8,12 @@
     "title_slug",
     "description",
     "course_overview",
-    "rendered.post_info_booked",
-    "rendered.post_info_date",
-    "rendered.post_info_city",
-    "rendered.json_ld"
+    "description_short",
+    "course_overview_short",
+    "date_start",
+    "city",
+    "places_available",
+    "url"
   ],
   "query": {
     "bool": {
