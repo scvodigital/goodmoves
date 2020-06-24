@@ -183,7 +183,7 @@ footer.mdc-layout__footer {
 }
 
 .mdc-toolbar-fixed-adjust {
-  padding-top: 256px;
+  padding-top: 176px;
 }
 
 body {
@@ -1331,18 +1331,18 @@ footer.mdc-layout__footer {
     background-image: linear-gradient(80deg, rgb(68, 133, 50), rgb(68, 133, 50) 66%, transparent 66.08%, transparent);
   }
   .mdc-top-app-bar {
-    height: 180px;
+    height: 100px;
   }
   .mdc-toolbar-fixed-adjust {
-    padding-top: 180px;
+    padding-top: 100px;
   }
 }
 @media screen and (max-width: $mobile-breakpoint) {
   .mdc-top-app-bar {
-    height: 177px;
+    height: 100px;
   }
   .mdc-toolbar-fixed-adjust {
-    padding-top: 177px;
+    padding-top: 100px;
   }
   .home-banner .banner-search {
     background-size: cover !important;
