@@ -760,6 +760,9 @@ a {
     }
   }
 }
+.mdc-card.list::after, .mdc-card.mini::after, .mdc-card.gist::after, .mdc-card.search-result::after {
+  will-change: opacity;
+}
 
 hr {
   background-color: $mdc-theme-primary-light;
