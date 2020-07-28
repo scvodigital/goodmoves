@@ -418,6 +418,9 @@ header {
   -moz-transition: $transition-speed ease-in-out;
   transition: $transition-speed ease-in-out;
 }
+.bg-tfn .card-image-link .card-image:after {
+  background-image: none;
+}
 .card-image-link:hover .card-image:after {
   opacity: 0;
 }
