@@ -1,7 +1,7 @@
 {
   "name": "admin_update_subscription",
   "pattern": "/admin/update-subscription",
-  "debug": true,
+  "debug": false,
   "tasks": [
     "context.metaData.commonTasks.authRequired",
     {

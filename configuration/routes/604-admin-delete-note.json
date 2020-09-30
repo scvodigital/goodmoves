@@ -1,7 +1,7 @@
 {
   "name": "admin_delete_note",
   "pattern": "/admin/delete-note",
-  "debug": true,
+  "debug": false,
   "tasks": [
     "context.metaData.commonTasks.authRequired",
     {

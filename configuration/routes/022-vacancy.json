@@ -1,6 +1,6 @@
 {
   "name": "vacancy",
-  "debug": true,
+  "debug": false,
   "pattern": "/vacancy/:id(/:junk)",
   "metaData": {
     "sidebarButton": {

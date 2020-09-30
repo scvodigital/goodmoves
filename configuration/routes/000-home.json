@@ -1,7 +1,7 @@
 {
   "name": "home",
   "pattern": "/",
-  "debug": true,
+  "debug": false,
   "metaData": {
     "hideSearch": true
   },
@@ -14,6 +14,11 @@
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",
+      "cache": {
+        "keyProperties": ["request.fullUrl", "data.auth.email", "$wut"],
+        "partition": "{{request.url.host}}",
+        "ttl": 600
+      },
       "config": {
         "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
         "elasticsearchConfig": {
@@ -45,6 +50,11 @@
     {
       "name": "supplimentaryResponses",
       "taskModule": "elasticsearch",
+      "cache": {
+        "keyProperties": ["request.fullUrl", "data.auth.email", "$wut"],
+        "partition": "{{request.url.host}}",
+        "ttl": 600
+      },
       "config": {
         "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
         "elasticsearchConfig": {
@@ -125,6 +135,11 @@
     {
       "name": "posts",
       "taskModule": "elasticsearch",
+      "cache": {
+        "keyProperties": ["request.fullUrl", "$wut"],
+        "partition": "{{request.url.host}}",
+        "ttl": 600
+      },
       "config": {
         "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
         "elasticsearchConfig": {

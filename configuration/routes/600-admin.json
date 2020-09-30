@@ -1,7 +1,7 @@
 {
   "name": "admin",
   "pattern": "/admin",
-  "debug": true,
+  "debug": false,
   "tasks": [
     "context.metaData.commonTasks.authRequired",
     {
