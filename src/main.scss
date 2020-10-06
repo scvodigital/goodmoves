@@ -16,8 +16,9 @@ $mdc-theme-footer-light: #FEF9F9;
 
 $mdc-theme-error: #A9201E;
 
-$mdc-theme-tfn: #3b9db1;
-$mdc-theme-tfn-dark: #2f7e8e;
+$mdc-theme-tfn-legacy: #3b9db1;
+$mdc-theme-tfn: #22E5EB;
+
 $mdc-theme-volunteering: #448532;
 $mdc-theme-volunteering-dark: #223c1d;
 
@@ -537,7 +538,7 @@ a {
   color: $mdc-theme-primary;
 }
 .tfn a {
-  color: $mdc-theme-tfn;
+  color: $mdc-theme-secondary;
 }
 
 .mdc-chip {
@@ -1189,21 +1190,30 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
   .card {
     width: 100%;
   }
+  .mdc-typography--headline5 img {
+    max-width: 175px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: $unit;
+  }
   a,
   p,
   h4,
   .mdc-typography--headline5 {
-    color: white;
+    color: $secondary-color;
   }
   .card-image-link:hover .card-title,
   a:hover {
-    color: $secondary-color-dark;
+    color: $secondary-color-light;
     text-decoration: none;
   }
   .gist {
     .mdc-card__subtitle {
-      color: $mdc-theme-secondary-dark;
+      color: $secondary-color;
     }
+  }
+  .card-image-link .card-image:after {
+    background-image: none;
   }
 }
 

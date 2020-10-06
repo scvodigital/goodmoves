@@ -1,15 +1,16 @@
 <div class="mdc-layout-grid tfn tfn-latest t-padding-full">
   <div class="mdc-layout-grid__inner t-padding-full">
-    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone v-padding-full">
-      <div class="mdc-typography--headline5">
-        Latest TFN news&ensp;<a href="https://thirdforcenews.org.uk?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="mdc-typography--body1">See more</a>
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone v-padding-full v-margin-full">
+      <div class="mdc-typography--headline5 t-padding">
+        <a href="https://tfn.scot?utm_source=scvo&utm_medium=website&utm_campaign=footer"><img src="{{~>asset_url url='images/logos/tfn-lochan.svg'~}}" alt="Third Force News" class="img-responsive" /></a>
+        Latest news&ensp;<a href="https://tfn.scot/news?utm_source=goodmoves&utm_medium=website&utm_campaign=footer" class="mdc-typography--body1">See more</a>
       </div>
       <div class="mdc-layout-grid equal-height">
         <div class="mdc-layout-grid__inner">
           {{#each @root.data.posts.tfn_latest.hits.hits ~}}
           <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
             {{#with _source ~}}
-            {{> content_featured name="latest-tfn" link=(trim url) heading="h4" title=(trim title) body=(momentFormat (moment date_published 'x') "Do MMMM YYYY") ratio="16:9" image=(replace image_wide '__wide' '') hide_read_more=true}}
+            {{> content_featured name="latest-tfn" link=(replace (replace (replace (trim url) 'utm_source=tfn' 'utm_source=goodmoves') 'utm_medium=bulletin' 'utm_medium=website') 'utm_campaign=list' 'utm_campaign=footer') heading="h4" title=(trim title) body=(momentFormat (moment date_published 'x') "Do MMMM YYYY") ratio="16:9" image=(replace image_wide '__wide' '') hide_read_more=true}}
             {{!-- <div class="gist tfn-post {{../_type}}" style="background-image: url('{{image_feature}}');">
               <a href="{{url}}?utm_source=Widget&amp;utm_medium=Widget&amp;utm_campaign=Widget-Traffic" title="{{{title}}}" class="mdc-card{{#if image_feature}}{{else}} no-image{{/if}}">
                 <h3 class="mdc-card__title mdc-typography--headline">
@@ -29,7 +30,7 @@
         </div>
       </div>
       <p class="mdc-typography--body1">
-        <a href="https://thirdforcenews.org.uk/tfn-news?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">Read all the latest news from TFN</a>&emsp;<a href="https://thirdforcenews.org.uk/signup?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">Subscribe to TFN</a>
+        <a href="https://tfn.scot/news?utm_source=goodmoves&utm_medium=website&utm_campaign=footer">Read all the latest news from TFN</a>&emsp;<a href="https://tfn.scot/bulletin?utm_source=goodmoves&utm_medium=website&utm_campaign=footer">Subscribe to TFN</a>
       </p>
     </div>
   </div>
