@@ -1192,10 +1192,6 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
     display: inline-block;
     margin-right: $unit;
   }
-  .card-image-link:hover .card-title,
-  a:hover {
-    // text-decoration: none;
-  }
   .card-image-link .card-image:after {
     background-image: none;
   }
@@ -1211,6 +1207,7 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
   .card-image-link:hover .card-title,
   a:hover {
     color: $secondary-color-light;
+    text-decoration: none;
   }
   .gist {
     .mdc-card__subtitle {
