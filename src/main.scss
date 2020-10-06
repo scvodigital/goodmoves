@@ -537,9 +537,6 @@ header {
 a {
   color: $mdc-theme-primary;
 }
-.tfn a {
-  color: $mdc-theme-secondary;
-}
 
 .mdc-chip {
   background-color: $mdc-theme-secondary;
@@ -1182,8 +1179,7 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
   border-bottom: $unit/5 solid $mdc-theme-primary-light;
 }
 
-.home .tfn-latest {
-  background-color: $mdc-theme-tfn;
+.tfn-latest {
   .mdc-layout-grid__inner {
     grid-gap: 2.4rem;
   }
@@ -1196,6 +1192,16 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
     display: inline-block;
     margin-right: $unit;
   }
+  .card-image-link:hover .card-title,
+  a:hover {
+    // text-decoration: none;
+  }
+  .card-image-link .card-image:after {
+    background-image: none;
+  }
+}
+.home .tfn-latest {
+  background-color: $mdc-theme-tfn;
   a,
   p,
   h4,
@@ -1205,15 +1211,11 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
   .card-image-link:hover .card-title,
   a:hover {
     color: $secondary-color-light;
-    text-decoration: none;
   }
   .gist {
     .mdc-card__subtitle {
       color: $secondary-color;
     }
-  }
-  .card-image-link .card-image:after {
-    background-image: none;
   }
 }
 

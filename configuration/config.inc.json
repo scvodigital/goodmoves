@@ -21,7 +21,7 @@
     "shortlistCampaignName": "goodmoves-shortlist",
     "volunteeringTerms": "{:./data/volunteering-terms.json}",
     "menus": "{:./data/menus.json}",
-    "elasticsearchUrl": "{$./data/elasticsearch-url.txt}",
+    "elasticsearchUrl": "{$./data/elasticsearch-legacy-url.txt}",
     "termTypeLabels": "{:./data/term-type-labels.json}",
     "handlebars": {
       "partials": {
