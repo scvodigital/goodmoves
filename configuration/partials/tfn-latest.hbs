@@ -1,3 +1,4 @@
+{{#compare @root.data.posts.tfn_latest.hits.total.value ">" 0 ~}}
 <div class="mdc-layout-grid tfn tfn-latest t-padding-full">
   <div class="mdc-layout-grid__inner t-padding-full">
     <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone v-padding-full v-margin-full">
@@ -10,20 +11,7 @@
           {{#each @root.data.posts.tfn_latest.hits.hits ~}}
           <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
             {{#with _source ~}}
-            {{> content_featured name="latest-tfn" link=(replace (replace (replace (trim url) 'utm_source=tfn' 'utm_source=goodmoves') 'utm_medium=bulletin' 'utm_medium=website') 'utm_campaign=list' 'utm_campaign=footer') heading="h4" title=(trim title) body=(momentFormat (moment date_published 'x') "Do MMMM YYYY") ratio="16:9" image=(replace image_wide '__wide' '') hide_read_more=true}}
-            {{!-- <div class="gist tfn-post {{../_type}}" style="background-image: url('{{image_feature}}');">
-              <a href="{{url}}?utm_source=Widget&amp;utm_medium=Widget&amp;utm_campaign=Widget-Traffic" title="{{{title}}}" class="mdc-card{{#if image_feature}}{{else}} no-image{{/if}}">
-                <h3 class="mdc-card__title mdc-typography--headline">
-                  {{{title}}}
-                </h3>
-                <h4 class="mdc-card__subtitle post-info">
-                  <div class="post-info-item post-info-date">
-                    <span class="far fa-calendar-edit" aria-hidden="true"></span>
-                    {{{momentFormat (moment date_published "x") "Do MMMM YYYY"}}}
-                  </div>
-                </h4>
-              </a>
-            </div> --}}
+            {{> content_featured name="latest-tfn" link=(concat site path 'utm_source=goodmoves&utm_medium=website&utm_campaign=footer') heading="h4" title=(trim title) body=(momentFormat (moment d_published 'x') "Do MMMM YYYY") ratio="16:9" image=image.medium hide_read_more=true}}
             {{/with ~}}
           </div>
           {{/each ~}}
@@ -35,3 +23,4 @@
     </div>
   </div>
 </div>
+{{/compare}}

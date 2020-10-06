@@ -2,16 +2,42 @@
   "size": 3,
   "_source": [
     "title",
-    "url",
-    "date_published",
-    "image_feature"
+    "site",
+    "path",
+    "image.medium",
+    "d_published"
   ],
   "query": {
-    "more_like_this" : {
-      "fields" : ["text_bag"],
-      "like" : "{{data.primaryResponse.hits.hits.[0]._source.text_bag_boost}}",
-      "min_term_freq" : 1,
-      "max_query_terms" : 12
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "k_post_status": "publish"
+          }
+        },
+        {
+          "term": {
+            "type": "tfn-post"
+          }
+        },
+        {
+          "terms": {
+            "k_post_type": [
+              "news",
+              "list",
+              "feature"
+            ]
+          }
+        },
+        {
+          "more_like_this" : {
+            "fields" : ["textbag"],
+            "like" : "{{@root.data.primaryResponse.hits.hits.[0]._source.text_bag_boost}}",
+            "min_term_freq" : 1,
+            "max_query_terms" : 12
+          }
+        }
+      ]
     }
   }
 }
