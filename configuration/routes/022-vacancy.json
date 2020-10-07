@@ -130,6 +130,7 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.vacancies_vacancy-head-tags",
               "body": ">context.metaData.handlebars.templates.vacancies_vacancy",
+              "bodyLower": ">context.metaData.handlebars.templates.vacancies_vacancy-lower",
               "foot": ">context.metaData.handlebars.templates.vacancies_vacancy-foot",
               "sidebar": ">context.metaData.handlebars.templates.vacancies_search-form"
             },
