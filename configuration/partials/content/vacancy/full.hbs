@@ -71,7 +71,7 @@
                       {{../title}}<br />
                       Postcode: {{postcode}}
                     </p>
-                    <form action="http://maps.google.co.uk/maps" method="get" target="_blank">
+                    <form action="https://maps.google.co.uk/maps" method="get" target="_blank">
                       {{#if @root.request.params.query.location ~}}
                       <input type="hidden" name="saddr" value="{{@root.request.params.query.location}}" />
                       {{else}}
@@ -91,7 +91,7 @@
 
             <div class="t-padding-full r-padding-full l-padding-full">
               {{#each (arrayify geo_info) ~}}
-              <form action="http://maps.google.co.uk/maps" method="get" target="_blank" class="b-padding-full">
+              <form action="https://maps.google.co.uk/maps" method="get" target="_blank" class="b-padding-full">
                 {{#if @root.request.params.query.location ~}}
                 <input type="hidden" name="saddr" value="{{@root.request.params.query.location}}" />
                 {{else}}
