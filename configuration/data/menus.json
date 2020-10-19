@@ -123,12 +123,6 @@
       "icon": "at",
       "path": "/contact",
       "route": "^/contact"
-    },
-    {
-      "label": "Change country",
-      "icon": "globe",
-      "path": "/change-country",
-      "route": "^/change-country"
     }
   ],
   "footer-info": [
