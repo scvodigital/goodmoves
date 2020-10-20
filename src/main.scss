@@ -27,7 +27,7 @@ $primary-color-light: #ffd6d6;
 $primary-color-dark: #C5143D;
 $secondary-color: #244B5A;
 $secondary-color-dark: darken($secondary-color, 10%) !default;
-$gray-color: #D5D8DC;
+$gray-color: #F0F1F2;
 
 $secondary-color: #244B5A;
 $secondary-color-light: lighten($secondary-color, 10%) !default;
@@ -170,7 +170,7 @@ footer.mdc-layout__footer {
   }
   .text-link:hover {
     text-decoration: none;
-    border-bottom: $thick-line solid $secondary-color;
+    // border-bottom: $thick-line solid $secondary-color;
   }
   .brand-logo {
     // margin-left: $unit/4;
