@@ -28,11 +28,19 @@ $primary-color-dark: #C5143D;
 $secondary-color: #244B5A;
 $secondary-color-dark: darken($secondary-color, 10%) !default;
 $gray-color: #F0F1F2;
+$gray-color-light: #F0F1F2;
 
 $secondary-color: #244B5A;
 $secondary-color-light: lighten($secondary-color, 10%) !default;
 $secondary-color-dark: darken($secondary-color, 10%) !default;
 $yellow-color: #FFDB00;
+
+$goodmoves-color: #537F2C;
+$tfn-legacy-color: #3b9db1;
+$tfn-color: #22E5EB;
+$tfn-color-alt: #00A2BC;
+$fs-legacy-color: #537F2C;
+$fs-color: #537F2C;
 
 $unit: 1rem;
 $padding: 1.2rem;
@@ -147,39 +155,62 @@ footer.mdc-layout__footer {
 }
 
 .scvo-link-bar {
-  background-color: $gray-color;
+  background-color: $gray-color-light;
   height: 40px;
-  padding: 0 $unit;
   width: 100%;
   ul {
-    list-style-type: none;
     margin: 0;
+    list-style-type: none;
     li {
+      margin: 0;
       display: inline;
     }
   }
   .text-link {
+    font-size: 91%;
     display: inline-block;
-    box-sizing: border-box;
     height: 40px;
     line-height: 40px;
-    border-bottom: $thick-line solid transparent;
-    margin-right: $unit;
+    // border-bottom: $thick-line solid transparent;
+    padding: 0 0.4rem;
     color: $secondary-color;
-    transition: border $transition-speed;
-  }
-  .text-link:hover {
     text-decoration: none;
-    // border-bottom: $thick-line solid $secondary-color;
+  }
+  .brand-coronavirus .text-link:hover {
+    background-color: $primary-color;
+    color: white;
+  }
+  .brand-fundingscotland .text-link:hover {
+    background-color: $fs-color;
+    color: white;
+  }
+  .brand-goodmoves .text-link:hover {
+    background-color: $goodmoves-color;
+    color: white;
+  }
+  .brand-tfn .text-link:hover {
+    background-color: $tfn-color-alt;
+    color: white;
+  }
+  .brand-scvo .brand-logo.active,
+  .brand-scvo .brand-logo:hover,
+  .brand-scvo .text-link:hover {
+    background-color: $primary-color;
+    color: white;
   }
   .brand-logo {
-    // margin-left: $unit/4;
+    box-sizing: border-box;
     line-height: 38px;
-    // width: 90px;
+    width: 90px;
+    padding: 0 0.4rem;
     img {
-      height: 30px !important;
       vertical-align: middle;
+      width: 100%
     }
+  }
+  .brand-scvo .brand-logo:hover img,
+  .brand-scvo .brand-logo.active img {
+    filter: invert(1) contrast(100);
   }
 }
 
