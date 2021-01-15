@@ -380,7 +380,6 @@ header {
 .card-image-link {
   position: relative;
   width: 100%;
-  overflow: hidden;
   margin: $unit 0 0;
   overflow: hidden;
   display: inline-block;
@@ -668,8 +667,56 @@ a {
   }
 }
 
+.wfPage,
+.wfHideSubmit,
+.offstate,
+.lengthIndicator,
+.hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 .popup-pager .map-content:not(:first-child) {
   display: none;
+}
+
+input[type=button].wfPagePreviousButton,
+input[type=button].wfPageNextButton{
+  height: auto;
+  min-height: auto;
+  line-height: $unit*1.5;
+  letter-spacing: normal;
+  min-width: 0;
+  // font-size: 1.4rem;
+  background: $mdc-theme-primary;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  font-weight: bold;
+  padding: $unit/4 $unit/2;
+  // text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+input[type=button].wfPagePreviousButton,
+input[type=button].wfPageNextButton {
+  margin-top: $unit;
+  margin-bottom: $unit;
+  cursor: pointer;
+}
+input[type=button].wfPagePreviousButton {
+  margin-right: $unit*1.5;
+}
+input[type=button].wfPagePreviousButton:hover,
+input[type=button].wfPageNextButton:hover,
+.btn:hover {
+  background: $mdc-theme-primary-dark;
+  opacity: 1;
 }
 
 .search-info {
