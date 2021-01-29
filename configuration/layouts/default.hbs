@@ -406,6 +406,29 @@
           </div>
         </div>
       </footer>
+
+      {{#ifNone @root.request.cookies.questionnaire (contains @root.request.url.pathname "questionnaire")}}
+        <div style="position: fixed; top: 0; left: 0; right: 0; padding: 1rem; background: #F9DA18; color: #244B5A; z-index:10000;" data-dismissable="questionnaire">
+          <button type="button" class="mdc-button pull-right" style="margin-top: -0.5rem" data-dismiss="questionnaire">
+            <span class="far fa-times fa-fw"></span>
+          </button>
+          We want your views to help us improve. <a href="/questionnaire">Please complete our short survey and you could win an Apple iPad</a>.
+        </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var dismissButtons = Array.prototype.slice.call(document.querySelectorAll('[data-dismiss]'));
+            for (var i = 0; i < dismissButtons.length; i++) {
+              var dismissButton = dismissButtons[i];
+              dismissButton.addEventListener('click', function() {
+                var toDismiss = dismissButton.getAttribute('data-dismiss');
+                goodmoves.setCookie(toDismiss, 'true', 365);
+                var dismissable = document.querySelector('[data-dismissable="' + toDismiss + '"]');
+                dismissable.style.display = 'none';
+              });
+            }
+          });
+        </script>
+      {{/ifNone}}
     </div>
   </goodmoves-site>
 
