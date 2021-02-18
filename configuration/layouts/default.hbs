@@ -407,7 +407,7 @@
         </div>
       </footer>
 
-      {{#ifNone @root.request.cookies.questionnaire (contains @root.request.url.pathname "questionnaire")}}
+      {{!-- {{#ifNone @root.request.cookies.questionnaire (contains @root.request.url.pathname "questionnaire")}}
         <div class="mdc-typography" style="position: fixed; top: 0; left: 0; right: 0; padding: 1rem; background: #F9DA18; color: #244B5A; z-index:10000; text-align: center" data-dismissable="questionnaire">
           <button type="button" class="mdc-button pull-right" style="margin-top: -0.5rem" data-dismiss="questionnaire">
             <span class="far fa-times fa-fw"></span>
@@ -428,7 +428,7 @@
             }
           });
         </script>
-      {{/ifNone}}
+      {{/ifNone}} --}}
     </div>
   </goodmoves-site>
 
