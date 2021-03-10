@@ -35,7 +35,8 @@
 {{#compare @root.data.supplimentaryResponses.types.hits.total ">" 0 ~}}
   <div class="mdc-drawer__content">
     {{#compare @root.route.name "!==" "jobs_in" ~}}
-    <div class="h-padding-full">
+    <div class="h-padding-full" style="display:flex; align-items:center;">
+      <span class="text-white" style="display: inline-block;">View as&ensp;</span>
       {{#> components_tab_bar}}
         {{> components_tab url=(concat "/search" (if (compare (querystringify @root.request.params.query utm_source=null utm_campaign=null utm_medium=null) "") "" else="?") (querystringify @root.request.params.query utm_source=null utm_campaign=null utm_medium=null)) iconClasses="far fa-list fa-fw" label="List" active=(compare @root.request.url.pathname "===" "/search")}}
         {{> components_tab url=(concat "/map" (if (compare (querystringify @root.request.params.query utm_source=null utm_campaign=null utm_medium=null) "") "" else="?") (querystringify @root.request.params.query utm_source=null utm_campaign=null utm_medium=null)) iconClasses="far fa-map-marker-alt fa-fw" label="Map" active=(compare @root.request.url.pathname "===" "/map")}}
@@ -201,8 +202,8 @@
 
       <div class="h-margin-full v-margin-full">
         <button class="mdc-button mdc-button--raised mdc-button--large mdc-button--fullwidth mdc-ripple-surface mdc-ripple-surface--primary" type="submit" id="{{instance_id}}-search-submit" data-mdc-auto-init="MDCRipple">
-          <span class="far fa-search fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
           Search
+          <span class="far fa-search fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
         </button>
       </div>
     </form>

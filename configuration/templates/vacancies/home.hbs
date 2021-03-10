@@ -172,7 +172,7 @@
   </div>
 
   {{#compare @root.data.supplimentaryResponses.types.hits.total ">" 0 ~}}
-    <div class="home-browse h-padding">
+    <div class="home-browse">
       <h3 class="mdc-drawer__content-heading cursor-pointer h-padding-full" data-collapse-target="#home-browse-collapse" role="button" aria-pressed="false" aria-label="Show browse section" tabindex="0">
         <span class="mdc-button mdc-button--raised" onclick="gtag('event', 'ui-interaction', { event_category: 'home-page', event_label: 'Browse menu click' })">
           Browse
@@ -180,11 +180,11 @@
             <span class="far fa-chevron-down" aria-hidden="true"></span>
           </span>
         </span>
-        <span class="mdc-typography--body2">
-          By role, sector, working pattern, or region
+        <span class="mdc-typography--body2 text-white">
+          <strong>By role, sector, working pattern, or region</strong>
         </span>
       </h3>
-      <div id="home-browse-collapse" style="display: none;">
+      <div id="home-browse-collapse" class="h-padding-full" style="display: none;">
         {{> browse eventContext="category-browser-home"}}
       </div>
     </div>
