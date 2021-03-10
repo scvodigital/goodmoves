@@ -1,13 +1,16 @@
 <div class="container-fluid home-banner">
-  <div class="banner-search overlay" style="background-image: url('{{~>asset_url url='images/goodmoves-header.jpg'~}}');">
+  <div class="banner-search-home">
+     {{!-- style="background-image: url('{{~>asset_url url='images/goodmoves-header.jpg'~}}');" --}}
     <div class="content page-content">
       <div class="overlay-content">
         <div class="mdc-layout-grid">
           <div class="mdc-layout-grid__inner">
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-              {{> logo welcome="true"}}
+              <h1>
+                Opportunities to <span class="text-primary">make a difference</span>
+              </h1>
               <p class="header-extra">
-                Charity and voluntary sector recruitment
+                Not-for-profit and voluntary sector recruitment
               </p>
             </div>
           </div>
@@ -15,7 +18,7 @@
       </div>
       <div class="search-content">
         {{#compare @root.data.supplimentaryResponses.types.hits.total ">" 0 ~}}
-          <form id="search-view" class="search-form mdc-elevation--z10" action="/search" method="GET">
+          <form id="search-view" class="search-form" action="/search" method="GET">
             <input type="hidden" name="lat" value="{{@root.request.params.query.lat}}" id="location-lat">
             <input type="hidden" name="lng" value="{{@root.request.params.query.lng}}" id="location-lng">
             <div class="mdc-layout-grid">

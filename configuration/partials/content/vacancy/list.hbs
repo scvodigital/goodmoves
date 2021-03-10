@@ -1,4 +1,4 @@
-<div class="mdc-card content-primary list{{if top_job " top-content"}}" data-vacancy-id="{{Id}}">
+<div class="mdc-card mdc-elevation--z0 content-primary list{{if top_job " top-content"}}" data-vacancy-id="{{Id}}">
   {{> content_vacancy_key_info view="list"}}
   <hr class="mdc-list-divider" />
   {{#compare (trim (getProperty @root.data.notes Id)) "!==" "" ~}}

@@ -11,39 +11,17 @@
       "icon": "list-alt",
       "path": "/browse",
       "route": "^/browse$"
-    }
-  ],
-  "main-extra": [
+    },
     {
       "label": "Advice",
       "icon": "question-circle",
       "path": "/advice",
       "route": "^/advice"
-    }
-  ],
-  "main-not-signed-in": [
+    },
     {
-      "label": "Jobs by email",
-      "icon": "envelope",
-      "path": "/jobs-by-email",
-      "route": "^/jobs-by-email"
-    }
-  ],
-  "main-signed-in": [
-    {
-      "label": "Jobs by email",
-      "icon": "envelope",
-      "path": "/searches",
-      "route": "^/searches"
-    }
-  ],
-  "upper": [
-    {
-      "label": "Recruiting?",
+      "label": "Recruiting",
       "icon": "clipboard-list",
       "path": "/recruitment",
-      "linkClasses": "mdc-button mdc-button--raised r-margin",
-      "labelClasses": "mdc-theme--on-primary",
       "route": "^/recruitment"
     },
     {
@@ -59,10 +37,32 @@
       "route": "^/volunteering"
     },
     {
+      "label": "About us",
+      "icon": "info-circle",
+      "path": "/about",
+      "route": "^/about"
+    },
+    {
       "label": "Contact",
       "icon": "at",
       "path": "/contact",
       "route": "^/contact"
+    }
+  ],
+  "_hidden_main-not-signed-in": [
+    {
+      "label": "Jobs by email",
+      "icon": "envelope",
+      "path": "/jobs-by-email",
+      "route": "^/jobs-by-email"
+    }
+  ],
+  "_hidden_main-signed-in": [
+    {
+      "label": "Jobs by email",
+      "icon": "envelope",
+      "path": "/searches",
+      "route": "^/searches"
     }
   ],
   "user-signed-in": [
