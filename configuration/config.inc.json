@@ -1,14 +1,7 @@
 {
   "domains": [
-    "goodmoves.com",
     "test.goodmoves.com",
-    "beta.goodmoves.com",
-    "goodmoves.eu",
-    "goodmoves.be",
-    "goodmoves.scot",
-    "goodmovesjobs.de",
-    "goodmoves.local",
-    "goodmoves.org.uk"
+    "goodmoves.local"
   ],
   "routes": [
     "{:./routes/*.json}"
