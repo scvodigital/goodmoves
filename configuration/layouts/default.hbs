@@ -134,14 +134,13 @@
           </div>
         {{/if}}
       {{/ifAny}}
-      <header class="mdc-top-app-bar mdc-elevation--z5 top-bar-stuck" id="top-bar">
+      <header class="mdc-top-app-bar top-bar-stuck" id="top-bar">
         <div class="container-fluid">
           <div class="mdc-top-app-bar__row mdc-top-app-bar__lower scvo-tab-bar hide-sm hide-md">
             <section class="mdc-top-app-bar__row">
               {{> components_scvo_bar}}
             </section>
           </div>
-          {{> layout_covid_19}}
           <div class="mdc-top-app-bar__row mdc-top-app-bar__upper">
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
               {{#unless @root.route.metaData.hideSearch ~}}
@@ -181,14 +180,14 @@
                 {{#each @root.context.metaData.menus.main ~}}
                   {{>components_tab
                       url=(stripTrailingSlash path)
-                      labelClasses="mdc-theme--on-primary"
+                      labelClasses=""
                       active=(regexMatch @root.request.url.pathname route "gi")
                       label=label}}
                 {{/each ~}}
                 {{#each @root.context.metaData.menus.main-extra ~}}
                   {{>components_tab
                       url=(stripTrailingSlash path)
-                      labelClasses="mdc-theme--on-primary"
+                      labelClasses=""
                       active=(regexMatch @root.request.url.pathname route "gi")
                       label=label}}
                 {{/each ~}}
@@ -196,7 +195,7 @@
                   {{#each @root.context.metaData.menus.main-signed-in ~}}
                     {{>components_tab
                         url=(stripTrailingSlash path)
-                        labelClasses="mdc-theme--on-primary"
+                        labelClasses=""
                         active=(regexMatch @root.request.url.pathname route "gi")
                         label=label}}
                   {{/each ~}}
@@ -204,7 +203,7 @@
                   {{#each @root.context.metaData.menus.main-not-signed-in ~}}
                     {{>components_tab
                         url=(stripTrailingSlash path)
-                        labelClasses="mdc-theme--on-primary"
+                        labelClasses=""
                         active=(regexMatch @root.request.url.pathname route "gi")
                         label=label}}
                   {{/each ~}}
@@ -214,7 +213,7 @@
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end mdc-top-app-bar__user">
               {{#if @root.data.auth ~}}
                 {{#>components_anchored_menu
-                    buttonClasses="mdc-theme--on-primary"
+                    buttonClasses=""
                     imageUrl=(default @root.data.auth.photoURL false)
                     imageClasses="far fa-fw user-avatar"
                     iconClasses=(if (if @root.data.auth.photoURL false else=true) "far fa-fw fa-user-circle" else=false)
@@ -236,7 +235,7 @@
                   {{#each @root.context.metaData.menus.user-not-signed-in ~}}
                     {{>components_tab
                         url=(stripTrailingSlash path)
-                        labelClasses="mdc-theme--on-primary"
+                        labelClasses=""
                         active=(regexMatch @root.request.url.pathname route "gi")
                         label=label}}
                   {{/each}}

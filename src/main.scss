@@ -250,7 +250,7 @@ header {
       }
     }
     .mdc-top-app-bar__lower {
-      background-color: $mdc-theme-primary-medium;
+      // background-color: $mdc-theme-primary-medium;
     }
     .mdc-tab-bar {
       .mdc-tab {
@@ -293,7 +293,7 @@ header {
     .mdc-top-app-bar__main .mdc-tab-bar,
     .mdc-top-app-bar__user .mdc-tab-bar {
       .mdc-tab {
-        color: #fff;
+        color: $secondary-color;
       }
       .mdc-tab:hover .mdc-tab__text-label {
         border-bottom-color: rgba(255, 255, 255, 0.75);
