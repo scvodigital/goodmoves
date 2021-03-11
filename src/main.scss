@@ -643,10 +643,10 @@ header {
         display: none;
       }
     }
-    .goog-te-menu-value:hover {
-      text-decoration: underline;
-      color: $mdc-theme-footer;
-    }
+    // .goog-te-menu-value:hover {
+    //   text-decoration: underline;
+    //   color: $mdc-theme-footer;
+    // }
   }
 }
 .goog-te-menu-frame {
@@ -809,7 +809,7 @@ input[type=button].wfPageNextButton{
   min-width: 0;
   // font-size: 1.4rem;
   background: $mdc-theme-primary;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+  // box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
   color: white;
   border-radius: 4px;
   border: none;
@@ -893,11 +893,14 @@ input[type=button].wfPageNextButton:hover,
 .mdc-card {
   .mdc-card__actions {
     // background-color: $mdc-theme-complimentary-light;
-    a {
-      color: $mdc-theme-primary-dark;
-    }
+    a,
     .mdc-card__action {
-      color: $mdc-theme-primary-dark;
+      color: $secondary-color;
+      border-bottom: 2px solid $mdc-theme-primary;
+    }
+    a:hover,
+    .mdc-card__action:hover {
+      text-decoration: none;
     }
   }
 }
@@ -990,7 +993,10 @@ input[type=button].wfPageNextButton:hover,
   .content-primary-info-container {
     border-radius: 2px;
     background-color: white;
-    box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);
+    box-shadow: none;
+    border: 1px solid $gray-color;
+    border-radius: 0 0 1rem 1rem;
+    // box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);
   }
   .mdc-card--full-content {
     .key-info-extra {
@@ -1597,14 +1603,32 @@ footer.mdc-layout__footer {
   }
   .footer-main {
     margin-bottom: 0;
-    padding: $unit*1.5 $unit*1.5 $unit;
-    // background-color: $mdc-theme-footer;
+    padding: $unit*1.5 $unit*1.5 $unit*3;
+    background-color: $mdc-theme-primary-medium;
+    p,
+    li,
+    span,
+    .fa-ul .fa-li .fas,
+    .fa-ul .fa-li .fab,
+    a,
+    h2,
+    h3 {
+      color: $secondary-color;
+    }
+    a.goog-te-menu-value:hover span,
+    a:hover {
+      color: $mdc-theme-primary !important;
+    }
   }
   .footer-copyright {
-    padding-left: $unit*1.5;
-    padding-right: $unit*1.5;
+    padding: $unit*2.4 $unit*1.5;
     p {
       line-height: 1.4rem;
+    }
+    .brand-logo {
+      img {
+        width: 170px;
+      }
     }
   }
 }
