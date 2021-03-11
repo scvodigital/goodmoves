@@ -152,36 +152,24 @@
                 {{> logo link="true"}}
               </span>
             </section>
-            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-              <button class="mdc-top-app-bar__navigation-icon hide-lg" data-drawer-target="#mobile-menu" aria-label="Menu">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end hide-lg">
+              <button class="mdc-top-app-bar__navigation-icon " data-drawer-target="#mobile-menu" aria-label="Menu">
                 <span class="far fa-fw fa-2x fa-bars"></span>
               </button>
-              {{#>components_tab_bar
-                  extraClasses="mdc-tab-bar__auto-width"
-                  id="user-not-signed-in-tab-bar"}}
-                {{#each @root.context.metaData.menus.user-not-signed-in ~}}
-                  {{>components_tab
-                      url=(stripTrailingSlash path)
-                      labelClasses="btn btn-primary"
-                      active=(regexMatch @root.request.url.pathname route "gi")
-                      label=label}}
-                {{/each}}
-              {{/components_tab_bar}}
-
-              {{!-- {{#>components_tab_bar
-                  extraClasses="mdc-tab-bar__auto-width hide-sm hide-md"
-                  id="upper-tab-bar"}}
-                {{#each @root.context.metaData.menus.upper ~}}
-                  {{#if label ~}}
-                  {{>components_tab
-                      url=(stripTrailingSlash path)
-                      linkClasses=linkClasses
-                      labelClasses=labelClasses
-                      active=(regexMatch @root.request.url.pathname route "gi")
-                      label=label}}
-                  {{/if ~}}
-                {{/each ~}}
-              {{/components_tab_bar}} --}}
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end hide-md hide-sm" style="display:contents;">
+              <div class="t-margin-full">
+                <div class="sign-in-up t-margin-full">
+                  {{#each @root.context.metaData.menus.user-not-signed-in ~}}
+                    <a href="{{stripTrailingSlash path}}" class="btn btn-lg{{#compare label 'Sign in'}} btn-primary{{/compare}} r-margin-full">{{label}}</a>
+                  {{/each}}
+                  <div class="alerts-by-email r-margin-full t-margin-full">
+                    <span class="mdc-typography--caption">
+                      Register with {{> logo}} for<br />regular job email alerts
+                    </span>
+                  </div>
+                </div>
+              </div>
             </section>
           </div>
           <div class="mdc-top-app-bar__row mdc-top-app-bar__lower hide-sm hide-md">

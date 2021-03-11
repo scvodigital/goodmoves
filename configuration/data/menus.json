@@ -105,16 +105,16 @@
   ],
   "user-not-signed-in": [
     {
-      "label": "Sign in",
-      "icon": "sign-in-alt",
-      "path": "/sign-in",
-      "route": "^/sign-in"
-    },
-    {
       "label": "Sign up",
       "icon": "list-alt",
       "path": "/sign-up",
       "route": "^/sign-up"
+    },
+    {
+      "label": "Sign in",
+      "icon": "sign-in-alt",
+      "path": "/sign-in",
+      "route": "^/sign-in"
     }
   ],
   "footer-help": [
