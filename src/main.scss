@@ -1427,8 +1427,14 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
 
 .home-browse {
   .mdc-button {
+    font-size: 1.5rem;
+    border-radius: 6px;
     .mdc-icon-toggle {
+      height: 34px;
+      border: 1px solid white;
+      border-radius: 0 8px 8px 0;
       color: white;
+      background-color: $mdc-theme-primary;
     }
   }
 }
@@ -1440,9 +1446,12 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
 .home-content-primary {
   background-color: $mdc-theme-secondary-light;
 }
+.home-heading {
+  padding-top: $unit*1.5;
+}
 .home-content-primary {
+  padding-bottom: $unit*1.5 !important;
   margin-bottom: 0 !important;
-  padding-bottom: $unit;
 }
 
 .home {
@@ -1457,7 +1466,7 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
     background: white !important;
     color: $mdc-theme-primary;
     .mdc-icon-toggle  {
-      color: $mdc-theme-primary;
+      color: white;
     }
   }
   // border-bottom: $unit/5 solid $mdc-theme-primary-light;
