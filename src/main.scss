@@ -386,10 +386,34 @@ header {
 }
 
 .banner-search-home {
-  padding: 0 $unit !important;
+  // padding: 0 $unit !important;
   background: white;
-  h1 {
-    font-size: 4rem;
+  .page-content {
+    padding: 0;
+    .overlay-content {
+      max-width: 1440px;
+      margin: 0 auto;
+      h1 {
+        font-size: 5rem;
+        word-break: normal;
+        line-height: 1;
+      }
+      .header-extra {
+        font-size: 1.2rem;
+        margin-bottom: $unit*2;
+      }
+    }
+    .search-content {
+      background-color: $mdc-theme-complimentary;
+      padding: $unit;
+      .search-form {
+        max-width: 1280px;
+        margin: 0 auto;
+        #search-primary-content {
+          margin-top: $unit/2;
+        }
+      }
+    }
   }
 }
 
