@@ -1,7 +1,7 @@
-$mdc-theme-primary: #E85822;
-$mdc-theme-primary-medium: #F8C3A3;
-$mdc-theme-primary-light: #FEF1E9;
-$mdc-theme-primary-dark: #D93811;
+$mdc-theme-primary: #FF6200;
+$mdc-theme-primary-medium: #FF9E78;
+$mdc-theme-primary-light: #FFDCCF;
+$mdc-theme-primary-dark: #B03200;
 
 $mdc-theme-secondary: #F8AA1F;
 $mdc-theme-secondary-medium: #FDCD85;
@@ -11,7 +11,7 @@ $mdc-theme-secondary-dark: #684403;
 $mdc-theme-tertiary: #244555;
 $mdc-theme-tertiary-medium: #536977;
 $mdc-theme-tertiary-light: #E7E8EA;
-$mdc-theme-tertiary-dark: #D2D5D9;
+$mdc-theme-tertiary-dark: #244555;
 
 $mdc-theme-footer: #244B5A;
 $mdc-theme-footer-light: #FEF9F9;
@@ -792,10 +792,11 @@ a {
 .mdc-button--raised {
   background-color: $mdc-theme-primary !important;
   box-shadow: none !important;
+  color: white !important;
 }
 .mdc-button--raised:hover {
   background-color: $mdc-theme-tertiary-medium !important;
-  color: white;
+  color: white !important;
 }
 
 .leaflet-container {
@@ -877,7 +878,9 @@ input[type=button].wfPagePreviousButton {
 input[type=button].wfPagePreviousButton:hover,
 input[type=button].wfPageNextButton:hover,
 .btn:hover {
-  background: $mdc-theme-primary-dark;
+  background: $mdc-theme-tertiary-medium;
+  border-color: $mdc-theme-tertiary-medium;
+  color: white;
   opacity: 1;
 }
 
@@ -888,8 +891,6 @@ input[type=button].wfPageNextButton:hover,
   text-decoration: none !important;
 }
 .btn:hover {
-  background: $mdc-theme-primary;
-  color: white;
   text-decoration: none !important;
 }
 .btn.btn-primary {
@@ -899,6 +900,7 @@ input[type=button].wfPageNextButton:hover,
 .btn.btn-primary:hover,
 .btn.btn-secondary:hover {
   background: $mdc-theme-tertiary-medium;
+  border-color: $mdc-theme-tertiary-medium;
   color: white;
 }
 .btn.btn-secondary {
@@ -970,6 +972,11 @@ input[type=button].wfPageNextButton:hover,
   //     color: $mdc-theme-primary-dark;
   //   }
   // }
+}
+.mdc-card.search-result {
+  margin-bottom: $unit*(3/4);
+  padding-bottom: $unit*(3/4);
+  border-bottom: 1px solid $mdc-theme-tertiary-light;
 }
 .content-primary.mdc-card.list,
 .content-primary.mdc-card.mini,
@@ -1045,14 +1052,14 @@ input[type=button].wfPageNextButton:hover,
     border-radius: 2px;
     background-color: white;
     box-shadow: none;
-    border: 1px solid $gray-color;
+    border: 1px solid $mdc-theme-tertiary-light;
     border-radius: 0 0 1rem 1rem;
     // box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);
   }
   .mdc-card--full-content {
     .key-info-extra {
       .mdc-chip {
-        color: $mdc-theme-tertiary-dark;
+        color: $mdc-theme-tertiary;
         background-color: $mdc-theme-tertiary-light;
       }
       .mdc-chip:hover {
@@ -1184,6 +1191,10 @@ a.mdc-drawer__content-heading {
   }
 }
 
+.mdc-card .mdc-card__media--content-secondary {
+  margin-right: 0;
+}
+
 .mdc-card.full {
   .mdc-card__info--content-primary-row {
     .mdc-card__media--content-secondary {
@@ -1191,13 +1202,36 @@ a.mdc-drawer__content-heading {
     }
     .fa-li {
       .fa-fw {
-        color: $mdc-theme-tertiary-dark;
+        color: $mdc-theme-tertiary;
       }
     }
   }
   .mdc-card__info--content-secondary-row {
     background-color: white;
   }
+}
+
+.search-result-article__snippet,
+.mdc-card.search-result .mdc-card__actions,
+.mdc-card.search-result .mdc-card__info--content-primary-row,
+.mdc-card.search-result .mdc-card__info--content-primary,
+.mdc-card.list .mdc-card__actions,
+.mdc-card.list .mdc-card__info--content-primary-row,
+.mdc-card.list .mdc-card__info--content-primary {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.mdc-card.list .mdc-card__actions .mdc-card__action-buttons,
+.mdc-card.search-result .mdc-card__actions .mdc-card__action-buttons {
+  margin-left: 0;
+}
+
+.mdc-card.list:hover::after,
+.mdc-card.mini:hover::after,
+.mdc-card.gist:hover::after,
+.mdc-card.search-result:hover::after {
+  opacity: 0 !important;
+  display: none;
 }
 
 .search-form {
@@ -1490,7 +1524,7 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
     .mdc-icon-toggle {
       height: 34px;
       border: 1px solid white;
-      border-radius: 0 8px 8px 0;
+      border-radius: 0 6px 6px 0;
       color: white;
       background-color: $mdc-theme-primary;
     }
@@ -1522,12 +1556,25 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
   background-color: $mdc-theme-primary;
   .mdc-button {
     background: white !important;
-    color: $mdc-theme-primary;
+    color: $mdc-theme-primary !important;
     .mdc-icon-toggle  {
-      color: white;
+      transition: background-color $fast-transition-speed, border $fast-transition-speed;
+      color: white !important;
     }
   }
-  // border-bottom: $unit/5 solid $mdc-theme-primary-light;
+}
+.home-browse:hover {
+  .mdc-button {
+    background: $mdc-theme-tertiary !important;
+    color: white !important;
+    .mdc-icon-toggle {
+      background: $mdc-theme-tertiary;
+      border-top-color: $mdc-theme-tertiary;
+      border-right-color: $mdc-theme-tertiary;
+      border-bottom-color: $mdc-theme-tertiary;
+      border-left-color: white;
+    }
+  }
 }
 #home-browse-collapse {
   background: white;
@@ -1671,7 +1718,7 @@ footer.mdc-layout__footer {
   .footer-main {
     margin-bottom: 0;
     padding: $unit*1.5 $unit*1.5 $unit*3;
-    background-color: $mdc-theme-primary-medium;
+    background-color: $mdc-theme-secondary-medium;
     p,
     li,
     span,
