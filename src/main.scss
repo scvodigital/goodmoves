@@ -974,9 +974,19 @@ input[type=button].wfPageNextButton:hover,
   // }
 }
 .mdc-card.search-result {
+  box-shadow: none;
+  border-radius: 0;
   margin-bottom: $unit*(3/4);
   padding-bottom: $unit*(3/4);
   border-bottom: 1px solid $mdc-theme-tertiary-light;
+  .mdc-card__info--content-secondary-title {
+    padding: 0 0 $unit;
+  }
+  .mdc-card__info--event {
+    // padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 .content-primary.mdc-card.list,
 .content-primary.mdc-card.mini,
@@ -1542,8 +1552,11 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
   padding-top: $unit*1.5;
 }
 .home-content-primary {
-  padding-bottom: $unit*1.5 !important;
+  // padding-bottom: $unit*1.5 !important;
   margin-bottom: 0 !important;
+  // .mdc-layout-grid {
+  //   margin-bottom: $unit*1.5;
+  // }
 }
 
 .home {
@@ -1618,7 +1631,7 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
 }
 
 .currently-recruiting {
-  padding: $unit/4 0 $unit/3 !important;
+  // padding: $unit/4 0 $unit/3 !important;
   background-color: white;
   .home-heading {
     background-color: white;
