@@ -86,7 +86,6 @@ li,
 footer h3,
 .mdc-chip,
 .mdc-card,
-.mdc-button,
 .mdc-select,
 .mdc-button,
 .mdc-form-field,
@@ -366,6 +365,10 @@ header {
       .mdc-top-app-bar__action-item {
         color: $mdc-theme-tertiary !important;
       }
+      .mdc-menu-surface--anchor .mdc-menu-surface {
+        top: 61px !important;
+        right: 0 !important;
+      }
     }
     .mdc-top-app-bar__section--align-end {
       padding-right: 0 !important;
@@ -383,8 +386,8 @@ header {
   margin-left: $unit;
   .header-text-banner {
     font-weight: 800 !important;
-    font-size: 3.3rem;
-    line-height: 3.3rem;
+    // font-size: 3.3rem;
+    // line-height: 3.3rem;
     .normal {
       font-weight: 600 !important;
     }
@@ -399,14 +402,23 @@ header {
     .overlay-content {
       max-width: 1440px;
       margin: 0 auto;
-      h1 {
-        font-size: 5rem;
-        word-break: normal;
-        line-height: 1;
+      .home-text {
+        h1 {
+          font-size: 5rem;
+          word-break: normal;
+          line-height: 1;
+        }
+        .header-extra {
+          font-size: 1.2rem;
+          margin-bottom: $unit*2;
+        }
       }
-      .header-extra {
-        font-size: 1.2rem;
-        margin-bottom: $unit*2;
+      .home-photo {
+        background-position-x: right;
+        background-position-y: bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+        min-height: 55vh;
       }
     }
     .search-content {
@@ -417,10 +429,25 @@ header {
         margin: 0 auto;
         #search-primary-content {
           margin-top: $unit/2;
+          font-size: 1.5rem;
         }
       }
     }
   }
+}
+
+// .mdc-drawer__content .mdc-list-item--activated:hover, .mdc-drawer__content .mdc-list-item--activated {
+//   color: $secondary-color;
+// }
+:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:not(.mdc-ripple-upgraded):focus::before,
+:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated.mdc-ripple-upgraded--background-focused::before {
+  opacity: 0;
+}
+:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated:not(.mdc-ripple-upgraded):active::after {
+  opacity: 0.2;
+}
+:not(.mdc-list--non-interactive)>:not(.mdc-list-item--disabled).mdc-list-item--activated::before {
+  opacity: 0.15;
 }
 
 .back-to-results {
@@ -474,6 +501,15 @@ header {
     }
   }
 }
+#mobile-menu {
+  background: white;
+}
+.mdc-drawer.mdc-drawer--modal.mdc-drawer--open {
+  height: 100% !important;
+  .mdc-list {
+    margin: 0;
+  }
+}
 .mdc-drawer--occasional {
   margin-left: $unit;
   margin-bottom: $unit*3;
@@ -505,6 +541,10 @@ header {
   .mdc-button {
     color: white;
   }
+}
+.mdc-button.mdc-button--large {
+  min-height: 56px;
+  height: auto;
 }
 
 .my-preferences {
@@ -958,6 +998,21 @@ input[type=button].wfPageNextButton:hover,
   }
 }
 
+.mdc-card.full .mdc-card__info--content-primary-row .mdc-card__media img,
+.mdc-card .mdc-card__info--content-primary-row .mdc-card__media img,
+.mdc-card .mdc-card__info--content-secondary-row .mdc-card__media img {
+  margin: 0 0 0 auto;
+}
+
+.mdc-card.full .mdc-card__info--content-secondary-row,
+.mdc-card.full .mdc-card__info--content-primary-row .mdc-card__media--content-secondary {
+  box-shadow: none;
+}
+.mdc-card.full .mdc-card__info--content-secondary-row {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .mdc-card.list,
 .mdc-card.mini,
 .mdc-card.gist,
@@ -1005,6 +1060,9 @@ input[type=button].wfPageNextButton:hover,
       color: $secondary-color;
       border-bottom: 2px solid $mdc-theme-primary;
       text-decoration: none !important;
+    }
+    .mdc-card__action.hide-md {
+      border-bottom: none;
     }
     .mdc-chip.mdc-chip--selected {
       background-color: $mdc-theme-primary-dark;
@@ -1381,6 +1439,10 @@ footer,
   .browse-title-working-patterns {
     margin-top: 24px;
   }
+}
+
+.mdc-drawer .mdc-list-item.mdc-list-item--activated {
+  color: $mdc-theme-primary;
 }
 
 .home-banner {
@@ -1770,13 +1832,25 @@ footer.mdc-layout__footer {
 //     background-image: linear-gradient(80deg, rgb(68, 133, 50), rgb(68, 133, 50) 40%, transparent 40.08%, transparent);
 //   }
 // }
-// @media screen and (max-width: 1260px) {
+@media screen and (max-width: 1260px) {
+  .banner-search-home .page-content .overlay-content .home-text h1 {
+    font-size: 3.5rem;
+  }
 //   .home-banner .banner-search {
 //     background-size: cover;
 //     background-position: center center;
 //   }
-// }
+}
 // @media screen and (min-width: $mobile-breakpoint + 1) and (max-width: $mobile-landscape-breakpoint) {
+// }
+@media screen and (max-width: $mobile-landscape-breakpoint) {
+  .mdc-drawer--occasional,
+  .container-content {
+    margin-left: 0;
+  }
+  .banner-search-home .page-content .overlay-content .home-text h1 {
+    font-size: 2.8rem;
+  }
 //   .home-banner .banner-search.overlay .content {
 //     background-image: linear-gradient(80deg, rgb(68, 133, 50), rgb(68, 133, 50) 66%, transparent 66.08%, transparent);
 //   }
@@ -1786,8 +1860,37 @@ footer.mdc-layout__footer {
 //   // .mdc-toolbar-fixed-adjust {
 //   //   padding-top: 100px;
 //   // }
-// }
+}
 @media screen and (max-width: $mobile-breakpoint) {
+  header .container-fluid .mdc-top-app-bar__title .header-text .header-text-banner {
+    font-size: 2.8rem;
+    line-height: 1;
+  }
+  .banner-search-home .page-content .overlay-content .home-text h1 {
+    font-size: 2rem;
+  }
+  .banner-search-home {
+    .page-content {
+      .overlay-content {
+        .home-text {
+          h1 {
+            font-size: 2rem;
+          }
+          .header-extra {
+            font-size: 1.1rem;
+            margin-bottom: $unit/2;
+          }
+        }
+        .home-photo {
+          min-height: 200px;
+        }
+      }
+    }
+  }
+  .home-browse .mdc-drawer__content-heading {
+    padding-left: $unit !important;
+    padding-right: $unit !important;
+  }
 //   .mdc-top-app-bar {
 //     height: 100px;
 //   }
@@ -1825,6 +1928,11 @@ footer.mdc-layout__footer {
     }
   }
   .settings .settings-heading {
+    display: block;
+  }
+}
+@media screen and (max-width: 450px) {
+  .mdc-drawer .mdc-tab__text-label {
     display: block;
   }
 }

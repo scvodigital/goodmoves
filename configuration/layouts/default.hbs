@@ -143,25 +143,25 @@
           </div>
           <div class="mdc-top-app-bar__row mdc-top-app-bar__upper">
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-              {{#unless @root.route.metaData.hideSearch ~}}
-              <button class="mdc-top-app-bar__navigation-icon hide-lg filter-search-button" id="sidebar-button" title="Search">
-                <span class="far fa-fw fa-2x fa-search"></span>
-              </button>
-              {{/unless ~}}
               <span class="mdc-top-app-bar__title">
                 {{> logo link="true"}}
               </span>
             </section>
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end hide-lg">
+              {{#unless @root.route.metaData.hideSearch ~}}
+              <button class="mdc-top-app-bar__navigation-icon hide-lg filter-search-button" id="sidebar-button" title="Search">
+                <span class="far fa-fw fa-2x fa-search"></span>
+              </button>
+              {{/unless ~}}
               <button class="mdc-top-app-bar__navigation-icon " data-drawer-target="#mobile-menu" aria-label="Menu">
                 <span class="far fa-fw fa-2x fa-bars"></span>
               </button>
             </section>
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end hide-md hide-sm" style="display:contents;">
-              <div class="my-preferences t-margin-full t-padding-full r-margin-full">
+              <div class="my-preferences t-margin-full r-margin-full">
                 {{#if @root.data.auth ~}}
                   {{#>components_anchored_menu
-                      buttonClasses="btn btn-lg btn-secondary"
+                      buttonClasses="btn btn-lg btn-primary t-margin-full"
                       imageUrl=(default @root.data.auth.photoURL false)
                       imageClasses="far fa-fw user-avatar r-margin-full"
                       iconClasses=(if (if @root.data.auth.photoURL false else=true) "far fa-fw fa-user-circle" else=false)
