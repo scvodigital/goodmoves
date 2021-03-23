@@ -557,9 +557,9 @@ header {
 }
 
 .card-loader {
-  background-color: $mdc-theme-tertiary-light;
+  background-color: white;
   .card-loader-inner {
-    color: $mdc-theme-primary-dark;
+    color: $mdc-theme-primary;
   }
 }
 
@@ -1607,6 +1607,7 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
   background-color: $mdc-theme-tertiary-light;
 }
 .home-heading,
+.bg-grey,
 .home-content-primary {
   background-color: $mdc-theme-tertiary-light;
 }
@@ -1818,6 +1819,21 @@ footer.mdc-layout__footer {
       img {
         width: 170px;
       }
+    }
+  }
+}
+
+.volunteering {
+  .header-photo {
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    background-size: contain;
+    min-height: 325px;
+    .header-text {
+      max-width: 60%;
+      font-size: 1.1rem;
+      padding: $unit/2 $unit/2 $unit;
     }
   }
 }
