@@ -1,7 +1,14 @@
-$mdc-theme-primary: #E75822;
+// Orange
+$mdc-theme-primary: #E75821;
 $mdc-theme-primary-medium: #F8CDBD;
 $mdc-theme-primary-light: #F7C9B8;
 $mdc-theme-primary-dark: #6A250B;
+
+// Goodberry
+// $mdc-theme-primary: #B6497D;
+// $mdc-theme-primary-medium: #DFBDCB;
+// $mdc-theme-primary-light: #EDD9E1;
+// $mdc-theme-primary-dark: #5D2D41;
 
 $mdc-theme-secondary: #F8A91F;
 $mdc-theme-secondary-medium: #FBC260;
@@ -262,6 +269,7 @@ body {
   background-color: white;
   position: relative;
   height: auto;
+  z-index: 1;
 }
 
 header {
@@ -490,7 +498,7 @@ header {
         width: fit-content;
         display: inline-block;
         .mdc-tab__icon {
-          color: $mdc-theme-primary;
+          color: white;
           opacity: 1;
         }
         .mdc-tab__text-label {
@@ -932,7 +940,9 @@ input[type=button].wfPageNextButton:hover,
 
 .btn {
   border-radius: 6px;
-  border: 1px solid $mdc-theme-primary;
+  border: 1px solid $mdc-theme-secondary;
+  background: $mdc-theme-secondary;
+  color: $secondary-color;
   transition: background $fast-transition-speed, color $fast-transition-speed, border $fast-transition-speed;
   text-decoration: none !important;
 }
@@ -941,6 +951,7 @@ input[type=button].wfPageNextButton:hover,
 }
 .btn.btn-primary {
   background: $mdc-theme-primary;
+  border-color: $mdc-theme-primary;
   color: white;
 }
 .btn.btn-primary:hover,
