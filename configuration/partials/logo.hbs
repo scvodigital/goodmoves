@@ -1,8 +1,9 @@
-<h1 class="header-text">
+<div class="header-text v-margin-full">
   {{#if link ~}}<a href="/" title="Goodmoves">{{/if ~}}
   <span class="header-text-banner">
     {{#if welcome ~}}<span class="normal welcome">Welcome to</span><br />{{/if ~}}
-    good<span class="normal moves text-secondary">moves</span>
+    {{!-- good<span class="normal moves text-secondary">moves</span> --}}
+    <img src="{{~>asset_url url='images/logos/goodmoves.svg'~}}" class="img-responsive" alt="Goodmoves" />
   </span>
   {{#if link ~}}</a>{{/if ~}}
-</h1>
+</div>
