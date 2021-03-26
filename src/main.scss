@@ -1,14 +1,14 @@
 // Orange
-$mdc-theme-primary: #E75821;
-$mdc-theme-primary-medium: #F8CDBD;
-$mdc-theme-primary-light: #F7C9B8;
-$mdc-theme-primary-dark: #6A250B;
+// $mdc-theme-primary: #E75821;
+// $mdc-theme-primary-medium: #F8CDBD;
+// $mdc-theme-primary-light: #F7C9B8;
+// $mdc-theme-primary-dark: #6A250B;
 
 // Goodberry
-// $mdc-theme-primary: #B6497D;
-// $mdc-theme-primary-medium: #DFBDCB;
-// $mdc-theme-primary-light: #EDD9E1;
-// $mdc-theme-primary-dark: #5D2D41;
+$mdc-theme-primary: #B6497D;
+$mdc-theme-primary-medium: #DFBDCB;
+$mdc-theme-primary-light: #EDD9E1;
+$mdc-theme-primary-dark: #5D2D41;
 
 $mdc-theme-secondary: #F8A91F;
 $mdc-theme-secondary-medium: #FBC260;
@@ -507,7 +507,8 @@ header {
       }
     }
   }
-  .checkbox-toggle-display-all {
+  .checkbox-toggle-display-all,
+  .checkbox-toggle-display-checked {
     background: white;
     border-radius: $unit/4;
     h3 {
