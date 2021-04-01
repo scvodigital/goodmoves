@@ -166,7 +166,7 @@
     "name": "notes",
     "taskModule": "firebaseRtbGet",
     "renderer": "handlebars",
-    "config": {
+    "config_DISABLED_": {
       "appName": "goodmoves",
       "pathTemplate": "/notes/{{default data.auth.uid 'no-such-profile'}}",
       "defaultData": " "
