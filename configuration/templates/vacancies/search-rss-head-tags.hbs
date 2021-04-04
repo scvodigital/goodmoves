@@ -6,4 +6,4 @@
 <title>Job search results – Goodmoves</title>
 {{/if ~}}
 <description>{{{description}}}</description>
-<link>https://goodmoves.com{{{urlencode (replace (replace request.params.uri.path "&rss" "") "?rss" "")}}}</link>
+<link>https://goodmoves.com{{{urlencode (replace (replace (replace request.params.uri.path "&rss" "") "?rss" "") "&" "&amp;")}}}</link>
