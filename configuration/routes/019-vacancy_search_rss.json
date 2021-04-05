@@ -56,7 +56,7 @@
               "head": ">context.metaData.handlebars.templates.vacancies_search-rss-head-tags",
               "body": ">context.metaData.handlebars.templates.vacancies_search-rss"
             },
-            "contentType": "application/atom+xml"
+            "contentType": "application/rss+xml"
           }
         }
       }
