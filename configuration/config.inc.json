@@ -1,6 +1,12 @@
 {
   "domains": [
     "test.goodmoves.com",
+    "goodmoves.com",
+    "goodmoves.eu",
+    "goodmoves.be",
+    "goodmoves.scot",
+    "goodmovesjobs.de",
+    "goodmoves.org.uk",
     "goodmoves.local"
   ],
   "routes": [
