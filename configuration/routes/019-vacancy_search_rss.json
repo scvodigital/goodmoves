@@ -1,6 +1,7 @@
 {
   "name": "vacancy_search_rss",
   "pattern": "/search-rss",
+  "doNotZip": "true",
   "metaData": {
     "hideSearch": true
   },
