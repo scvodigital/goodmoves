@@ -9,6 +9,8 @@ window.firebase = firebase;
 
 export class Goodmoves {
   constructor(firebaseConfig) {
+    this.setupGaLinkEvents();
+
     this.firebaseConfig = firebaseConfig;
     this.auth = new Auth(this.firebaseConfig, '/upgrade-token?token={idToken}', 'gm_cookie');
 
@@ -176,5 +178,21 @@ export class Goodmoves {
     }
     currentPage.hide();
     nextPage.show();
+  }
+
+  setupGaLinkEvents() {
+    $('a[data-ga-link-event]').on('mouseup', function(event) {
+      if (typeof ga !== 'function' || typeof gtag !== 'function') {
+        console.log('No GA');
+        return;
+      }
+      var id = $(this).data('ga-link-event');
+      gtag('event', 'document_hit', {
+        'event_category': 'goodmoves-vacancy',
+        'event_label': id,
+        'hit_type': 'banner-clicked'
+      });
+      console.log('Banner click tracked', id, gtag);
+    });
   }
 }
