@@ -2,31 +2,16 @@
   <div class="banner-search-home">
      {{!-- style="background-image: url('{{~>asset_url url='images/goodmoves-header.jpg'~}}');" --}}
     <div class="content page-content">
-      <div class="overlay-content">
-        <div class="mdc-layout-grid">
-          <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone h-padding-full home-text">
-              <h1>
-                Opportunities to <span class="text-primary">make a difference</span>
-              </h1>
-              <p class="header-extra">
-                Not-for-profit and voluntary<br />sector recruitment
-              </p>
-            </div>
-            {{!-- <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone h-padding-full home-photo" style="background-image:url('{{~>asset_url url='images/goodmoves-header.png'~}}');"> --}}
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone h-padding-full home-photo" style="background-image:url('{{~>asset_url url='images/goodmoves-header-b.png'~}}');">
-              &nbsp;
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="search-content">
         {{#compare @root.data.supplimentaryResponses.types.hits.total ">" 0 ~}}
           <form id="search-view" class="search-form" action="/search" method="GET">
             <input type="hidden" name="lat" value="{{@root.request.params.query.lat}}" id="location-lat">
             <input type="hidden" name="lng" value="{{@root.request.params.query.lng}}" id="location-lng">
-            <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid b-padding-full">
               <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                  <h1><span class="text-primary">Search jobs in Scotland's vibrant voluntary sector</span></h1>
+                </div>
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-5-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
                   <div class="mdc-text-field mdc-text-field--box mdc-text-field--with-leading-icon mdc-text-field-tt" data-mdc-auto-init="MDCTextField">
                     <span class="far fa-search mdc-text-field__icon" tabindex="0" role="button" aria-hidden="true"></span>
@@ -171,6 +156,24 @@
             No jobs are currently listed
           </div>
         {{/compare ~}}
+      </div>
+      <div class="overlay-content">
+        <div class="mdc-layout-grid">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-5-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone h-padding-full home-text">
+              <h1>
+                Opportunities to <span class="text-primary">make a difference</span>
+              </h1>
+              {{!-- <p class="header-extra">
+                Not-for-profit and voluntary<br />sector recruitment
+              </p> --}}
+            </div>
+            {{!-- <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone h-padding-full home-photo" style="background-image:url('{{~>asset_url url='images/goodmoves-header.png'~}}');"> --}}
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-7-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone h-padding-full home-photo" style="background-image:url('{{~>asset_url url='images/goodmoves-header-b.png'~}}');">
+              &nbsp;
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

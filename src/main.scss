@@ -27,8 +27,8 @@ $mdc-theme-error: #A9201E;
 
 $mdc-theme-tfn: #bdedee;
 
-$mdc-theme-volunteering: #448532;
-$mdc-theme-volunteering-dark: #223c1d;
+$mdc-theme-volunteering: #00a0af;
+$mdc-theme-volunteering-dark: #00717c;
 
 $primary-color: #FF595A;
 $primary-color-light: #ffd6d6;
@@ -100,6 +100,7 @@ footer h3,
 .mdc-text-field,
 .mdc-dialog__body,
 .mdc-dialog__title,
+.search-content h1,
 .mdc-card__subtitle,
 .mdc-floating-label,
 .mdc-card__subtitle,
@@ -271,6 +272,10 @@ body {
   z-index: 1;
 }
 
+.drawer-container-temporary {
+  padding-top: $unit*2;
+}
+
 header {
   .container-fluid {
     #main-tab-bar .mdc-tab:first-child {
@@ -288,10 +293,16 @@ header {
     }
     .mdc-top-app-bar__lower {
       height: auto;
-      // background-color: $mdc-theme-primary-medium;
-      .mdc-tab-scroller {
-        margin-left: $unit;
-        border-bottom: 2px solid $mdc-theme-primary;
+      .mdc-tab-bar {
+        width: 100%;
+        .mdc-tab-scroller {
+          margin-left: $unit;
+          margin-right: $unit;
+          border-bottom: 2px solid $mdc-theme-primary;
+          .mdc-tab-scroller__scroll-content {
+            flex: 0 0 auto;
+          }
+        }
       }
     }
     .mdc-tab-bar {
@@ -417,21 +428,21 @@ header {
       margin: 0 auto;
       .home-text {
         h1 {
-          font-size: 5rem;
+          font-size: 3.8rem;
           word-break: normal;
           line-height: 1;
+          margin: $unit*3.5 0 $unit*3;
         }
         .header-extra {
           font-size: 1.2rem;
-          margin-bottom: $unit*2;
         }
       }
       .home-photo {
         background-position-x: right;
-        background-position-y: bottom;
+        background-position-y: 60%;
         background-repeat: no-repeat;
-        background-size: contain;
-        min-height: 55vh;
+        background-size: 100%;
+        min-height: 20vh;
       }
     }
     .search-content {
@@ -1320,6 +1331,16 @@ a.mdc-drawer__content-heading {
 .mdc-card.search-result .mdc-card__actions .mdc-card__action-buttons {
   margin-left: 0;
 }
+.volunteering {
+  .search-result-article__snippet {
+    padding-left: $unit !important;
+    padding-right: $unit !important;
+  }
+  .mdc-card .mdc-card__actions a,
+  .mdc-card .mdc-card__actions .mdc-card__action {
+    border-bottom-color: $mdc-theme-volunteering;
+  }
+}
 
 .mdc-card.list:hover::after,
 .mdc-card.mini:hover::after,
@@ -1634,7 +1655,7 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
   background-color: $mdc-theme-tertiary-light;
 }
 .home-heading,
-.bg-grey,
+.bg-gray,
 .home-content-primary {
   background-color: $mdc-theme-tertiary-light;
 }
