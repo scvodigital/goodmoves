@@ -1,0 +1,11 @@
+{
+  "size": 0,
+  "_source": false,
+  "query": {
+    "bool": {
+      "filter": [
+        {{>queries_vacancy_common_filters_open}}
+      ]
+    }
+  }
+}

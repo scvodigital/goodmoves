@@ -579,6 +579,16 @@ header {
     width: 100%;
     min-width: 295px;
   }
+  .btn.btn-link {
+    color: $mdc-theme-primary;
+    border-color: $mdc-theme-primary;
+    background-color: white;
+  }
+  .btn.btn-link:hover {
+    color: white;
+    border-color: $mdc-theme-tertiary-medium;
+    background-color: $mdc-theme-tertiary-medium;
+  }
 }
 
 .card-loader {

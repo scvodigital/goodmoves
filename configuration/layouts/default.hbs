@@ -169,7 +169,7 @@
                 {{else}}
                 <div class="sign-in-up t-margin-full">
                   {{#each @root.context.metaData.menus.user-not-signed-in ~}}
-                  <a href="{{stripTrailingSlash path}}" class="btn btn-lg{{#compare label 'Sign in'}} btn-primary{{/compare}} r-margin-full">{{label}}</a>
+                  <a href="{{stripTrailingSlash path}}" class="btn btn-lg{{#compare label 'Sign in'}} btn-link{{/compare}} r-margin-full">{{label}}</a>
                   {{/each}}
                   {{#compare @root.request.url.pathname '/'}}
                   <div class="alerts-by-email r-margin-full t-margin-full t-padding-full">

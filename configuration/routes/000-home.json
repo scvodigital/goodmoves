@@ -52,6 +52,12 @@
         },
         "queryTemplates": [
           {
+            "name": "total",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.vacancies_home-total"
+          },
+          {
             "name": "top",
             "index": "{$../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",
