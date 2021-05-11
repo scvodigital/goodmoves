@@ -428,10 +428,10 @@ header {
       margin: 0 auto;
       .home-text {
         h1 {
-          font-size: 3.8rem;
+          font-size: 4.5rem;
           word-break: normal;
           line-height: 1;
-          margin: $unit*3.5 0 $unit*3;
+          margin: $unit 0 $unit*4;
         }
         .header-extra {
           font-size: 1.2rem;
@@ -439,21 +439,24 @@ header {
       }
       .home-photo {
         background-position-x: right;
-        background-position-y: 60%;
+        background-position-y: bottom;
         background-repeat: no-repeat;
-        background-size: 100%;
-        min-height: 20vh;
+        background-size: contain;
+        height: 60vh;
+        max-height: 300px;
+        margin-top: 2rem;
       }
     }
     .search-content {
-      background-color: $mdc-theme-tertiary-light;
-      padding: $unit;
+      // background-color: $mdc-theme-tertiary-light;
+      padding: 0 $unit;
       .search-form {
         max-width: 1280px;
         margin: 0 auto;
         #search-primary-content {
           margin-top: $unit/2;
           font-size: 1.5rem;
+          width: 100%;
         }
       }
     }
@@ -1751,6 +1754,12 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
   }
 }
 
+.content-related {
+  .mdc-layout-grid__inner {
+    grid-gap: $unit*3;
+  }
+}
+
 .currently-recruiting {
   // padding: $unit/4 0 $unit/3 !important;
   background-color: white;
@@ -1949,6 +1958,10 @@ footer.mdc-layout__footer {
   // }
   .banner-search-home .page-content .overlay-content .home-text h1 {
     font-size: 2rem;
+    margin-bottom: 0;
+  }
+  .banner-search-home .page-content .overlay-content .home-photo {
+    margin-top: 0;
   }
   .banner-search-home {
     .page-content {

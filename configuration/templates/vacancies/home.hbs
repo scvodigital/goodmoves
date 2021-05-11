@@ -7,15 +7,24 @@
           <form id="search-view" class="search-form" action="/search" method="GET">
             <input type="hidden" name="lat" value="{{@root.request.params.query.lat}}" id="location-lat">
             <input type="hidden" name="lng" value="{{@root.request.params.query.lng}}" id="location-lng">
-            <div class="mdc-layout-grid b-padding-full">
+            <div class="mdc-layout-grid">
               <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
                   <h1><span class="text-primary">Search {{@root.data.supplimentaryResponses.total.hits.total}} jobs in Scotland's vibrant voluntary sector</span></h1>
                 </div>
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-5-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-                  <div class="mdc-text-field mdc-text-field--box mdc-text-field--with-leading-icon mdc-text-field-tt" data-mdc-auto-init="MDCTextField">
+                  <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon mdc-text-field-tt" data-mdc-auto-init="MDCTextField">
+                    <span class="mdc-notched-outline">
+                      <span class="mdc-notched-outline__leading"></span>
+                      <span class="mdc-notched-outline__notch">
+                        <label for="what-primary-content" class="mdc-floating-label" id="label-keywords">
+                          Keywords
+                        </label>
+                      </span>
+                      <span class="mdc-notched-outline__trailing"></span>
+                    </span>
                     <span class="far fa-search mdc-text-field__icon" tabindex="0" role="button" aria-hidden="true"></span>
-                    <input type="text" id="what-primary-content" name="keywords" class="mdc-text-field__input" placeholder="" data-lpignore="true" data-typeahead='{
+                    <input type="text" id="what-primary-content" aria-labelledby="label-keywords" name="keywords" class="mdc-text-field__input" placeholder="" data-lpignore="true" data-typeahead='{
                       "typeaheadOptions": {
                         "highlight": true,
                         "minlength": 0
@@ -92,42 +101,48 @@
                         }
                       ]
                     }' aria-label="Keywords">
-                    <label for="what-primary-content" class="mdc-floating-label">
-                      Keywords
-                    </label>
-                    <div class="mdc-line-ripple"></div>
                   </div>
                 </div>
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-                  <div class="mdc-text-field mdc-text-field--box mdc-text-field--with-leading-icon" data-mdc-auto-init="MDCTextField">
-                    <i class="far fa-map-marker-alt mdc-text-field__icon geo-lookup" tabindex="0" title="Find my location" role="button"></i>
-                    <input type="text" id="where-primary-content" name="location" class="mdc-text-field__input" value="{{@root.request.params.query.location}}" placeholder="" data-lpignore="true" data-location-search='{
+                  <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon" data-mdc-auto-init="MDCTextField">
+                    <span class="mdc-notched-outline">
+                      <span class="mdc-notched-outline__leading"></span>
+                      <span class="mdc-notched-outline__notch">
+                        <label for="where-primary-content" class="mdc-floating-label" id="label-location">
+                          Location
+                        </label>
+                      </span>
+                      <span class="mdc-notched-outline__trailing"></span>
+                    </span>
+                    <span class="far fa-map-marker-alt mdc-text-field__icon geo-lookup" tabindex="0" title="Find my location" role="button"></span>
+                    <input type="text" id="where-primary-content" name="location" class="mdc-text-field__input" aria-labelledby="label-location" value="{{@root.request.params.query.location}}" placeholder="" data-lpignore="true" data-location-search='{
                       "latSelector": "[name=\"lat\"]",
                       "lngSelector": "[name=\"lng\"]",
                       "locationServicesSelector": ".geo-lookup"
                     }' aria-label="Location">
-                    <label for="where-primary-content" class="mdc-floating-label mdc-floating-label--float-above">
-                      Location
-                    </label>
-                    <div class="mdc-line-ripple"></div>
                   </div>
                   <!-- <div class="after-textfield-action geo-lookup">Find me</div> -->
                 </div>
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-4-phone">
                   <div class="mdc-form-field">
-                    <div class="mdc-select mdc-select--box" data-mdc-auto-init="MDCSelect">
+                    <div class="mdc-select mdc-select--outlined t-margin" data-mdc-auto-init="MDCSelect">
+                      <span class="mdc-notched-outline">
+                        <span class="mdc-notched-outline__leading"></span>
+                        <span class="mdc-notched-outline__notch">
+                          <label class="mdc-floating-label" for="distance-primary-content" id="label-distance">
+                            Distance
+                          </label>
+                        </span>
+                        <span class="mdc-notched-outline__trailing"></span>
+                      </span>
                       <span class="mdc-select__dropdown-icon"></span>
-                      <select data-location="where-primary-content" class="mdc-select__native-control" name="distance" id="distance-primary-content">
+                      <select data-location="where-primary-content" class="mdc-select__native-control" aria-labelledby="label-distance" name="distance" id="distance-primary-content">
                         <option value="8.04672">within 5 miles</option>
                         <option value="16.09344" selected>within 10 miles</option>
                         <option value="40.2336">within 25 miles</option>
                         <option value="80.4672">within 50 miles</option>
                         <option value="">any distance</option>
                       </select>
-                      <label class="mdc-floating-label mdc-floating-label--float-above" for="distance-primary-content">
-                        Distance
-                      </label>
-                      <span class="mdc-line-ripple"></span>
                     </div>
                   </div>
                 </div>
@@ -159,8 +174,8 @@
       </div>
       <div class="overlay-content">
         <div class="mdc-layout-grid">
-          <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-5-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone h-padding-full home-text">
+          <div class="mdc-layout-grid__inner" style="align-items:flex-end;">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone h-padding-full home-text">
               <h1>
                 Opportunities to <span class="text-primary">make a difference</span>
               </h1>
@@ -169,7 +184,7 @@
               </p> --}}
             </div>
             {{!-- <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone h-padding-full home-photo" style="background-image:url('{{~>asset_url url='images/goodmoves-header.png'~}}');"> --}}
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-7-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone h-padding-full home-photo" style="background-image:url('{{~>asset_url url='images/goodmoves-header-b.png'~}}');">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone h-padding-full home-photo" style="background-image:url('{{~>asset_url url='images/goodmoves-header-b.png'~}}');">
               &nbsp;
             </div>
           </div>
