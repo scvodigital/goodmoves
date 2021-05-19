@@ -51,6 +51,7 @@ $fs-color: #5ba855;
 $unit: 1rem;
 $padding: 1.2rem;
 $thick-line: 5px;
+$medium-line: 2px;
 $slow-transition-speed: 0.333s;
 $fast-transition-speed: 0.12s;
 
@@ -1047,10 +1048,35 @@ input[type=button].wfPageNextButton:hover,
       color: $secondary-color;
       border-bottom: 2px solid $mdc-theme-primary;
     }
-    a:hover,
+    a.mdc-card__action:hover,
     .mdc-card__action:hover {
       text-decoration: none;
+      // background-color: $mdc-theme-tertiary-light;
     }
+    // a.mdc-card__action:before {
+    //   content: "";
+    //   display: block;
+    //   position: absolute;
+    //   width: 100%;
+    //   bottom: 0;
+    //   left: 0;
+    //   height: $medium-line;
+    //   background-color: $mdc-theme-primary;
+    //   background-position: 0 100%;
+    //   background-repeat: repeat-x;
+    //   background-size: 5px $medium-line;
+    //   transition: background-size $slow-transition-speed, color $slow-transition-speed, border $slow-transition-speed, background-color $fast-transition-speed;
+    //   text-decoration: none;
+    // }
+    // a.mdc-card__action:hover {
+    //   background-size: 5px 13px;
+    // }
+    // a.mdc-card__action:hover:before {
+    //   color: $mdc-theme-secondary;
+    //   background-color: $mdc-theme-primary-light;
+    //   // background-image: linear-gradient(to bottom, $primary-color-light 0%, $primary-color-light 100%);
+    //   background-size: 5px 13px;
+    // }
   }
 }
 
