@@ -456,6 +456,9 @@ header {
     .search-content {
       // background-color: $mdc-theme-tertiary-light;
       padding: 0 $unit;
+      h1 {
+        margin: 0;
+      }
       .search-form {
         max-width: 1280px;
         margin: 0 auto;
@@ -1969,8 +1972,18 @@ footer.mdc-layout__footer {
   .container-content {
     margin-left: 0;
   }
+  .banner-search-home .page-content .search-content .search-form #search-primary-content {
+    font-size: 1.2rem;
+  }
+  .search-content h1 {
+    font-size: 1.75rem;
+  }
   .banner-search-home .page-content .overlay-content .home-text h1 {
     font-size: 2.8rem;
+  }
+  .banner-search-home .page-content .overlay-content .home-photo {
+    max-height: 200px;
+    height: 50vh;
   }
 //   .home-banner .banner-search.overlay .content {
 //     background-image: linear-gradient(80deg, rgb(68, 133, 50), rgb(68, 133, 50) 66%, transparent 66.08%, transparent);
@@ -1987,10 +2000,16 @@ footer.mdc-layout__footer {
   //   font-size: 2.8rem;
   //   line-height: 1;
   // }
-  .banner-search-home .page-content .overlay-content .home-text h1 {
-    font-size: 2rem;
-    margin-bottom: 0;
+  .search-content h1 {
+    font-size: 1.25rem;
   }
+  .banner-search-home .page-content .search-content .search-form #search-primary-content {
+    font-size: 1.1rem;
+  }
+  // .banner-search-home .page-content .overlay-content .home-text h1 {
+  //   font-size: 2rem;
+  //   // margin-bottom: 0;
+  // }
   .banner-search-home .page-content .overlay-content .home-photo {
     margin-top: 0;
   }
@@ -2000,6 +2019,8 @@ footer.mdc-layout__footer {
         .home-text {
           h1 {
             font-size: 2rem;
+            margin-top: $unit*1.5;
+            margin-bottom: $unit;
           }
           .header-extra {
             font-size: 1.1rem;
@@ -2007,6 +2028,7 @@ footer.mdc-layout__footer {
           }
         }
         .home-photo {
+          height: auto;
           min-height: 200px;
         }
       }
@@ -2064,6 +2086,9 @@ footer.mdc-layout__footer {
     min-width: 66vw;
     top: 9px;
     position: relative;
+  }
+  .banner-search-home .page-content .overlay-content .home-text h1 {
+    margin-bottom: 0;
   }
 }
 
