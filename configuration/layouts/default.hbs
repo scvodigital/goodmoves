@@ -195,48 +195,8 @@
                       active=(regexMatch @root.request.url.pathname route "gi")
                       label=label}}
                 {{/each ~}}
-                {{!-- {{#each @root.context.metaData.menus.main-extra ~}}
-                  {{>components_tab
-                      url=(stripTrailingSlash path)
-                      labelClasses=""
-                      active=(regexMatch @root.request.url.pathname route "gi")
-                      label=label}}
-                {{/each ~}}
-                {{#if @root.data.auth ~}}
-                  {{#each @root.context.metaData.menus.main-signed-in ~}}
-                    {{>components_tab
-                        url=(stripTrailingSlash path)
-                        labelClasses=""
-                        active=(regexMatch @root.request.url.pathname route "gi")
-                        label=label}}
-                  {{/each ~}}
-                {{else}}
-                  {{#each @root.context.metaData.menus.main-not-signed-in ~}}
-                    {{>components_tab
-                        url=(stripTrailingSlash path)
-                        labelClasses=""
-                        active=(regexMatch @root.request.url.pathname route "gi")
-                        label=label}}
-                  {{/each ~}}
-                {{/if ~}} --}}
               {{/components_tab_bar}}
             </section>
-            {{!-- <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end mdc-top-app-bar__user">
-              {{#if @root.data.auth ~}}
-              {{else}}
-                {{#>components_tab_bar
-                    extraClasses="mdc-tab-bar__auto-width"
-                    id="user-not-signed-in-tab-bar"}}
-                  {{#each @root.context.metaData.menus.user-not-signed-in ~}}
-                    {{>components_tab
-                        url=(stripTrailingSlash path)
-                        labelClasses=""
-                        active=(regexMatch @root.request.url.pathname route "gi")
-                        label=label}}
-                  {{/each}}
-                {{/components_tab_bar}}
-              {{/if ~}}
-            </section> --}}
           </div>
         </div>
       </header>
