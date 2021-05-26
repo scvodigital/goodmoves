@@ -589,6 +589,7 @@ header {
 .sign-in-form,
 .reset-password-form {
   .middle-line-text {
+    margin: 3rem 0;
     border-bottom: 2px solid #dfdfdf;
     span {
       background-color: white;
@@ -837,8 +838,13 @@ header {
 a {
   color: $mdc-theme-primary;
 }
-.container-content a {
+.home-browse a,
+.container-content a,
+.content a {
   font-weight: inherit;
+}
+.mdc-button {
+  font-weight: 600;
 }
 
 .mdc-chip {
