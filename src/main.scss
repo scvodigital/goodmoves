@@ -1091,6 +1091,9 @@ input[type=button].wfPageNextButton:hover,
       color: $secondary-color;
       border-bottom: 2px solid $mdc-theme-primary;
     }
+    .mdc-card__action.hide-md {
+      border-bottom: none !important;
+    }
     a.mdc-card__action:hover,
     .mdc-card__action:hover {
       text-decoration: none;
@@ -1187,7 +1190,7 @@ input[type=button].wfPageNextButton:hover,
       text-decoration: none !important;
     }
     .mdc-card__action.hide-md {
-      border-bottom: none;
+      border-bottom: none !important;
     }
     .mdc-chip.mdc-chip--selected {
       background-color: $mdc-theme-primary-dark;
@@ -2161,6 +2164,14 @@ footer.mdc-layout__footer {
 .mdc-button--raised.mdc-button--warning {
   background-color: $mdc-theme-error !important;
   color: white !important;
+}
+
+@media screen and (max-width: 450px) {
+  .mdc-card.full .mdc-card__info--content-primary-row .mdc-card__media img,
+  .mdc-card .mdc-card__info--content-primary-row .mdc-card__media img,
+  .mdc-card .mdc-card__info--content-secondary-row .mdc-card__media img {
+    margin: 0 auto;
+  }
 }
 
 @media screen and (min-width: $desktop-landscape-breakpoint + 1) {
