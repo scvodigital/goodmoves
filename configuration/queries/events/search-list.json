@@ -46,7 +46,7 @@
         {
           "range" : {
             "date_start" : {
-              "gte" : "now/d"
+              "gt" : "now/d"
             }
           }
         },
@@ -66,5 +66,8 @@
         {{/if ~}}
       ]
     }
+  },
+  "sort": {
+    "date_start": "asc"
   }
 }
