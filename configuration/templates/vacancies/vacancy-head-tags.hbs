@@ -2,24 +2,25 @@
 {{#with data.primaryResponse.hits.hits.[0]._source ~}}
 
 <title>{{title}} with {{organisation.name}} – Goodmoves</title>
-<meta property="og:title" content="{{title}} with {{organisation.name}} – Goodmoves" data-dynamic="true">
-<meta itemprop="name" content="{{title}} with {{organisation.name}} – Goodmoves" data-dynamic="true">
-<meta name="twitter:title" content="{{title}} with {{organisation.name}} – Goodmoves" data-dynamic="true">
+<meta property="og:title" content="{{title}} with {{organisation.name}} – Goodmoves">
+<meta itemprop="name" content="{{title}} with {{organisation.name}} – Goodmoves">
+<meta name="twitter:title" content="{{title}} with {{organisation.name}} – Goodmoves">
 
 {{#ifAny organisation.logo_url og_image ../og_image ~}}
-<meta property="og:image" content="{{default organisation.logo_url og_image ../og_image}}" data-dynamic="true">
-<meta property="og:image:height" content="250">
-<meta property="og:image:width" content="250">
-<meta itemprop="image" content="{{default organisation.logo_url og_image ../og_image}}" data-dynamic="true">
-<meta name="twitter:image" content="{{default organisation.logo_url og_image ../og_image}}" data-dynamic="true">
+<meta property="og:image" content="{{default organisation.logo_url og_image ../og_image}}">
+{{!-- <meta property="og:image:height" content="250">
+<meta property="og:image:width" content="250"> --}}
+<meta itemprop="image" content="{{default organisation.logo_url og_image ../og_image}}">
+<meta name="twitter:image" content="{{default organisation.logo_url og_image ../og_image}}">
+<meta name="twitter:image:alt" content="{{organisation.name}}">
 {{/ifAny ~}}
 
 {{#ifAny og_summary description ../og_summary ../description ~}}
-<meta property="og:summary" content="{{stripTags (regexReplace (default og_summary (default ../og_summary (default description ../description))) '\r|\n' 'gi' '')}}" data-dynamic="true">
-<meta itemprop="description" content="{{stripTags (regexReplace (default description (default ../description (default og_summary ../og_summary))) '\r|\n' 'gi' '')}}" data-dynamic="true">
-<meta name="description" content="{{stripTags (regexReplace (default description (default ../description (default og_summary ../og_summary))) '\r|\n' 'gi' '')}}" data-dynamic="true">
-<meta property="og:description" content="{{stripTags (regexReplace (default description (default ../description (default og_summary ../og_summary))) '\r|\n' 'gi' '')}}" data-dynamic="true">
-<meta name="twitter:description" content="{{stripTags (regexReplace (default description (default ../description (default og_summary ../og_summary))) '\r|\n' 'gi' '')}}" data-dynamic="true">
+<meta property="og:summary" content="{{stripTags (regexReplace (default og_summary (default ../og_summary (default description ../description))) '\r|\n' 'gi' '')}}">
+<meta itemprop="description" content="{{stripTags (regexReplace (default description (default ../description (default og_summary ../og_summary))) '\r|\n' 'gi' '')}}">
+<meta name="description" content="{{stripTags (regexReplace (default description (default ../description (default og_summary ../og_summary))) '\r|\n' 'gi' '')}}">
+<meta property="og:description" content="{{stripTags (regexReplace (default description (default ../description (default og_summary ../og_summary))) '\r|\n' 'gi' '')}}">
+<meta name="twitter:description" content="{{stripTags (regexReplace (default description (default ../description (default og_summary ../og_summary))) '\r|\n' 'gi' '')}}">
 {{/ifAny ~}}
 
 <!-- Twitter Card data -->
@@ -31,8 +32,8 @@
 
 <!-- Open Graph data -->
 <meta property="og:type" content="website" />
-{{#if slug ~}}
-<!-- <meta property="og:url" content="https://goodmoves.com/vacancy/{{slug}}" /> -->
+{{#if path ~}}
+<meta property="og:url" content="https://goodmoves.com/{{path}}" />
 {{/if ~}}
 <meta property="og:site_name" content="Goodmoves" />
 
@@ -43,6 +44,6 @@
 {{/with ~}}
 {{else}}
 <title>Job vacancy – Goodmoves</title>
-<meta property="og:title" content="Job vacancy – Goodmoves" data-dynamic="true">
+<meta property="og:title" content="Job vacancy – Goodmoves">
 {{/if ~}}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
