@@ -44,6 +44,11 @@
       "minimum_should_match": 1,
       "must": [
         {
+          "term": {
+            "team": "events"
+          }
+        },
+        {
           "range" : {
             "date_start" : {
               "gt" : "now/d"
