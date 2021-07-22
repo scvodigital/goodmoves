@@ -8,7 +8,7 @@
       <h2 id="save-search-dialog-label" class="mdc-dialog__title">Give your search a name</h2>
       <section id="save-search-dialog-description" class="mdc-dialog__content">
         <div class="mdc-text-field mdc-text-field--box" data-mdc-auto-init="MDCTextField">
-          <input type="text" id="saved-search-name" name="name" class="mdc-text-field__input" value="
+          <input type="text" id="saved-search-name" name="name" class="mdc-text-field__input" maxlength="250" value="
 {{~#with @root.request.params.query~}}
   {{~#if keywords~}}
     {{~keywords~}}
