@@ -1368,6 +1368,7 @@ a.mdc-drawer__content-heading {
   .mdc-card__info--content-secondary,
   .mdc-card__info--content-primary {
     .mdc-card__info--content-primary-title {
+      clear: both;
       a .top-content {
         background-color: $secondary-color !important;
         color: white;
@@ -2165,7 +2166,7 @@ footer.mdc-layout__footer {
   .mdc-card.full .mdc-card__info--content-primary-row .mdc-card__media img,
   .mdc-card .mdc-card__info--content-primary-row .mdc-card__media img,
   .mdc-card .mdc-card__info--content-secondary-row .mdc-card__media img {
-    margin: 0 auto;
+    margin: $unit auto;
   }
 }
 
