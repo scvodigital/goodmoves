@@ -60,7 +60,7 @@
       </div>
       <div class="panel mdc-card--full-content" role="tabpanel" aria-hidden="true" data-tab-name="location">
         <div class="location-info">
-          {{#if various_locations ~}}
+          {{#ifAll various_locations (compare organisation.postcode "===" postcodes.[0]) ~}}
             <div class="h-margin-full v-margin-full">
               <p class="mdc-typography--body1">
                 <span class="far fa-map-marker-alt fa-fw" title="Location"></span>
@@ -138,7 +138,7 @@
                 </p>
               </div>
             {{/compare ~}}
-          {{/if}}
+          {{/ifAll}}
         </div>
       </div>
       <div class="panel mdc-card--full-content" role="tabpanel" aria-hidden="true" data-tab-name="notes">
