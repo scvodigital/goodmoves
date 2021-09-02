@@ -60,76 +60,85 @@
       </div>
       <div class="panel mdc-card--full-content" role="tabpanel" aria-hidden="true" data-tab-name="location">
         <div class="location-info">
-          {{#compare (length geo_info) ">" 0 ~}}
-            <div class="container-content container-map">
-              <div id="map-content-primary" data-map-name="vacancyMap" data-map-clustered-options='{
-                  }'>
-                {{#each (arrayify geo_info) ~}}
-                  <marker style="display:none;" data-map="vacancyMap" data-lat="{{latitude}}" data-lng="{{longitude}}" data-title="{{../organisation.name}} - {{../title}}">
-                    <h3 class="mdc-typography--headline8">{{../organisation.name}}</h3>
-                    <p class="mdc-typography--body2">
-                      {{../title}}<br />
-                      Postcode: {{postcode}}
-                    </p>
-                    <form action="https://maps.google.co.uk/maps" method="get" target="_blank">
-                      {{#if @root.request.params.query.location ~}}
-                      <input type="hidden" name="saddr" value="{{@root.request.params.query.location}}" />
-                      {{else}}
-                      <p class="mdc-typography--body2">
-                        Enter your starting address:
-                        <input type="text" name="saddr" />
-                      </p>
-                      {{/if ~}}
-                      <input type="hidden" name="daddr" value="{{postcode}}" />
-                      <input type="hidden" name="dirflg" value="r" />
-                      <input type="submit" value="Get directions" class="mdc-button mdc-button--raised" />
-                    </form>
-                  </marker>
-                {{/each ~}}
-              </div>
-            </div>
-
-            <div class="t-padding-full r-padding-full l-padding-full">
-              {{#each (arrayify geo_info) ~}}
-              <form action="https://maps.google.co.uk/maps" method="get" target="_blank" class="b-padding-full">
-                {{#if @root.request.params.query.location ~}}
-                <input type="hidden" name="saddr" value="{{@root.request.params.query.location}}" />
-                {{else}}
-                <p class="mdc-typography--body2">
-                  Enter your starting address:
-                  <input type="text" name="saddr" />
-                </p>
-                {{/if ~}}
-                <input type="hidden" name="daddr" value="{{postcode}}" />
-                <input type="hidden" name="dirflg" value="r" />
-                {{#compare (length ../geo_coords) 1 ~}}
-                <input type="submit" value="Get directions" class="mdc-button mdc-button--raised" />
-                {{else}}
-                <input type="submit" value="Get directions to {{postcode}}" class="mdc-button mdc-button--raised" />
-                {{/compare ~}}
-              </form>
-              {{/each ~}}
-            </div>
-          {{else}}
-            <div class="container-content v-margin-full">
+          {{#if various_locations ~}}
+            <div class="h-margin-full v-margin-full">
               <p class="mdc-typography--body1">
                 <span class="far fa-map-marker-alt fa-fw" title="Location"></span>
-                {{#ifAny home_based various_locations ~}}
-                {{#if home_based ~}}
-                Home-based
-                {{else}}
-                {{#if various_locations ~}}
                 Various locations
-                {{else}}
-                A specific job location has not been provided
-                {{/if ~}}
-                {{/if ~}}
-                {{else}}
-                A specific job location has not been provided
-                {{/ifAny ~}}
               </p>
             </div>
-          {{/compare ~}}
+          {{else}}
+            {{#compare (length geo_info) ">" 0 ~}}
+              <div class="container-content container-map">
+                <div id="map-content-primary" data-map-name="vacancyMap" data-map-clustered-options='{
+                    }'>
+                  {{#each (arrayify geo_info) ~}}
+                    <marker style="display:none;" data-map="vacancyMap" data-lat="{{latitude}}" data-lng="{{longitude}}" data-title="{{../organisation.name}} - {{../title}}">
+                      <h3 class="mdc-typography--headline8">{{../organisation.name}}</h3>
+                      <p class="mdc-typography--body2">
+                        {{../title}}<br />
+                        Postcode: {{postcode}}
+                      </p>
+                      <form action="https://maps.google.co.uk/maps" method="get" target="_blank">
+                        {{#if @root.request.params.query.location ~}}
+                        <input type="hidden" name="saddr" value="{{@root.request.params.query.location}}" />
+                        {{else}}
+                        <p class="mdc-typography--body2">
+                          Enter your starting address:
+                          <input type="text" name="saddr" />
+                        </p>
+                        {{/if ~}}
+                        <input type="hidden" name="daddr" value="{{postcode}}" />
+                        <input type="hidden" name="dirflg" value="r" />
+                        <input type="submit" value="Get directions" class="mdc-button mdc-button--raised" />
+                      </form>
+                    </marker>
+                  {{/each ~}}
+                </div>
+              </div>
+
+              <div class="t-padding-full r-padding-full l-padding-full">
+                {{#each (arrayify geo_info) ~}}
+                <form action="https://maps.google.co.uk/maps" method="get" target="_blank" class="b-padding-full">
+                  {{#if @root.request.params.query.location ~}}
+                  <input type="hidden" name="saddr" value="{{@root.request.params.query.location}}" />
+                  {{else}}
+                  <p class="mdc-typography--body2">
+                    Enter your starting address:
+                    <input type="text" name="saddr" />
+                  </p>
+                  {{/if ~}}
+                  <input type="hidden" name="daddr" value="{{postcode}}" />
+                  <input type="hidden" name="dirflg" value="r" />
+                  {{#compare (length ../geo_coords) 1 ~}}
+                  <input type="submit" value="Get directions" class="mdc-button mdc-button--raised" />
+                  {{else}}
+                  <input type="submit" value="Get directions to {{postcode}}" class="mdc-button mdc-button--raised" />
+                  {{/compare ~}}
+                </form>
+                {{/each ~}}
+              </div>
+            {{else}}
+              <div class="h-margin-full v-margin-full">
+                <p class="mdc-typography--body1">
+                  <span class="far fa-map-marker-alt fa-fw" title="Location"></span>
+                  {{#ifAny home_based various_locations ~}}
+                  {{#if home_based ~}}
+                  Home-based
+                  {{else}}
+                  {{#if various_locations ~}}
+                  Various locations
+                  {{else}}
+                  A specific job location has not been provided
+                  {{/if ~}}
+                  {{/if ~}}
+                  {{else}}
+                  A specific job location has not been provided
+                  {{/ifAny ~}}
+                </p>
+              </div>
+            {{/compare ~}}
+          {{/if}}
         </div>
       </div>
       <div class="panel mdc-card--full-content" role="tabpanel" aria-hidden="true" data-tab-name="notes">
