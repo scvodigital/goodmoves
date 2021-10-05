@@ -334,12 +334,13 @@ header {
           color: $secondary-color;
         }
       }
-      .mdc-tab:active,
       .mdc-tab:focus,
       .mdc-tab:hover {
         background-size: 5px 50px;
       }
+      .mdc-tab:active,
       .mdc-tab.mdc-tab--active {
+        transition: background-size 0s;
         background-size: 0 0 !important;
         background-color: $mdc-theme-primary !important;
         .mdc-tab__text-label {
@@ -1723,7 +1724,8 @@ a[href^="https://search.volunteerscotland.net"]::after {
 }
 a[href^="http://search.volunteerscotland.net"].noext::after,
 a[href^="https://search.volunteerscotland.net"].noext::after {
-  content: ""
+  content: "";
+  margin: 0;
 }
 
 .content-volunteering-search {
