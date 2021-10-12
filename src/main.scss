@@ -339,6 +339,7 @@ header {
         background-size: 5px 50px;
       }
       .mdc-tab:active,
+      .mdc-tab:focus,
       .mdc-tab.mdc-tab--active {
         transition: background-size 0s;
         background-size: 0 0 !important;
