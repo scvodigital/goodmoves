@@ -154,7 +154,7 @@
                       buttonClasses="btn btn-lg btn-primary t-margin-full"
                       imageUrl=(default @root.data.auth.photoURL false)
                       imageClasses="far fa-fw user-avatar r-margin-full"
-                      iconClasses=(if (if @root.data.auth.photoURL false else=true) "far fa-fw fa-user-circle" else=false)
+                      iconClasses=(if (if @root.data.auth.photoURL false else=true) "far fa-fw fa-user-circle r-margin-full" else=false)
                       buttonLabel="My preferences"
                       arrowClasses="far fa-fw fa-angle-down l-margin-full"}}
                     {{#each @root.context.metaData.menus.user-signed-in ~}}
