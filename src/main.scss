@@ -509,11 +509,23 @@ header {
 
 .back-to-results {
   background: $mdc-theme-tertiary-light;
-  border-radius: 2px;
+  border-radius: $unit;
   font-weight: 400;
-  padding: $unit/3 $unit/2;
+  padding: 0.2rem 0.4rem;
   margin: $unit 0 $unit*1.5;
   display: inline-block;
+}
+.back-to-results:hover,
+.back-to-results:focus {
+  background: $mdc-theme-tertiary-medium;
+}
+.back-to-results:hover,
+.back-to-results:focus,
+.back-to-results:hover strong,
+.back-to-results:focus strong,
+.back-to-results:hover .fa-fw,
+.back-to-results:focus .fa-fw {
+  color: white,
 }
 
 .mdc-drawer {
