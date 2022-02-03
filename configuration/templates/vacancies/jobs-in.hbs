@@ -1,4 +1,4 @@
-<div id="detailed-results-container" class="container-content content-primary-search">
+<div id="detailed-results-container" class="container-content content-primary-search b-margin-full">
   <h1 class="mdc-typography--headline3">
     Jobs in
     {{#if @root.request.params.ward}}
@@ -48,12 +48,18 @@
 
   <div class="search-info">
     <strong>
-      Total number of jobs in
+      {{#if @root.request.url.query}}
+        Jobs matching your search query in
+      {{else}}
+        Total number of jobs in
+      {{/if}}
       {{#if @root.request.params.ward}}
       {{{replace (getProperty @root.data.termsMaps.districts.slugsMap (concat @root.request.params.district ".wards." @root.request.params.ward ".term")) "/" " &amp; "}}},
       {{/if}}
       {{getProperty @root.data.termsMaps.districts.slugsMap (concat @root.request.params.district ".term")}}:
-    </strong> {{@root.data.search_data.detailed_results.hits.total}}
+    </strong>
+    {{@root.data.search_data.detailed_results.hits.total}}&ensp;
+    <a href="/search{{> query_search}}">All areas</a>
   </div>
 
   {{#each @root.data.search_data.detailed_results.hits.hits ~}}
