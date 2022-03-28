@@ -143,6 +143,12 @@
       "icon": "cookie",
       "path": "/cookies",
       "route": "^/cookies"
+    },
+    {
+      "label": "Terms & conditions",
+      "icon": "file-contract",
+      "path": "/terms",
+      "route": "^/terms"
     }
   ]
 }
