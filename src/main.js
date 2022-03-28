@@ -39,7 +39,7 @@ export class Goodmoves {
     this.componentsInitialiser = new ComponentsInitialiser({
       themes: {
         primary: {
-          background: '#42842A',
+          background: '#B6497D',
           text: '#ffffff'
         },
         secondary: {
@@ -75,9 +75,9 @@ export class Goodmoves {
     ci.options.message = "We use cookies to track anonymous usage statistics and do not collect any personal information that can be used to identify you. By continuing to visit this site you agree to our use of cookies.";
     ci.options.fontFamily = "'Ingra',Helvetica,Arial,sans-serif";
     ci.options.bg = "#fff";
-    ci.options.link = "#42842A";
+    ci.options.link = "#B6497D";
     ci.options.divlink = "#fff";
-    ci.options.divlinkbg = "#42842A";
+    ci.options.divlinkbg = "#B6497D";
     ci.options.position = "bottom";
     ci.options.acceptOnScroll = "true";
     ci.options.moreinfo = "/cookies";

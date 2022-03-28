@@ -3,8 +3,8 @@
     {{#compare action "===" "organisation" ~}}
     <a href="https://search.volunteerscotland.net/organisation/{{organisation_id}}/{{organisation_name_slug}}?utm_source=goodmoves&utm_campaign=search&utm_medium=website" class="mdc-card__action hide-sm noext">Find out more about {{organisation_name}}</a>
     {{else}}
-    <a href="https://search.volunteerscotland.net/opportunity/{{Id}}/{{title_slug}}?utm_source=goodmoves&utm_campaign=search&utm_medium=website" class="mdc-card__action hide-sm noext">Find out more</a>
-    <a href="https://search.volunteerscotland.net/opportunity/{{Id}}/{{title_slug}}?utm_source=goodmoves&utm_campaign=search&utm_medium=website" class="mdc-card__action hide-md hide-lg noext"><span class="fal fa-info-circle fa-fw fa-2x" aria-hidden="true"></span></a>
+    <a href="https://search.volunteerscotland.net/opportunity/{{Id}}/{{title_slug}}?utm_source=goodmoves&utm_campaign=search&utm_medium=website" class="mdc-card__action hide-sm noext" aria-label="Find out more about {{title}}">Find out more</a>
+    <a href="https://search.volunteerscotland.net/opportunity/{{Id}}/{{title_slug}}?utm_source=goodmoves&utm_campaign=search&utm_medium=website" class="mdc-card__action hide-md hide-lg noext" aria-label="Find out more about {{title}}"><span class="fal fa-info-circle fa-fw fa-2x" aria-hidden="true"></span></a>
     {{/compare ~}}
   </div>
 </div>

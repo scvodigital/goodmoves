@@ -35,6 +35,7 @@ $gray-color-light: #F0F1F2;
 $yellow-color: #FFDB00;
 
 $goodmoves-color: $mdc-theme-primary;
+$gathering-color: #a2195b;
 $tfn-legacy-color: #3b9db1;
 $tfn-color: #22E5EB;
 $tfn-color-alt: #00A2BC;
@@ -187,12 +188,13 @@ footer.mdc-layout__footer {
     margin: 0;
     list-style-type: none;
     li {
-      margin: 0;
-      display: inline;
+      // margin: 0;
+      display: inline-block;
+      vertical-align: top;
     }
   }
   .text-link {
-    font-size: 91%;
+    font-size: 98.14%;
     display: inline-block;
     height: 40px;
     line-height: 40px;
@@ -203,6 +205,10 @@ footer.mdc-layout__footer {
   }
   .brand-coronavirus .text-link:hover {
     background-color: $primary-color;
+    color: white;
+  }
+  .brand-gathering .text-link:hover {
+    background-color: $gathering-color;
     color: white;
   }
   .brand-fundingscotland .text-link.active,
@@ -334,12 +340,14 @@ header {
           color: $secondary-color;
         }
       }
-      .mdc-tab:active,
       .mdc-tab:focus,
       .mdc-tab:hover {
         background-size: 5px 50px;
       }
+      .mdc-tab:active,
+      .mdc-tab:focus,
       .mdc-tab.mdc-tab--active {
+        transition: background-size 0s;
         background-size: 0 0 !important;
         background-color: $mdc-theme-primary !important;
         .mdc-tab__text-label {
@@ -363,7 +371,7 @@ header {
         }
       }
       .brand-logo img {
-        height: 36px;
+        height: 40px;
       }
     }
     // #upper-tab-bar {
@@ -501,11 +509,23 @@ header {
 
 .back-to-results {
   background: $mdc-theme-tertiary-light;
-  border-radius: 2px;
+  border-radius: $unit;
   font-weight: 400;
-  padding: $unit/3 $unit/2;
+  padding: 0.2rem 0.4rem;
   margin: $unit 0 $unit*1.5;
   display: inline-block;
+}
+.back-to-results:hover,
+.back-to-results:focus {
+  background: $mdc-theme-tertiary-medium;
+}
+.back-to-results:hover,
+.back-to-results:focus,
+.back-to-results:hover strong,
+.back-to-results:focus strong,
+.back-to-results:hover .fa-fw,
+.back-to-results:focus .fa-fw {
+  color: white,
 }
 
 .mdc-drawer {
@@ -516,6 +536,7 @@ header {
   h3,
   h4,
   p,
+  .mdc-drawer__subtitle,
   .mdc-tab__text-label {
     color: white;
   }
@@ -1053,7 +1074,7 @@ input[type=button].wfPageNextButton:hover,
 }
 
 .search-info {
-  color: $mdc-theme-primary;
+  // color: $mdc-theme-primary;
   padding: 0;
   .search-info-bg {
     width: fit-content;
@@ -1723,7 +1744,8 @@ a[href^="https://search.volunteerscotland.net"]::after {
 }
 a[href^="http://search.volunteerscotland.net"].noext::after,
 a[href^="https://search.volunteerscotland.net"].noext::after {
-  content: ""
+  content: "";
+  margin: 0;
 }
 
 .content-volunteering-search {
@@ -2162,10 +2184,18 @@ footer.mdc-layout__footer {
 }
 
 @media screen and (max-width: 450px) {
+  .mdc-card {
+    .mdc-card__info--content-secondary,
+    .mdc-card__info--content-primary {
+      .mdc-card__info--content-primary-title {
+        clear: both;
+      }
+    }
+  }
   .mdc-card.full .mdc-card__info--content-primary-row .mdc-card__media img,
   .mdc-card .mdc-card__info--content-primary-row .mdc-card__media img,
   .mdc-card .mdc-card__info--content-secondary-row .mdc-card__media img {
-    margin: 0 auto;
+    margin: $unit auto;
   }
 }
 

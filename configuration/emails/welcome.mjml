@@ -1,7 +1,7 @@
 <mjml>
   <mj-body background-color="#eaeaea">
     <mj-wrapper background-color="#ffffff" padding="10px">
-      <mj-section background-color="#42842A" padding="10px">
+      <mj-section background-color="#B6497D" padding="10px">
         <mj-column padding="0px">
           <mj-image src="https://storage.googleapis.com/scvo-assets/emailer/goodmoves-logo-white.png" width="352px" align="left" padding="0px"></mj-image>
         </mj-column>
