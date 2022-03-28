@@ -130,24 +130,25 @@
     {{/compare ~}}
     {{/compare ~}}
     {{else}}
-    "_score",
-    {
-      "start_at": "desc"
-    }
-    {{/if ~}}
-    {{#ifAll @root.request.params.query.location @root.request.params.query.lat @root.request.params.query.lng ~}},
-    {
-      "_geo_distance": {
-        "geo_coords": {
-          "lat": {{request.params.query.lat}},
-          "lon": {{request.params.query.lng}}
-        },
-        "order": "asc",
-        "unit": "km",
-        "mode": "min",
-        "distance_type": "arc"
+      {{#ifAll @root.request.params.query.location @root.request.params.query.lat @root.request.params.query.lng ~}}
+      {
+        "_geo_distance": {
+          "geo_coords": {
+            "lat": {{request.params.query.lat}},
+            "lon": {{request.params.query.lng}}
+          },
+          "order": "asc",
+          "unit": "km",
+          "mode": "min",
+          "distance_type": "arc"
+        }
       }
-    }
-    {{/ifAll ~}}
+      {{else}}
+      "_score",
+      {
+        "start_at": "desc"
+      }
+      {{/ifAll ~}}
+    {{/if ~}}
   ]
 }
