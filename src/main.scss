@@ -319,7 +319,7 @@ header {
     .mdc-tab-bar {
       // height: auto;
       .mdc-tab {
-        border-radius: .1rem .1rem 0 0;
+        border-radius: .2rem .2rem 0 0;
         color: $secondary-color;
         background: linear-gradient(to bottom, $mdc-theme-primary-light 0%, $mdc-theme-primary-light 100%);
         background-position: 0 100%;
@@ -1261,7 +1261,6 @@ input[type=button].wfPageNextButton:hover,
     }
   }
   .content-primary-info-container {
-    border-radius: 2px;
     background-color: white;
     box-shadow: none;
     border: 1px solid $mdc-theme-tertiary-light;
@@ -1392,7 +1391,7 @@ a.mdc-drawer__content-heading {
       a .top-content {
         background-color: $secondary-color !important;
         color: white;
-        border-radius: 5px;
+        border-radius: 7.333px;
         display: block;
         width: fit-content;
         margin-bottom: $unit/2;
