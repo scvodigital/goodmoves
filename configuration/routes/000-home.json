@@ -1,7 +1,7 @@
 {
   "name": "home",
   "pattern": "/",
-  "debug": false,
+  "debug": true,
   "metaData": {
     "hideSearch": true
   },
@@ -130,20 +130,11 @@
     "context.metaData.commonTasks.termsMaps",
     {
       "name": "posts",
-      "taskModule": "elasticsearch",
+      "taskModule": "request",
       "config": {
-        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
-        "elasticsearchConfig": {
-          "apiVersion": "5.6"
-        },
-        "queryTemplates": [
-          {
-            "name": "tfn_latest",
-            "index": "",
-            "type": "",
-            "template": ">context.metaData.handlebars.queries.posts_tfn-latest"
-          }
-        ]
+        "optionsTemplates": {
+          "tfn_latest": ">context.metaData.handlebars.queries.posts_tfn-latest"
+        }
       },
       "renderer": "handlebars"
     },
