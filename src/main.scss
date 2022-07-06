@@ -181,7 +181,7 @@ footer.mdc-layout__footer {
 }
 
 .scvo-link-bar {
-  background-color: $gray-color-light;
+  background-color: white;
   height: 40px;
   width: 100%;
   ul {
@@ -202,6 +202,7 @@ footer.mdc-layout__footer {
     padding: 0 0.4rem;
     color: $secondary-color;
     text-decoration: none;
+    border-radius: 0 0 0.2rem 0.2rem;
   }
   .brand-coronavirus .text-link:hover {
     background-color: $primary-color;
@@ -236,6 +237,7 @@ footer.mdc-layout__footer {
     line-height: 38px;
     width: 90px;
     padding: 0 0.4rem;
+    border-radius: 0 0 0.2rem 0.2rem;
     img {
       vertical-align: middle;
       width: 100%
@@ -244,6 +246,10 @@ footer.mdc-layout__footer {
   .brand-scvo .brand-logo:hover img,
   .brand-scvo .brand-logo.active img {
     filter: invert(1) contrast(100);
+  }
+  .brand-scvo.l-margin.r-margin-full {
+    background-color: $gray-color-light;
+    border-radius: 0 0 0.2rem 0.2rem;
   }
 }
 //
