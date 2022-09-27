@@ -590,6 +590,7 @@ header {
 .mdc-drawer--occasional {
   margin-left: $unit;
   margin-bottom: $unit*3;
+  border-radius: 0 0 7px 7px;
 }
 .mdc-drawer--temporary {
   .mdc-drawer__header-content {
