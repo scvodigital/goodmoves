@@ -49,6 +49,7 @@ $medium-line: 2px;
 $slow-transition-speed: 0.333s;
 $fast-transition-speed: 0.12s;
 
+
 @import "./node_modules/material-components-web/material-components-web.scss";
 @import "./node_modules/@scvo/common/old/common-styles.scss";
 @import url(../node_modules/leaflet.markercluster/dist/MarkerCluster.css);
