@@ -21,7 +21,6 @@
   "description": "{{stripTags (regexReplace description '\r|\n' 'gi' '')}}",
   "employmentType": "{{{role_status_list}}}",
   "industry": {{{stringify sectors}}},
-  "jobLocationType": "TELECOMMUTE",
   {{#ifAny geo_info.[0] organisation.street_address organisation.postcode ~}}
   "jobLocation": {
     "@type": "Place",
@@ -47,6 +46,7 @@
     }
   },
   {{else}}
+  "jobLocationType": "TELECOMMUTE",
   "jobLocation": "{{location}}",
   {{/ifAny ~}}
   "hiringOrganization": {
