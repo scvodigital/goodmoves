@@ -24,10 +24,6 @@ Twitter: digiscot
 
 Guidance and testing: The SCVO Staff
 Website: https://scvo.scot/about/staff-team
-Twitter: scvotweet
-Facebook: scvo1939
-Youtube: scvotv
-LinkedIn: scvo
 
 /* SITE */
 Last update: {{momentFormat (moment) 'YYYY-MM-DD'}}

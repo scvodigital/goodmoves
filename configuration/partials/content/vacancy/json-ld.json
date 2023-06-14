@@ -47,6 +47,7 @@
   },
   {{else}}
   "jobLocation": "{{location}}",
+  "jobLocationType": "TELECOMMUTE",
   {{/ifAny ~}}
   "hiringOrganization": {
     "@type": "Organization",
