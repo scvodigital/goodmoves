@@ -9,4 +9,6 @@
   {{/compare ~}}
   {{> content_vacancy_actions slug=slug Id=Id home_based=home_based various_locations=various_locations distance=distance}}
 </div>
-{{>ga documentType="goodmoves-vacancy" documentId=Id hitType=(default hitContext "search-result")}}
+<script>
+	{{>ga documentType="goodmoves-vacancy" documentId=Id hitType=(default hitContext "search-result") title=title}}
+</script>

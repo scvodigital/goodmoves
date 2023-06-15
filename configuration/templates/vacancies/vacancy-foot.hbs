@@ -28,6 +28,13 @@ $(document).ready(function() {
       'event_label': vacancyId,
       'hit_type': filename
     });
+
+    gtag('event', 'document_hit', {
+      'sf_type': 'Vacancy__c',
+      'id': vacancyId,
+      'title': filename,
+      'hit_type': filename
+    });
   });
   $('.detailed-info a').on('click', function(evt) {
     var url = $(evt.currentTarget).attr('href');
@@ -54,6 +61,13 @@ $(document).ready(function() {
     gtag('event', 'document_hit', {
       'event_category': 'goodmoves-vacancy',
       'event_label': vacancyId,
+      'hit_type': hitType
+    });
+
+    gtag('event', 'document_hit', {
+      'sf_type': 'Vacancy__c',
+      'id': vacancyId,
+      'title': url,
       'hit_type': hitType
     });
   });

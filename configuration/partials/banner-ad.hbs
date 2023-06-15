@@ -5,6 +5,8 @@
         <img class="responsive-img" src="{{og_image}}" alt="{{title}}" height="90">
       </a>
     </div>
-    {{>ga documentType="goodmoves-vacancy" documentId=Id hitType='banner-viewed'}}
+    <script>
+      {{>ga documentType="goodmoves-vacancy" documentId=Id hitType='banner-viewed' title=title}}
+    </script>
   {{/with ~}}
 {{/compare ~}}

@@ -9,4 +9,6 @@
   {{/compare ~}}
   {{> content_vacancy_actions slug=slug Id=Id}}
 </div>
-{{>ga documentType="goodmoves-vacancy" documentId=Id hitType=(default hitContext "list")}}
+<script>
+	{{>ga documentType="goodmoves-vacancy" documentId=Id hitType=(default hitContext "list") title=title}}
+</script>

@@ -192,6 +192,12 @@ export class Goodmoves {
         'event_label': id,
         'hit_type': 'banner-clicked'
       });
+      gtag('event', 'document_hit', {
+        'sf_type': 'Vacancy__c',
+        'id': id,
+        'title': 'Banner',
+        'hit_type': 'banner-clicked'
+      });
       console.log('Banner click tracked', id, gtag);
     });
   }

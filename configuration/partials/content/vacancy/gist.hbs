@@ -16,4 +16,6 @@
   </div>
   {{> content_vacancy_actions slug=slug Id=Id}}
 </div>
-{{>ga documentType="goodmoves-vacancy" documentId=Id hitType=(default hitContext "summary")}}
+<script>
+	{{>ga documentType="goodmoves-vacancy" documentId=Id hitType=(default hitContext "summary") title=title}}
+</script>

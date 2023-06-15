@@ -193,9 +193,13 @@
   </div>
 </div>
 {{#if @root.request.params.query.email ~}}
-  {{> ga documentType="goodmoves-vacancy" documentId=Id hitType="full-from-email"}}
+  <script>
+  	{{>ga documentType="goodmoves-vacancy" documentId=Id hitType="full-from-email" title=title}}
+  </script>
 {{else}}
-  {{> ga documentType="goodmoves-vacancy" documentId=Id hitType="full"}}
+  <script>
+  	{{>ga documentType="goodmoves-vacancy" documentId=Id hitType="full" title=title}}
+  </script>
 {{/if ~}}
 <script>
   function clearNotes(data) {
