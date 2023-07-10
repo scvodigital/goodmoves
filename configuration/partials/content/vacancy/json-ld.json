@@ -48,6 +48,11 @@
   {{else}}
   "jobLocation": "{{location}}",
   "jobLocationType": "TELECOMMUTE",
+  "applicantLocationRequirements": {
+    "@type": "Country",
+    "sameAs": "https://www.wikidata.org/wiki/Q145",
+    "name": "UK"
+  },
   {{/ifAny ~}}
   "hiringOrganization": {
     "@type": "Organization",
