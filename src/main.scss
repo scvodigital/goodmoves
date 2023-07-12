@@ -20,8 +20,8 @@ $mdc-theme-error: #A9201E;
 
 $mdc-theme-tfn: #bdedee;
 
-$mdc-theme-volunteering: #00a0af;
-$mdc-theme-volunteering-dark: #00717c;
+$mdc-theme-volunteering: #387c2c;
+$mdc-theme-volunteering-hover: #7BC143;
 
 $primary-color: #FF595A;
 $primary-color-light: #ffd6d6;
@@ -1418,6 +1418,10 @@ a.mdc-drawer__content-heading {
 .mdc-card__info--content-primary-title a:hover .hover-underline {
   color: $secondary-color-light;
 }
+.volunteering-banner .mdc-card__info--content-primary-title a:hover,
+.volunteering-banner .mdc-card__info--content-primary-title a:hover .hover-underline {
+  color: $mdc-theme-volunteering-hover;
+}
 
 .mdc-card .mdc-card__media--content-secondary {
   margin-right: 0;
@@ -1720,7 +1724,7 @@ footer,
   .home-browse .mdc-list .mdc-list-item:hover .mdc-list-item__text,
   a:hover,
   a:active {
-    color: $mdc-theme-volunteering-dark !important;
+    color: $mdc-theme-volunteering-hover !important;
   }
   .scroll-button .scroll-icon,
   .mdc-button.mdc-button--raised {
@@ -1728,10 +1732,12 @@ footer,
   }
   .scroll-button:hover .scroll-icon,
   .mdc-button.mdc-button--raised:hover {
-    background-color: $mdc-theme-volunteering-dark !important;
+    background-color: $mdc-theme-volunteering-hover !important;
   }
 }
 
+a[href^="http://volunteer.scot"]::after,
+a[href^="https://volunteer.scot"]::after,
 a[href^="http://search.volunteerscotland.net"]::after,
 a[href^="https://search.volunteerscotland.net"]::after {
   font-family: 'Font Awesome\ 5 Pro';
@@ -1749,6 +1755,8 @@ a[href^="https://search.volunteerscotland.net"]::after {
   top: -0.1rem;
   position: relative;
 }
+a[href^="http://volunteer.scot"].noext::after,
+a[href^="https://volunteer.scot"].noext::after,
 a[href^="http://search.volunteerscotland.net"].noext::after,
 a[href^="https://search.volunteerscotland.net"].noext::after {
   content: "";

@@ -2,14 +2,14 @@
   <div class="banner-search overlay" style="background-image: url('https://storage.googleapis.com/volunteerscotland-search/vs-search-homepage-image.jpg');">
     <div class="content page-content">
       <div class="search-content">
-        <form id="search-view" class="search-form" action="https://search.volunteerscotland.net/search" method="GET">
+        <form id="search-view" class="search-form" action="https://volunteer.scot/search" method="GET">
           <input type="hidden" name="lat" value="{{@root.request.params.query.lat}}" id="location-lat" />
-          <input type="hidden" name="lng" value="{{@root.request.params.query.lng}}" id="location-lng" />
+          <input type="hidden" name="lon" value="{{@root.request.params.query.lon}}" id="location-lon" />
           <input type="hidden" name="la" value="{{@root.request.params.query.la}}" id="location-la" />
           <input type="hidden" name="sort" value="{{@root.request.params.query.sort}}" id="default-sort" />
-          <input type="hidden" name="utm_source" value="goodmoves" id="default-utm_source" />
+          {{!-- <input type="hidden" name="utm_source" value="goodmoves" id="default-utm_source" />
           <input type="hidden" name="utm_campaign" value="search" id="default-utm_campaign" />
-          <input type="hidden" name="utm_medium" value="website" id="default-utm_medium" />
+          <input type="hidden" name="utm_medium" value="website" id="default-utm_medium" /> --}}
           <h2 class="mdc-typography--headline6">
             <span class="mdc-typography--headline4">Search</span> for a volunteering opportunity
           </h2>
@@ -20,7 +20,7 @@
                   <span class="far fa-map-marker-alt mdc-text-field__icon geo-lookup" tabindex="0" title="Find my location"></span>
                   <input type="text" id="where-opportunities" name="location" class="mdc-text-field__input" value="{{@root.request.params.query.location}}" placeholder="" data-lpignore="true" data-location-search='{
                     "latSelector": "[name=\"lat\"]",
-                    "lngSelector": "[name=\"lng\"]",
+                    "lngSelector": "[name=\"lon\"]",
                     "laSelector": "[name=\"la\"]",
                     "locationServicesSelector": ".geo-lookup"
                   }'>
@@ -38,8 +38,8 @@
                       <div class="mdc-select" data-mdc-auto-init="MDCSelect">
                         <span class="mdc-select__dropdown-icon"></span>
                         <select class="mdc-select__native-control" id="distance" name="distance">
-                          {{#each (split "5,10,15,20,25,30,35,40,45,50" ",")}}
-                            <option value="{{this}}" {{#compare (default @root.request.params.query.distance "10") "===" this}}selected{{/compare}}>{{this}} miles</option>
+                          {{#each (split "5,10,25,50" ",")}}
+                            <option value="{{this}}mi" {{#compare (default @root.request.params.query.distance "10") "===" this}}selected{{/compare}}>{{this}} miles</option>
                           {{/each}}
                         </select>
                         <label class="mdc-floating-label mdc-select__label--float-above" for="sort">
