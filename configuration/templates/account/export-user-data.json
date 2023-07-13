@@ -56,7 +56,7 @@
             "id": {{{stringify Id}}},
             "title": {{{stringify title}}},
             "organisation": {{{stringify organisation.name}}},
-            "url": {{{stringify (concat "https://goodmoves.com/vacancy/" slug)}}}
+            "url": {{{stringify (concat "https://goodmoves.org/vacancy/" slug)}}}
           }{{#unless @last}},{{/unless}}
         {{/with}}
       {{/each}}

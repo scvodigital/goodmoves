@@ -620,6 +620,7 @@ header {
   }
   .mdc-button {
     color: white;
+    line-height: 2rem;
   }
 }
 .mdc-button.mdc-button--large {
@@ -798,6 +799,69 @@ header {
 }
 .icon-toggle-on {
   color: $mdc-theme-primary-light;
+}
+
+.social .mdc-button, .social-button {
+  padding: 1px 0.6rem 1px 1px;
+  height: $unit*2.1;
+  border-radius: 2px;
+  border: none;
+  position: relative;
+  display: block;
+  margin-bottom: $unit;
+  width: 100%;
+  color: white;
+  font-weight: 600;
+  .google-logo {
+    img {
+      width: $unit*1.2;
+    }
+  }
+  .fa-fw {
+    height: $unit*2.1;
+    width: $unit*2.1;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1px;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    margin-right: 0.6rem;
+  }
+}
+.provider-google.mdc-chip--selected,
+.provider-google.mdc-chip--selected:hover,
+#continue-with-google {
+  background-color: #4285F4 !important;
+}
+.chip.bg-google:focus,
+.chip.bg-google:hover,
+#continue-with-google:focus,
+#continue-with-google:hover {
+  background-color: #3367d6 !important;
+}
+.provider-twitter.mdc-chip--selected,
+.provider-twitter.mdc-chip--selected:hover,
+#continue-with-twitter {
+  background-color: #007DA3 !important;
+}
+.provider-facebook.mdc-chip--selected,
+.provider-facebook.mdc-chip--selected:hover,
+#continue-with-facebook {
+  background-color: #17A9FD !important;
+}
+.social .fab.fa-facebook {
+  color: #17A9FD !important;
+  line-height: 1rem;
+  font-size: 1.1rem;
+}
+.chip.bg-facebook:focus,
+.chip.bg-facebook:hover,
+#continue-with-facebook:focus,
+#continue-with-facebook:hover {
+  background-color: #0165E1 !important;
 }
 
 #google_translate_element {
