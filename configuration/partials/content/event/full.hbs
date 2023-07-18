@@ -253,9 +253,9 @@
         {{#if Speaker_Biography__c ~}}<br />
         {{Speaker_Biography__c}}
         {{/if ~}}
-        {{#if Contact__r.Contact_Twitter_Handle__c ~}}<br />
+        {{!-- {{#if Contact__r.Contact_Twitter_Handle__c ~}}<br />
         Twitter: <a href="https://twitter.com/{{replace Contact__r.Contact_Twitter_Handle__c '@' ''}}">{{Contact__r.Contact_Twitter_Handle__c}}</a>
-        {{/if ~}}
+        {{/if ~}} --}}
         {{#if Contact__r.LinkedIn_URL__c ~}}
         <br />
         LinkedIn: <a href="{{Contact__r.LinkedIn_URL__c}}">{{Contact__r.LinkedIn_URL__c}}</a>

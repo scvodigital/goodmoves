@@ -12,7 +12,7 @@
     "emailVerified": {{{stringify @root.data.auth.emailVerified}}},
     "metadata": {{{stringify @root.data.auth.metadata}}},
     "providerData": {
-      "dataComment": "Each account can be linked to one or more authentication provider (email/password, Google, Facebook, Twitter), this is the information we store in relation to each authentication provider.",
+      "dataComment": "Each account can be linked to one or more authentication provider (email/password, Google, Facebook), this is the information we store in relation to each authentication provider.",
       "items": {{{stringify @root.data.auth.providerData}}}
     }
   },

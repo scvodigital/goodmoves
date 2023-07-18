@@ -15,7 +15,6 @@
     "has_logo",
     "logo_url",
     "facebook",
-    "twitter",
     "website",
     "website_url",
     "rendered.json_ld"
