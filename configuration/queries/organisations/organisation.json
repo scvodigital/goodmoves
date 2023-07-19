@@ -16,6 +16,8 @@
     "facebook_url",
     "linkedin",
     "linkedin_url",
+    "twitter",
+    "twitter_url",
     "website",
     "website_url",
     "rendered.json_ld",
