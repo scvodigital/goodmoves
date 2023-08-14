@@ -23,18 +23,8 @@
           {{#compare website "!==" null ~}}
           {{#compare website "!==" "http://" ~}}
           <li class="mdc-card__info--content-secondary-website mdc-typography--body1">
-            <span class="fa-li"><span class="far fa-link fa-fw" title="Website"></span></span>
+            <span class="fa-li"><span class="far fa-link fa-fw"></span></span>
             <a href="{{website_url}}">{{website}}</a>
-          </li>
-          {{/compare ~}}
-          {{/compare ~}}
-          {{/if ~}}
-          {{#if twitter ~}}
-          {{#compare twitter "!==" null ~}}
-          {{#compare twitter "!==" "http://" ~}}
-          <li class="mdc-card__info--content-secondary-twitter mdc-typography--body1">
-            <span class="fa-li"><span class="fab fa-twitter fa-fw" title="Twitter"></span></span>
-            <a href="{{twitter_url}}">{{twitter}}</a>
           </li>
           {{/compare ~}}
           {{/compare ~}}
@@ -43,7 +33,7 @@
           {{#compare facebook "!==" null ~}}
           {{#compare facebook "!==" "http://" ~}}
           <li class="mdc-card__info--content-secondary-facebook mdc-typography--body1">
-            <span class="fa-li"><span class="fab fa-facebook fa-fw" title="Facebook"></span></span>
+            <span class="fa-li"><span class="fab fa-facebook fa-fw"></span></span>
             <a href="{{facebook_url}}">{{facebook}}</a>
           </li>
           {{/compare ~}}
@@ -55,6 +45,16 @@
           <li class="mdc-card__info--content-secondary-linkedin mdc-typography--body1">
             <span class="fa-li"><span class="fab fa-linkedin fa-fw" title="LinkedIn"></span></span>
             <a href="{{linkedin_url}}">{{linkedin}}</a>
+          </li>
+          {{/compare ~}}
+          {{/compare ~}}
+          {{/if ~}}
+          {{#if twitter ~}}
+          {{#compare twitter "!==" null ~}}
+          {{#compare twitter "!==" "http://" ~}}
+          <li class="mdc-card__info--content-secondary-twitter mdc-typography--body1">
+            <span class="fa-li"><span class="fab fa-x-twitter fa-fw"></span></span>
+            <a href="{{twitter_url}}">{{twitter}}</a>
           </li>
           {{/compare ~}}
           {{/compare ~}}
