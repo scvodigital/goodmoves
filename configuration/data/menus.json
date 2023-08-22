@@ -133,6 +133,12 @@
       "route": "^/advertise"
     },
     {
+      "label": "Accessibility",
+      "icon": "circle-info",
+      "path": "/accessibility",
+      "route": "^/accessibility"
+    },
+    {
       "label": "Privacy",
       "icon": "lock-alt",
       "path": "/privacy",
