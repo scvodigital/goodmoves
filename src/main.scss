@@ -1858,6 +1858,9 @@ a[href^="https://search.volunteerscotland.net"].noext::after {
 .home-content-primary {
   background-color: $mdc-theme-tertiary-light;
 }
+.bg-white {
+  background-color: white;
+}
 .home-heading {
   padding-top: $unit*1.5;
 }
