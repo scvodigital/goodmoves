@@ -1,6 +1,6 @@
 {
   "name": "volunteering",
-  "pattern": "/volunteering",
+  "pattern": "/volunteering-old",
   "debug": false,
   "metaData": {
     "sidebarButton": {

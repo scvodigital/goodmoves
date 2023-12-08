@@ -1,6 +1,6 @@
 {
   "name": "volunteering_widget",
-  "pattern": "/volunteering-widget",
+  "pattern": "/volunteering",
   "debug": false,
   "metaData": {
     "sidebarButton": {
