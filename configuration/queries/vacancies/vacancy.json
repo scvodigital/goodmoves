@@ -30,6 +30,7 @@
     "end_at",
     "home_based",
     "postcodes",
+    "workplace",
     "various_locations",
     "organisation.slug",
     "organisation.name",

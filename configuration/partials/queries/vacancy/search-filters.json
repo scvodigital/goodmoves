@@ -17,6 +17,9 @@
   {{>queries_number_range field="salary_min" lte=salary_max}},
 {{/compare ~}}
 {{/if ~}}
+{{#if workplace ~}}
+  {{>queries_term field="workplace" term=workplace}},
+{{/if ~}}
 {{#ifAny regions location home_based various_locations ~}}
 {
   "bool": {

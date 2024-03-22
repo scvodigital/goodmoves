@@ -79,6 +79,7 @@
                 <div class="mdc-line-ripple"></div>
               </div>
             </div>
+
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
               <div class="mdc-select mdc-select--box" data-mdc-auto-init="MDCSelect">
                 <span class="mdc-select__dropdown-icon"></span>
@@ -100,7 +101,39 @@
       </div>
       <input type="hidden" name="lat" value="{{@root.request.params.query.lat}}">
       <input type="hidden" name="lng" value="{{@root.request.params.query.lng}}">
+
+      <div class="h-padding-full">
+        <div class="mdc-select mdc-select--box" data-mdc-auto-init="MDCSelect">
+          <span class="mdc-select__dropdown-icon"></span>
+          <select class="mdc-select__native-control workplace" id="{{instance_id}}-workplace" name="workplace">
+            <option {{#unless @root.request.params.query.workplace}} selected{{/unless}}>Any</option>
+            <option value="On site"{{#compare @root.request.params.query.workplace "On site"}} selected{{/compare}}>On site</option>
+            <option value="Remote"{{#compare @root.request.params.query.workplace "Remote"}} selected{{/compare}}>Remote</option>
+            <option value="Hybrid"{{#compare @root.request.params.query.workplace "Hybrid"}} selected{{/compare}}>Hybrid</option>
+          </select>
+          <label class="mdc-floating-label mdc-floating-label--float-above" for="{{instance_id}}-workplace">
+            Workplace
+          </label>
+          <div class="mdc-line-ripple"></div>
+        </div>
+      </div>
       {{/compare}}
+
+
+      {{!-- {{#with @root.data.supplimentaryResponses.types.aggregations ~}}
+        {{#ifAny (compare (length various_locations.buckets) ">=" 1) (compare (length home_based.buckets) ">=" 1) ~}}
+          <div class="t-margin-full">
+            <div class="mdc-drawer--occasional-ie11 checkbox-toggle-display-all" style="padding-top: 0.8rem !important;">
+              {{#compare (length various_locations.buckets) ">=" 1 ~}}
+                {{> term_checkbox slug="true" field="various_locations" selected=@root.request.params.query.various_locations instance_id=../instance_id value="Various locations"}}
+              {{/compare ~}}
+              {{#compare (length home_based.buckets) ">=" 1 ~}}
+                {{> term_checkbox slug="true" field="home_based" selected=@root.request.params.query.home_based instance_id=../instance_id value="Home-based"}}
+              {{/compare ~}}
+            </div>
+          </div>
+        {{/ifAny ~}}
+      {{/with ~}} --}}
 
       <h3 class="mdc-drawer__content-heading cursor-pointer noselect" data-collapse-target="#{{instance_id}}-salary-collapse" role="button" aria-pressed="false" aria-label="Show salary search options" tabindex="0">
         Salary
@@ -181,17 +214,6 @@
               {{/if ~}}
             {{/each ~}}
             {{/compare ~}}
-            {{#with @root.data.supplimentaryResponses.types.aggregations ~}}
-            {{#ifAny (compare (length various_locations.buckets) ">=" 1) (compare (length home_based.buckets) ">=" 1) ~}}
-              <h3 class="mdc-typography--headline7 h-padding-full checkbox-collapse-element">Other</h3>
-              {{#compare (length various_locations.buckets) ">=" 1 ~}}
-                {{> term_checkbox slug="true" field="various_locations" selected=@root.request.params.query.various_locations instance_id=../../instance_id value="Various locations"}}
-              {{/compare ~}}
-              {{#compare (length home_based.buckets) ">=" 1 ~}}
-                {{> term_checkbox slug="true" field="home_based" selected=@root.request.params.query.home_based instance_id=../../instance_id value="Home-based"}}
-              {{/compare ~}}
-            {{/ifAny ~}}
-            {{/with ~}}
           {{else}}
             {{#each (getProperty @root.data.termsMaps (concat this ".all")) ~}}
               {{> term_checkbox slug=slug field=../this selected=(getProperty @root.request.params.query ../this) instance_id=../../instance_id value=term}}

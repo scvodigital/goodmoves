@@ -21,7 +21,8 @@
     "role_status_list",
     "location",
     "postcodes",
-    "slug"
+    "slug",
+    "workplace"
   ],
   "query": {
     "bool": {

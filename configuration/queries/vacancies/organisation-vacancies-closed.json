@@ -19,6 +19,7 @@
     "closing_date",
     "start_at",
     "end_at",
+    "workplace",
     "organisation.slug",
     "organisation.name",
     "organisation.id",

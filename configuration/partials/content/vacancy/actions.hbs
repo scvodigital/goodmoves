@@ -5,30 +5,30 @@
     <!-- <a href="/organisation/{{organisation.id}}/{{organisation.name_slug}}{{> query_search}}" class="mdc-card__action hide-md hide-lg"><span class="fal fa-info-circle fa-fw fa-2x" aria-hidden="true"></span></a> -->
     {{else}}
     {{#compare @root.route.name "===" "vacancy_search" ~}}
-    {{#ifAll @root.request.params.query.location @root.request.params.query.lat @root.request.params.query.lng ~}}
-    {{#if home_based ~}}{{else}}
-    {{#if various_locations ~}}{{else}}
-    {{#if distance ~}}
-    {{#compare distance "!==" "Infinity" ~}}
-    <ul class="fa-ul hide-sm">
-      <li class="mdc-card__info--search-distance mdc-typography--body2">
-        <span class="fa-li"><span class="fas fa-location-arrow fa-fw" title="Distance"></span></span>
-        {{#compare distance "<" 4 ~}}
-          Less than {{inflect (round distance "up") "mile" "miles" true}} away
-        {{else}}
-          {{#compare distance "<" 10 ~}}
-            Within {{round distance "up"}} miles
-          {{else}}
-            {{round distance "up"}} miles away
-          {{/compare ~}}
-        {{/compare ~}}
-      </li>
-    </ul>
-    {{/compare ~}}
-    {{/if ~}}
-    {{/if ~}}
-    {{/if ~}}
-    {{/ifAll ~}}
+      {{#ifAll @root.request.params.query.location @root.request.params.query.lat @root.request.params.query.lng ~}}
+        {{#if home_based ~}}{{else}}
+          {{#if various_locations ~}}{{else}}
+            {{#if distance ~}}
+              {{#compare distance "!==" "Infinity" ~}}
+                <ul class="fa-ul hide-sm">
+                  <li class="mdc-card__info--search-distance mdc-typography--body2">
+                    <span class="fa-li"><span class="fas fa-location-arrow fa-fw" title="Distance"></span></span>
+                    {{#compare distance "<" 4 ~}}
+                      Less than {{inflect (round distance "up") "mile" "miles" true}} away
+                    {{else}}
+                      {{#compare distance "<" 10 ~}}
+                        Within {{round distance "up"}} miles
+                      {{else}}
+                        {{round distance "up"}} miles away
+                      {{/compare ~}}
+                    {{/compare ~}}
+                  </li>
+                </ul>
+              {{/compare ~}}
+            {{/if ~}}
+          {{/if ~}}
+        {{/if ~}}
+      {{/ifAll ~}}
     {{/compare ~}}
     <a href="/vacancy/{{Id}}/{{title_slug}}{{> query_search}}" class="mdc-card__action hide-sm" aria-label="Find out more about {{title}}">Find out more</a>
     <a href="/vacancy/{{Id}}/{{title_slug}}{{> query_search}}" class="mdc-card__action hide-md hide-lg" aria-label="Find out more about {{title}}"><span class="fal fa-info-circle fa-fw fa-2x" aria-hidden="true"></span></a>
