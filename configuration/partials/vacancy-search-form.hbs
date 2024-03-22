@@ -106,7 +106,7 @@
         <div class="mdc-select mdc-select--box" data-mdc-auto-init="MDCSelect">
           <span class="mdc-select__dropdown-icon"></span>
           <select class="mdc-select__native-control workplace" id="{{instance_id}}-workplace" name="workplace">
-            <option {{#unless @root.request.params.query.workplace}} selected{{/unless}}>Any</option>
+            <option value="" {{#unless @root.request.params.query.workplace}} selected{{/unless}}>Any</option>
             <option value="On site"{{#compare @root.request.params.query.workplace "On site"}} selected{{/compare}}>On site</option>
             <option value="Remote"{{#compare @root.request.params.query.workplace "Remote"}} selected{{/compare}}>Remote</option>
             <option value="Hybrid"{{#compare @root.request.params.query.workplace "Hybrid"}} selected{{/compare}}>Hybrid</option>
