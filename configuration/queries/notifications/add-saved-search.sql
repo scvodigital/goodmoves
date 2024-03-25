@@ -15,6 +15,7 @@ CALL _addSubscriptionParameters(
       lat=@root.request.params.query.lat
       lng=@root.request.params.query.lng
       location=@root.request.params.query.location
+      workplace=@root.request.params.query.workplace
     )
   }}},
   {{{mysqlEscape (default (truncate @root.request.body.name 250 suffix="...") "My saved search")}}},
