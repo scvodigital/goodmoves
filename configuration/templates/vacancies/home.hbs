@@ -12,7 +12,8 @@
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
                   <h1><span class="text-primary">Search {{@root.data.supplimentaryResponses.total.hits.total}} jobs in Scotland's vibrant voluntary sector</span></h1>
                 </div>
-                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-5-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
                   <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon mdc-text-field-tt" data-mdc-auto-init="MDCTextField">
                     <span class="mdc-notched-outline">
                       <span class="mdc-notched-outline__leading"></span>
@@ -103,7 +104,8 @@
                     }' aria-label="Keywords">
                   </div>
                 </div>
-                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
                   <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon" data-mdc-auto-init="MDCTextField">
                     <span class="mdc-notched-outline">
                       <span class="mdc-notched-outline__leading"></span>
@@ -123,6 +125,7 @@
                   </div>
                   <!-- <div class="after-textfield-action geo-lookup">Find me</div> -->
                 </div>
+
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                   <div class="mdc-form-field">
                     <div class="mdc-select mdc-select--outlined t-margin" data-mdc-auto-init="MDCSelect">
@@ -146,6 +149,30 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                  <div class="mdc-form-field">
+                    <div class="mdc-select mdc-select--outlined t-margin" data-mdc-auto-init="MDCSelect">
+                      <span class="mdc-notched-outline">
+                        <span class="mdc-notched-outline__leading"></span>
+                        <span class="mdc-notched-outline__notch">
+                          <label class="mdc-floating-label" style="transform: translateY(-130%) scale(0.75); background-color: #ffffff;" for="workplace-primary-content" id="label-workplace">
+                            Workplace
+                          </label>
+                        </span>
+                        <span class="mdc-notched-outline__trailing"></span>
+                      </span>
+                      <span class="mdc-select__dropdown-icon"></span>
+                      <select data-location="where-primary-content" class="mdc-select__native-control" aria-labelledby="label-workplace" name="workplace" id="workplace-primary-content">
+                        <option value="" {{#unless @root.request.params.query.workplace}} selected{{/unless}}>Any</option>
+                        <option value="On site"{{#compare @root.request.params.query.workplace "On site"}} selected{{/compare}}>On site</option>
+                        <option value="Remote"{{#compare @root.request.params.query.workplace "Remote"}} selected{{/compare}}>Remote</option>
+                        <option value="Hybrid"{{#compare @root.request.params.query.workplace "Hybrid"}} selected{{/compare}}>Hybrid</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                   <button type="submit" id="search-primary-content" class="mdc-button mdc-button--raised mdc-button--large mdc-text-field--box mdc-button--search mdc-ripple-surface mdc-ripple-surface--primary" data-mdc-auto-init="MDCRipple">
                     Search
